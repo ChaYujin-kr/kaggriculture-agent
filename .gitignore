@@ -1,0 +1,9 @@
+﻿.venv/
+data/
+submissions/
+kaggle.json
+access_token
+.ipynb_checkpoints/
+__pycache__/
+*.pkl
+.env
