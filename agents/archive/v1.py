@@ -62,13 +62,6 @@ PARAMS = {
     "animal_labor": 5.0,
     "crop_labor": 2.0,
     "drop_carry": 12,          # carried items that trigger a DROP trip
-    "dist_w": 2.0,             # priority points lost per step of walking
-    "sticky": 15.0,            # bonus for continuing toward last turn's target
-    "weed_prio": 12.0,         # priority of clearing an unplanned weed
-    "labor_util": 0.8,         # fraction of max unit-turns the planner may commit
-    "fertilize": True,         # fertilize ongoing crops on production days (doubles yield)
-    "wheat_keep": 4.0,         # feed-days of wheat never sold
-    "wheat_buy": 2.5,          # feed-days of wheat to top up to (must stay < wheat_keep)
 }
 
 G = {}
@@ -164,9 +157,7 @@ def crop_option(c, day, ctx):
         ks = [k for k in ks if day + k <= LAST_DAY]
         if not ks:
             return None
-        # fertilized + watered production days yield 2; one FERTILIZE covers 3 days
-        units = len(ks) * (2 if PARAMS["fertilize"] else 1)
-        fert_used = (len(ks) + 1) // 2 if PARAMS["fertilize"] else 0
+        units = len(ks)
         occ = min(ks[-1] + 1, LAST_DAY + 1 - day)
         t_h = (ks[0] + ks[-1]) / 2.0
     else:
@@ -175,11 +166,10 @@ def crop_option(c, day, ctx):
             return None
         ws = (cd["mxd"] + 1) // 2
         units = min(cd["max_yield"], 1 + max(0, a - ws + 1))
-        fert_used = 0
         occ = max(a, 1)
         t_h = a
     p = ctx["exp_price"](c, units / 2.0, t_h)
-    profit = units * p - cd["seed"] - fert_used * ctx["fert_cost"]
+    profit = units * p - cd["seed"]
     labor = PARAMS["crop_labor"]
     score = profit / occ - PARAMS["capital_rate"] * cd["seed"] - PARAMS["labor_cost"] * labor
     return {"kind": "CROP", "name": c, "score": score, "cost": cd["seed"], "units": units,
@@ -274,7 +264,7 @@ def _act(obs, step):
 
     wheat_cost = price_at("WHEAT", mkt_inv["WHEAT"] - feed_need_h / 2.0
                           - demand_per_day("WHEAT", shops, 5) * 5)
-    ctx = {"exp_price": exp_price, "wheat_cost": wheat_cost, "fert_cost": prices.get("FERTILIZER", 100)}
+    ctx = {"exp_price": exp_price, "wheat_cost": wheat_cost}
 
     # ---------------- plan empty tiles
     for key in list(plan.keys()):
@@ -287,13 +277,6 @@ def _act(obs, step):
             del plan[key]
         elif pk["kind"] == "CROP" and pk["day"] != day and t is None:
             del plan[key]  # stale crop plan -> re-plan today
-
-    # planned-but-not-yet-running tiles still count toward future supply and feed demand
-    for pk in plan.values():
-        committed[pk["product"]] += pk["units"]
-        if pk["kind"] == "ANIMAL":
-            committed["FERTILIZER"] += pk["fert"]
-            my_animals += 1
 
     spend = money - 50 - wheat_cost * my_animals * 1.5
     for pk in plan.values():
@@ -314,18 +297,6 @@ def _act(obs, step):
                 free.append((x, y))
     free.sort(key=lambda p: (dist(p, nearest_shed(p)), p))
 
-    # labor budget: what the farmer + max hands can service per day
-    labor_cap = (P["hands_max"] + 1) * P["unit_turns"] * P["labor_util"]
-    labor_used = 0.0
-    for row in tiles:
-        for t in row:
-            if isinstance(t, dict):
-                if t.get("kind") == "PLANT":
-                    labor_used += P["crop_labor"]
-                elif t.get("animal"):
-                    labor_used += P["animal_labor"]
-    labor_used += sum(P["animal_labor"] if pk["kind"] == "ANIMAL" else P["crop_labor"] for pk in plan.values())
-
     if free and hour <= 20 and not last_day:
         for pos in free:
             t = tiles[pos[1]][pos[0]]
@@ -345,14 +316,11 @@ def _act(obs, step):
                     o = animal_option(a, day, ctx)
                     if o:
                         opts.append(o)
-            opts = [o for o in opts if o["score"] >= P["min_score"] and o["cost"] <= spend
-                    and labor_used + o["labor"] <= labor_cap]
+            opts = [o for o in opts if o["score"] >= P["min_score"] and o["cost"] <= spend]
             if not opts:
                 continue
             best = max(opts, key=lambda o: o["score"])
-            labor_used += best["labor"]
-            plan[pos] = {"kind": best["kind"], "name": best["name"], "cost": best["cost"], "day": day,
-                         "product": best["product"], "units": best["units"], "fert": best.get("fert", 0)}
+            plan[pos] = {"kind": best["kind"], "name": best["name"], "cost": best["cost"], "day": day}
             spend -= best["cost"]
             committed[best["product"]] += best["units"]
             if best["kind"] == "ANIMAL":
@@ -368,8 +336,6 @@ def _act(obs, step):
         tasks.append({"pos": pos, "op": op, "prio": prio, "need": need, "args": list(args)})
 
     unfed = 0
-    fert_tasks = 0
-    fert_upcoming = 0
     animals_needed_in_shed = {a: 0 for a in ANIMALS}
     for y in range(n):
         for x in range(n):
@@ -391,7 +357,7 @@ def _act(obs, step):
             k = t.get("kind")
             if k == "WEED":
                 if pk or not endgame:
-                    add(pos, "DIG", 30 if pk else P["weed_prio"])
+                    add(pos, "DIG", 30 if pk else 12)
                 continue
             if k == "PLANT":
                 cd = CROPS[t["crop"]]
@@ -410,20 +376,8 @@ def _act(obs, step):
                     if ready:
                         add(pos, "HARVEST", 70 if t["crop"] == "MELON" else 55)
                 else:
-                    fud = t.get("fertilized_until_day", -1)
-                    # production events fire at end of day planted + first - 1 + j*interval
-                    evs = [t["planted_day"] + cd["first"] - 1 + j * cd["interval"] for j in range(4)]
-                    evs = [e for e in evs if day <= e <= LAST_DAY - 1]
-                    if not t["watered_today"] and not endgame:
-                        if cu >= 1:
-                            add(pos, "WATER", 90)
-                        elif fud >= day and day in evs:
-                            add(pos, "WATER", 75)  # fertilized production day only pays if watered
-                    if P["fertilize"] and any(e <= day + 4 and fud < e for e in evs):
-                        fert_upcoming += 1
-                    if P["fertilize"] and any(e <= day + 2 and fud < e for e in evs):
-                        fert_tasks += 1
-                        add(pos, "FERTILIZE", 68, need="FERTILIZER")
+                    if not t["watered_today"] and cu >= 1 and not endgame:
+                        add(pos, "WATER", 90)
                     if yu > 0 and (yu >= 2 or t.get("max_lifespan_step", -1) >= 0 or day >= LAST_DAY - 1):
                         add(pos, "HARVEST", 50)
                 continue
@@ -460,17 +414,6 @@ def _act(obs, step):
             shed_wheat -= q
             need -= q
             k += 1
-    carried_fert = sum(i.get("FERTILIZER", 0) for i in invs)
-    shed_fert = shed.get("FERTILIZER", 0)
-    if fert_tasks > carried_fert and shed_fert > 0:
-        need = fert_tasks - carried_fert
-        k = 0
-        while need > 0 and k < 4 and shed_fert > 0:
-            q = min(8, shed_fert, need + 1)
-            add("SHED", "PICKUP", 72, args=["FERTILIZER", q])
-            shed_fert -= q
-            need -= q
-            k += 1
     for a in ANIMALS:
         carried = sum(i.get(a, 0) for i in invs)
         avail = shed.get(a, 0)
@@ -485,9 +428,7 @@ def _act(obs, step):
         c = sum(v for kk, v in inv.items() if kk not in ANIMALS)
         carried_total += c
     for ui, inv in enumerate(invs[:len(units_pos)]):
-        c = sum(v for kk, v in inv.items() if kk not in ANIMALS and kk not in ("WHEAT", "FERTILIZER"))
-        if endgame:
-            c = sum(v for kk, v in inv.items() if kk not in ANIMALS)
+        c = sum(v for kk, v in inv.items() if kk not in ANIMALS and kk != "WHEAT")
         if c <= 0:
             continue
         d = dist(units_pos[ui], nearest_shed(units_pos[ui]))
@@ -498,8 +439,6 @@ def _act(obs, step):
 
     # ---------------- assignment (global greedy on priority - distance)
     unit_inv = [dict(i) for i in invs[:len(units_pos)]]
-    prev_tgt = G.get("tgt", {}) if hour > 0 else {}
-    new_tgt = {}
     pairs = []
     for ti, tk in enumerate(tasks):
         for ui, up in enumerate(units_pos):
@@ -511,10 +450,7 @@ def _act(obs, step):
             d = dist(up, tgt)
             if tk["pos"] != "SHED" and step + d > LAST_STEP:
                 continue
-            sc = tk["prio"] - P["dist_w"] * d
-            if prev_tgt.get(ui) == (tk["pos"], tk["op"]):
-                sc += P["sticky"]  # keep walking to the same job instead of thrashing
-            pairs.append((sc, ti, ui, tgt))
+            pairs.append((tk["prio"] - 2.0 * d, ti, ui, tgt))
     pairs.sort(key=lambda z: (-z[0], z[2], z[1]))
     used_t, used_u = set(), set()
     need_used = {}
@@ -531,8 +467,6 @@ def _act(obs, step):
         used_t.add(ti)
         used_u.add(ui)
         pos = units_pos[ui]
-        if pos != tgt:
-            new_tgt[ui] = (tk["pos"], tk["op"])
         if pos == tgt:
             if tk["op"] == "DROP":
                 actions[ui] = ["DROP"]
@@ -542,8 +476,6 @@ def _act(obs, step):
                 actions[ui] = [tk["op"]] + tk["args"]
         else:
             actions[ui] = [step_toward(pos, tgt)]
-
-    G["tgt"] = new_tgt
 
     # idle units drift toward the shed so they are central next turn
     for ui, pos in enumerate(units_pos):
@@ -565,17 +497,13 @@ def _act(obs, step):
     stock = dict(shed)
     for kk, v in dropping.items():
         stock[kk] = stock.get(kk, 0) + v
-    # keep feed wheat above the buy target (no sell-then-rebuy churn) and fertilizer for crops
-    wheat_keep = 0 if endgame else int(my_animals * P["wheat_keep"])
-    fert_keep = 0 if endgame else max(0, fert_upcoming + 2 - carried_fert)
+    wheat_keep = 0 if endgame else my_animals * 2
     pressure = sum(stock.values()) + (carried_total if hour >= 20 else 0) > SHED_CAP - 10
     sell_list = []
     for item in PRODUCTS:
         q = stock.get(item, 0)
         if item == "WHEAT":
             q -= wheat_keep
-        if item == "FERTILIZER":
-            q -= fert_keep
         if q <= 0:
             continue
         inv = mkt_inv[item]
@@ -650,21 +578,12 @@ def _act(obs, step):
     # wheat for feeding
     if my_animals > 0 and not endgame and len(orders) < 10:
         have_w = shed.get("WHEAT", 0) + carried_wheat
-        target_w = int(my_animals * P["wheat_buy"])
+        target_w = my_animals * 2 if hour < 12 else my_animals * 3
         short = target_w - have_w
         if short > 0 and space > 0:
             q = min(short, space, int(cash // max(1, prices.get("WHEAT", 25) + 5)))
             if q > 0:
                 orders.append(["BUY_PRODUCT", "WHEAT", q])
-                space -= q
-
-    # fertilizer for ongoing crops when animals don't supply enough
-    if P["fertilize"] and not endgame and len(orders) < 10 and fert_upcoming > 0:
-        short = fert_upcoming - shed.get("FERTILIZER", 0) - carried_fert
-        if short > 0 and space > 0:
-            q = min(short, space, int(cash // max(1, prices.get("FERTILIZER", 100) + 5)))
-            if q > 0:
-                orders.append(["BUY_PRODUCT", "FERTILIZER", q])
 
     return {"farmer": actions[0], "hands": actions[1:], "market": orders[:10]}
 

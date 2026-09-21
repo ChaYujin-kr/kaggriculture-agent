@@ -7,3 +7,5 @@ access_token
 __pycache__/
 *.pkl
 .env
+tuning/agent_snapshot.py
+replays/
