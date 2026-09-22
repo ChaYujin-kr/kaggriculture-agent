@@ -16,6 +16,9 @@ _CACHE = {}
 
 
 def _agent(path, tag, params):
+    """params may be a PARAMS dict, or {"flags": {...}} for module-global overrides."""
+    if isinstance(params, dict) and "flags" in params:
+        return fastsim.load_agent(path, tag, params.get("params"), params["flags"])
     return fastsim.load_agent(path, tag, params)
 
 

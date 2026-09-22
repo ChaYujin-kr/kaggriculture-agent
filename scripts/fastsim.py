@@ -19,8 +19,13 @@ _SPEC = json.load(open(os.path.join(os.path.dirname(K.__file__), "kaggriculture.
 DEFAULT_CFG = {k: v.get("default") if isinstance(v, dict) else v for k, v in _SPEC["configuration"].items()}
 
 
-def load_agent(path, tag, params=None):
-    """Load an agent file as an isolated module (own globals); optionally override its PARAMS."""
+def load_agent(path, tag, params=None, flags=None):
+    """Load an agent file as an isolated module (own globals).
+
+    params: overrides for a PARAMS dict (our own agents).
+    flags:  overrides for module-level globals of any agent; a "cfg.<key>" name instead patches
+            the public chassis settings (_IMPL.chassis.cfg), which are copied at import time.
+    """
     if not str(path).endswith(".py"):
         return K.agents[path]
     spec = importlib.util.spec_from_file_location(f"agent_{tag}", path)
@@ -32,6 +37,11 @@ def load_agent(path, tag, params=None):
                 mod.PARAMS[k] = {**mod.PARAMS[k], **v}
             else:
                 mod.PARAMS[k] = v
+    for k, v in (flags or {}).items():
+        if k.startswith("cfg."):
+            mod._IMPL.chassis.cfg[k[4:]] = v
+        else:
+            setattr(mod, k, v)
     return mod.agent
 
 

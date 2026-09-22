@@ -9,3 +9,9 @@ __pycache__/
 .env
 tuning/agent_snapshot.py
 replays/
+research/notebooks/
+research/refagents/
+research/outputs/
+research/pool/
+research/discussion/
+research/episodes/
