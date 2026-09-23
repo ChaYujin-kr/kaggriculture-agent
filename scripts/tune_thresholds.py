@@ -1,4 +1,4 @@
-"""Greedy search over the thresholds that scripts/knob_screen.py found live, scored by mirror duels
+﻿"""Greedy search over the thresholds that scripts/knob_screen.py found live, scored by mirror duels
 against the current champion.
 
 The ladder is full of near-clones of the champion, so "beats the champion in a mirror" is the signal
@@ -48,6 +48,8 @@ def main():
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--top", type=int, default=30)
     ap.add_argument("--out", default=os.path.join(ROOT, "tuning", "best_thresholds.json"))
+    ap.add_argument("--opponents", nargs="*", help="score against these instead of the mirror; "
+                                                   "use the mix the ladder census actually shows")
     a = ap.parse_args()
     live = {k: d for k, d in json.load(open(a.live)).items() if d.get("live")}
     ranked = sorted(live.items(), key=lambda kv: -abs(kv[1]["delta"]))[: a.top]
@@ -56,7 +58,8 @@ def main():
     pool = ProcessPoolExecutor(max_workers=a.workers)
     log = open(os.path.join(ROOT, "tuning", "thresholds_log.jsonl"), "a")
     best, best_w, best_m = {}, None, None
-    base = league.evaluate(a.agent, [a.champion], seeds, params={"flags": {}}, pool=pool)
+    opps = a.opponents or [a.champion]
+    base = league.evaluate(a.agent, opps, seeds, params={"flags": {}}, pool=pool)
     best_w, n, best_m = result(base)
     print(f"baseline (identical code) {best_w}/{n} margin {best_m:+.0f}", flush=True)
     for k, d in ranked:
@@ -64,7 +67,7 @@ def main():
             trial = dict(best)
             trial[k] = v
             t = time.time()
-            out = league.evaluate(a.agent, [a.champion], seeds, params={"flags": trial}, pool=pool)
+            out = league.evaluate(a.agent, opps, seeds, params={"flags": trial}, pool=pool)
             w, n, m = result(out)
             keep = (w, m) > (best_w, best_m)
             log.write(json.dumps({"knob": k, "value": v, "wins": w, "games": n, "margin": round(m),
@@ -81,3 +84,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

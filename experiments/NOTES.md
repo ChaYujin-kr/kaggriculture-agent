@@ -83,3 +83,9 @@ through days 10-19, stall at days 20-24, and **lose** ground on day 26 (-$1,504)
 | 2026-09-23 | E2a lineage tag | opponent bank at step 1, 4 opponents + 2 top-2 tapes | clean separation: our lineage spends $0, public forks $157, the top-2 branch $540 — the tag is reliable |
 | 2026-09-23 | E1 wheat squeeze | 6 wheat/turn, steps 0-48, vs 4 opponents x 3 seeds x 2 seats | 0/24, -1.7k to -4.0k per game |
 | 2026-09-23 | E5 inference noise | 1 unit every 7 turns, steps 120-690, same setup | 10/24 vs 15/24 baseline |
+| 2026-09-23 | E4 endgame gates | two late-season gates moved earlier (696→556, 648→518) | 40/48 mirror wins; 71/80 vs pool (champion 65/80) — **submitted** |
+| 2026-09-23 | E6 shed overflow | measured the end-of-day drop discarding produce | real leak: $889-$7,450 per game (15 milk, 10 wool, 6 strawberry in the worst case) |
+| 2026-09-23 | E6a capacity beliefs | in-code capacity checks 100 → 92/86/78 | no gain (92 identical, lower is worse) |
+| 2026-09-23 | E6b sell-down guard | new layer sells shed stock when the projected drop would overflow | no gain, 29/32 either way — SELL only draws from the shed, but the overflow is produce still in the units' hands |
+| 2026-09-23 | ladder census | lineage tag over 14 games at rating 2640 | 11 fork-family, 2 aurax7-family (both lost by 11k-20k), 1 all-in opener |
+| 2026-09-23 | last-day liquidation | top-team replays vs ours | they gain $3.5k-$13.3k on the final day, we gain $8.2k; one game flipped an $8.4k deficit into a win |
