@@ -1,4 +1,4 @@
-"""Find every module-level numeric/bool constant in an agent file and screen which ones actually
+﻿"""Find every module-level numeric/bool constant in an agent file and screen which ones actually
 change play. Dead knobs waste tuning budget, so this runs one cheap perturbation per knob.
 
 usage: python scripts/knob_screen.py --agent research/pool/hybrid2965.py --seeds 1
@@ -52,11 +52,14 @@ def main():
     ap.add_argument("--opp", default=os.path.join(ROOT, "research", "pool", "morewheat.py"))
     ap.add_argument("--seeds", type=int, default=1)
     ap.add_argument("--seed0", type=int, default=4100)
+    ap.add_argument("--prefix", default="", help="only screen constants with this name prefix")
+    ap.add_argument("--workers", type=int, default=None)
+    ap.add_argument("--out", default=os.path.join(ROOT, "research", "live_knobs.json"))
     a = ap.parse_args()
-    consts = constants(a.agent)
+    consts = {k: v for k, v in constants(a.agent).items() if k.startswith(a.prefix)}
     print(f"{len(consts)} module-level constants found", flush=True)
     seeds = list(range(a.seed0, a.seed0 + a.seeds))
-    pool = ProcessPoolExecutor(max_workers=os.cpu_count())
+    pool = ProcessPoolExecutor(max_workers=a.workers or os.cpu_count())
     base = league.evaluate(a.agent, [a.opp], seeds, params={"flags": {}}, pool=pool)
     base_scores = [r[0] for rs in base.values() for r in rs]
     print("baseline", base_scores, flush=True)
@@ -69,7 +72,7 @@ def main():
         live[k] = {"default": v, "trial": nv, "live": sc != base_scores, "delta": round(delta)}
         print(f"{k:<28} {str(v):>8} -> {str(nv):>8}  {'LIVE' if sc != base_scores else 'dead '}"
               f"  delta {delta:+9.0f}", flush=True)
-    json.dump(live, open(os.path.join(ROOT, "research", "live_knobs.json"), "w"), indent=1)
+    json.dump(live, open(a.out, "w"), indent=1)
     n = sum(1 for d in live.values() if d["live"])
     print(f"{n}/{len(live)} knobs change play")
     pool.shutdown()
@@ -77,3 +80,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

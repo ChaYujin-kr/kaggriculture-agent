@@ -19,6 +19,17 @@ ops, orders, traj = Counter(), Counter(), []
 
 def wrapped(obs):
     act = inner(obs)
+    try:
+        _record(obs, act)
+    except Exception as e:  # instrumentation must never change play: fastsim turns a raising
+        errors[type(e).__name__] += 1  # agent into an all-PASS turn, which silently wrecks the run
+    return act
+
+
+errors = Counter()
+
+
+def _record(obs, act):
     for a in [act["farmer"]] + act["hands"]:
         ops[a[0]] += 1
     for o in act["market"]:
@@ -32,7 +43,6 @@ def wrapped(obs):
                     mix[(t.get("crop") or t.get("animal") or t["kind"])[:4]] += 1
         traj.append(f"d{obs['day']:2d} ${f['money']:7.0f} q{len(f['unlocked_quadrants'])} hands={len(f['hands'])} "
                     f"shed={sum(obs['private']['shed'].values())} {dict(mix)}")
-    return act
 
 
 res = fastsim.play(wrapped, fastsim.load_agent(b_path, "opp"), seed)
@@ -42,3 +52,4 @@ tot = sum(ops.values())
 mv = sum(ops[m] for m in ("NORTH", "SOUTH", "EAST", "WEST"))
 print(f"ops {tot}, moves {mv / tot:.0%}:", dict(ops.most_common()))
 print("orders:", dict(orders.most_common()))
+print("instrumentation errors:", dict(errors))
