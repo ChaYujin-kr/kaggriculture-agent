@@ -1,0 +1,11 @@
+﻿.\.venv\Scripts\kaggle : usage: kaggle competitions pages [-h] [-v | --format OUTPUT_FORMAT] [-q]
+At line:1 char:431
++ ... Trim() } }; .\.venv\Scripts\kaggle competitions pages kaggriculture - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (usage: kaggle c...UT_FORMAT] [-q]:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 [--content] [--page-name PAGE_NAME]
+                                 [competition] {list,create,update,delete} ...
+kaggle competitions pages: error: argument command: invalid choice: 'kaggriculture' (choose from list, create, update, 
+delete)

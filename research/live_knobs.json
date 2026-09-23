@@ -1,0 +1,512 @@
+{
+ "LAST_ACT_STEP": {
+  "default": 718,
+  "trial": 897,
+  "live": false,
+  "delta": 0
+ },
+ "MAX_ORDERS": {
+  "default": 10,
+  "trial": 12,
+  "live": true,
+  "delta": -12732
+ },
+ "CROP_MIN_PRICE": {
+  "default": 70,
+  "trial": 87,
+  "live": false,
+  "delta": 0
+ },
+ "_V219_FERTILIZE": {
+  "default": true,
+  "trial": false,
+  "live": false,
+  "delta": 0
+ },
+ "APPLY_TIMING": {
+  "default": false,
+  "trial": true,
+  "live": false,
+  "delta": 0
+ },
+ "_V231_CAP": {
+  "default": 4,
+  "trial": 5,
+  "live": false,
+  "delta": 0
+ },
+ "_R37_ADAPTIVE": {
+  "default": true,
+  "trial": false,
+  "live": false,
+  "delta": 0
+ },
+ "_R37_QUOTE": {
+  "default": true,
+  "trial": false,
+  "live": false,
+  "delta": 0
+ },
+ "_R51_INPUT_MAX_WORKERS": {
+  "default": 2,
+  "trial": 3,
+  "live": false,
+  "delta": 0
+ },
+ "_R85_FEED": {
+  "default": true,
+  "trial": false,
+  "live": true,
+  "delta": -2840
+ },
+ "_R85_FERT": {
+  "default": true,
+  "trial": false,
+  "live": true,
+  "delta": -13
+ },
+ "_R88_PHASE": {
+  "default": true,
+  "trial": false,
+  "live": true,
+  "delta": -941
+ },
+ "_R88_HORIZON": {
+  "default": true,
+  "trial": false,
+  "live": true,
+  "delta": -31
+ },
+ "V9_COURIER_FROM_HOUR": {
+  "default": 12,
+  "trial": 15,
+  "live": false,
+  "delta": 0
+ },
+ "V9_CARROT_RATIO": {
+  "default": 1.8,
+  "trial": 2.44,
+  "live": false,
+  "delta": 0
+ },
+ "V9_CARROT_FIRST_DAY": {
+  "default": 10,
+  "trial": 12,
+  "live": false,
+  "delta": 0
+ },
+ "V9_CARROT_LAST_DAY": {
+  "default": 23,
+  "trial": 28,
+  "live": false,
+  "delta": 0
+ },
+ "V9_CARROT_WHEAT_RESERVE": {
+  "default": 40,
+  "trial": 50,
+  "live": false,
+  "delta": 0
+ },
+ "V9_CARROT_BOOM_RATIO": {
+  "default": 3.5,
+  "trial": 4.65,
+  "live": false,
+  "delta": 0
+ },
+ "V9_CARROT_BOOM_RESERVE": {
+  "default": 10,
+  "trial": 12,
+  "live": false,
+  "delta": 0
+ },
+ "V9_HERD_MIN_WOOL": {
+  "default": 150,
+  "trial": 187,
+  "live": false,
+  "delta": 0
+ },
+ "V9_HERD_MIN_MILK": {
+  "default": 150,
+  "trial": 187,
+  "live": false,
+  "delta": 0
+ },
+ "V9_HERD_MAX_EGG_SHOPS": {
+  "default": 1,
+  "trial": 2,
+  "live": false,
+  "delta": 0
+ },
+ "V9_HERD_MAX_EGG_SHOPS_COW": {
+  "default": 0,
+  "trial": 1,
+  "live": false,
+  "delta": 0
+ },
+ "V9_HERD_MIN_MILK_SHOPS": {
+  "default": 3,
+  "trial": 4,
+  "live": false,
+  "delta": 0
+ },
+ "V9_FERT_FIRST_DAY": {
+  "default": 14,
+  "trial": 17,
+  "live": false,
+  "delta": 0
+ },
+ "_V92_P_H": {
+  "default": 48,
+  "trial": 60,
+  "live": false,
+  "delta": 0
+ },
+ "_V92_P_K": {
+  "default": 4,
+  "trial": 5,
+  "live": true,
+  "delta": -53
+ },
+ "_V92_P_TOP": {
+  "default": 1,
+  "trial": 2,
+  "live": true,
+  "delta": -66
+ },
+ "_V92_P_EVERY": {
+  "default": 3,
+  "trial": 4,
+  "live": false,
+  "delta": 0
+ },
+ "_V92_Q_H": {
+  "default": 48,
+  "trial": 60,
+  "live": false,
+  "delta": 0
+ },
+ "_V92_Q_K": {
+  "default": 4,
+  "trial": 5,
+  "live": false,
+  "delta": 0
+ },
+ "_V92_Q_PF": {
+  "default": 1.0,
+  "trial": 1.4,
+  "live": false,
+  "delta": 0
+ },
+ "_V92_Q_PM": {
+  "default": 0.5,
+  "trial": 0.75,
+  "live": false,
+  "delta": 0
+ },
+ "V9_RACE_DEFAULT": {
+  "default": 41,
+  "trial": 51,
+  "live": true,
+  "delta": -244
+ },
+ "V9_RACE_MAX": {
+  "default": 48,
+  "trial": 60,
+  "live": false,
+  "delta": 0
+ },
+ "V9_RACE_MARGIN": {
+  "default": 12,
+  "trial": 15,
+  "live": false,
+  "delta": 0
+ },
+ "V9_RACE_GAP": {
+  "default": 3,
+  "trial": 4,
+  "live": false,
+  "delta": 0
+ },
+ "V9_RACE_WINDOW": {
+  "default": 30,
+  "trial": 37,
+  "live": false,
+  "delta": 0
+ },
+ "V9_RACEPX_MARGIN": {
+  "default": 0,
+  "trial": 1,
+  "live": true,
+  "delta": -1
+ },
+ "V9_RACEGATE_MARGIN": {
+  "default": 0,
+  "trial": 1,
+  "live": true,
+  "delta": -70
+ },
+ "_CA_FROM": {
+  "default": 6,
+  "trial": 7,
+  "live": false,
+  "delta": 0
+ },
+ "_CA_TO": {
+  "default": 28,
+  "trial": 35,
+  "live": false,
+  "delta": 0
+ },
+ "_CA_MARGIN": {
+  "default": -5.0,
+  "trial": -6.4,
+  "live": true,
+  "delta": -116
+ },
+ "_CA_DROP": {
+  "default": 0.0,
+  "trial": 0.1,
+  "live": false,
+  "delta": 0
+ },
+ "_CA_BUFFER": {
+  "default": 8,
+  "trial": 10,
+  "live": true,
+  "delta": 20
+ },
+ "_CA_FEED_DAYS": {
+  "default": 1,
+  "trial": 2,
+  "live": false,
+  "delta": 0
+ },
+ "_CA_CASH": {
+  "default": 800,
+  "trial": 1000,
+  "live": false,
+  "delta": 0
+ },
+ "_CA_RESCUE": {
+  "default": true,
+  "trial": false,
+  "live": false,
+  "delta": 0
+ },
+ "_OR2_CAP": {
+  "default": 30,
+  "trial": 37,
+  "live": true,
+  "delta": 1
+ },
+ "_OR2_SN_K": {
+  "default": 0,
+  "trial": 1,
+  "live": true,
+  "delta": 82
+ },
+ "_OR2_SN_H": {
+  "default": 24,
+  "trial": 30,
+  "live": false,
+  "delta": 0
+ },
+ "_OR2_SLOT_H": {
+  "default": 6,
+  "trial": 7,
+  "live": false,
+  "delta": 0
+ },
+ "_OR2_SLOT_MARGIN": {
+  "default": 20.0,
+  "trial": 26.1,
+  "live": false,
+  "delta": 0
+ },
+ "_CH_SHED": {
+  "default": 90,
+  "trial": 112,
+  "live": true,
+  "delta": 92
+ },
+ "_CH_SELL": {
+  "default": true,
+  "trial": false,
+  "live": true,
+  "delta": -89
+ },
+ "_SR_MARGIN": {
+  "default": 8,
+  "trial": 10,
+  "live": false,
+  "delta": 0
+ },
+ "_HD2_FROM": {
+  "default": 192,
+  "trial": 240,
+  "live": false,
+  "delta": 0
+ },
+ "_HD2_TO": {
+  "default": 360,
+  "trial": 450,
+  "live": false,
+  "delta": 0
+ },
+ "_HD2_RATIO": {
+  "default": 1.3,
+  "trial": 1.79,
+  "live": false,
+  "delta": 0
+ },
+ "_HD2_MIN_GAIN": {
+  "default": 600.0,
+  "trial": 780.1,
+  "live": false,
+  "delta": 0
+ },
+ "_HD2_LOOKBACK": {
+  "default": 3,
+  "trial": 4,
+  "live": false,
+  "delta": 0
+ },
+ "_HD2_CARE": {
+  "default": 0.8,
+  "trial": 1.14,
+  "live": false,
+  "delta": 0
+ },
+ "_HD2_FUTURE": {
+  "default": 0.0,
+  "trial": 0.1,
+  "live": false,
+  "delta": 0
+ },
+ "_CS_FROM": {
+  "default": 144,
+  "trial": 180,
+  "live": false,
+  "delta": 0
+ },
+ "_CS_TO": {
+  "default": 192,
+  "trial": 240,
+  "live": false,
+  "delta": 0
+ },
+ "_CS_RATIO": {
+  "default": 1.3,
+  "trial": 1.79,
+  "live": false,
+  "delta": 0
+ },
+ "_CS_MIN_GAIN": {
+  "default": 600.0,
+  "trial": 780.1,
+  "live": false,
+  "delta": 0
+ },
+ "_RACE_HORIZON_CLONE": {
+  "default": 9,
+  "trial": 11,
+  "live": false,
+  "delta": 0
+ },
+ "_RACE_HORIZON_ESCALATED": {
+  "default": 24,
+  "trial": 30,
+  "live": false,
+  "delta": 0
+ },
+ "_RACE_HORIZON_MIRROR": {
+  "default": 24,
+  "trial": 30,
+  "live": false,
+  "delta": 0
+ },
+ "_Y_MIN_DAY": {
+  "default": 1,
+  "trial": 2,
+  "live": false,
+  "delta": 0
+ },
+ "_Y_MARGIN": {
+  "default": -6,
+  "trial": -5,
+  "live": false,
+  "delta": 0
+ },
+ "_V44Y_REORDER_GATE": {
+  "default": false,
+  "trial": true,
+  "live": false,
+  "delta": 0
+ },
+ "_R148_OVERFLOW": {
+  "default": true,
+  "trial": false,
+  "live": false,
+  "delta": 0
+ },
+ "_R148_SEEDS": {
+  "default": false,
+  "trial": true,
+  "live": false,
+  "delta": 0
+ },
+ "_ADV_LOOK": {
+  "default": 3,
+  "trial": 4,
+  "live": true,
+  "delta": 277
+ },
+ "_ADV_FROM": {
+  "default": 144,
+  "trial": 180,
+  "live": true,
+  "delta": -2
+ },
+ "_ADV_TO": {
+  "default": 718,
+  "trial": 897,
+  "live": false,
+  "delta": 0
+ },
+ "_ADV_PROTECT": {
+  "default": true,
+  "trial": false,
+  "live": true,
+  "delta": 33
+ },
+ "_ADV_FRONT": {
+  "default": true,
+  "trial": false,
+  "live": true,
+  "delta": 15
+ },
+ "_ADV_BOOK": {
+  "default": false,
+  "trial": true,
+  "live": true,
+  "delta": 36
+ },
+ "_ADV_SUBTRACT_DEBTS": {
+  "default": false,
+  "trial": true,
+  "live": false,
+  "delta": 0
+ },
+ "_33_SF_HEDGE": {
+  "default": 2,
+  "trial": 3,
+  "live": true,
+  "delta": -10
+ },
+ "_33_SF_FROM": {
+  "default": 648,
+  "trial": 810,
+  "live": true,
+  "delta": -10
+ }
+}

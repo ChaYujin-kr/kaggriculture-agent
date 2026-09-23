@@ -1,0 +1,2002 @@
+{
+ "_KNOB_7174_25": {
+  "value": 3,
+  "line": 7174,
+  "context": "if len(o) >= 3 and o[:2] == [\"BUY_SEED\", \"WHEAT\"]:"
+ },
+ "_KNOB_7162_25": {
+  "value": 3,
+  "line": 7162,
+  "context": "if len(o) >= 3 and o[:2] == [\"BUY_SEED\", \"CARROT\"]:"
+ },
+ "_KNOB_7152_47": {
+  "value": 719,
+  "line": 7152,
+  "context": "c_ahead = _33_SF_C[step + 1] if step < 719 else 0"
+ },
+ "_KNOB_7151_47": {
+  "value": 719,
+  "line": 7151,
+  "context": "w_ahead = _33_SF_W[step + 1] if step < 719 else 0"
+ },
+ "_KNOB_7076_54": {
+  "value": 3,
+  "line": 7076,
+  "context": "isinstance(order, list) and len(order) >= 3 and"
+ },
+ "_KNOB_7055_54": {
+  "value": 3,
+  "line": 7055,
+  "context": "if (isinstance(order, list) and len(order) >= 3 and"
+ },
+ "_KNOB_7047_21": {
+  "value": 2,
+  "line": 7047,
+  "context": "if len(market) < 2:"
+ },
+ "_KNOB_7035_21": {
+  "value": 2,
+  "line": 7035,
+  "context": "if len(hands) <= 2 or hands[2] != [\"WATER\"]:"
+ },
+ "_KNOB_7020_43": {
+  "value": 29,
+  "line": 7020,
+  "context": "if int(observation.get(\"step\", -1)) != 29 or not isinstance(action, dict):"
+ },
+ "_KNOB_6971_76": {
+  "value": 3,
+  "line": 6971,
+  "context": "mid=[o for o in market if len(o)>=3 and o[0]=='BUY_PRODUCT' or (len(o)>=3 and o[0]=='SELL' and o[1] in buys)]"
+ },
+ "_KNOB_6971_38": {
+  "value": 3,
+  "line": 6971,
+  "context": "mid=[o for o in market if len(o)>=3 and o[0]=='BUY_PRODUCT' or (len(o)>=_KNOB_6971_76 and o[0]=='SELL' and o[1] in buys)"
+ },
+ "_KNOB_6970_40": {
+  "value": 3,
+  "line": 6970,
+  "context": "front=[o for o in market if len(o)>=3 and o[0]=='SELL' and o[1] not in buys]"
+ },
+ "_KNOB_6968_19": {
+  "value": 2,
+  "line": 6968,
+  "context": "if len(market)<2 or int(obs['step'])<_ADV_FROM:return action"
+ },
+ "_KNOB_6948_51": {
+  "value": 10,
+  "line": 6948,
+  "context": "if hit is None and len(market)+len(extra)>=10:continue"
+ },
+ "_KNOB_6947_47": {
+  "value": 3,
+  "line": 6947,
+  "context": "hit=next((o for o in market if len(o)>=3 and o[0]=='SELL' and o[1]==item),None)"
+ },
+ "_KNOB_6944_53": {
+  "value": 2,
+  "line": 6944,
+  "context": "if item in picked or int(prices.get(item,0))<2:continue"
+ },
+ "_KNOB_6937_19": {
+  "value": 3,
+  "line": 6937,
+  "context": "if len(o)>=3 and o[0]=='SELL':"
+ },
+ "_KNOB_6922_31": {
+  "value": 3,
+  "line": 6922,
+  "context": "if not o or len(o)<3:continue"
+ },
+ "_KNOB_6920_13": {
+  "value": 718,
+  "line": 6920,
+  "context": "if t>718:break"
+ },
+ "_KNOB_6915_16": {
+  "value": 23,
+  "line": 6915,
+  "context": "if step%24==23 or not _ADV_FROM<=step<_ADV_TO:return action"
+ },
+ "_KNOB_6912_40": {
+  "value": 648,
+  "line": 6912,
+  "context": "return _IMPL.chassis.routes[2 if t>=648 else native['route']][t].get('market',[]) or []"
+ },
+ "_KNOB_6864_43": {
+  "value": 10,
+  "line": 6864,
+  "context": "if not short or len(orders)+len(short)>10:return action"
+ },
+ "_KNOB_6851_24": {
+  "value": 2,
+  "line": 6851,
+  "context": "elif len(order)>2 and order[0]=='BUY_SEED':"
+ },
+ "_KNOB_6838_66": {
+  "value": 10,
+  "line": 6838,
+  "context": "if step<24 or step>=695 or step%24 in (22,23) or len(orders)>=10:return action"
+ },
+ "_KNOB_6838_24": {
+  "value": 695,
+  "line": 6838,
+  "context": "if step<24 or step>=695 or step%24 in (22,23) or len(orders)>=_KNOB_6838_66:return action"
+ },
+ "_KNOB_6838_12": {
+  "value": 24,
+  "line": 6838,
+  "context": "if step<24 or step>=_KNOB_6838_24 or step%24 in (22,23) or len(orders)>=_KNOB_6838_66:return action"
+ },
+ "_KNOB_6791_37": {
+  "value": 10,
+  "line": 6791,
+  "context": "if len(orders)+len(released)>10:break"
+ },
+ "_KNOB_6775_20": {
+  "value": 10,
+  "line": 6775,
+  "context": "if len(orders)>=10 or not _r97_budget(obs,orders):return action"
+ },
+ "_KNOB_6773_28": {
+  "value": 23,
+  "line": 6773,
+  "context": "if int(obs['step'])%24!=23:return action"
+ },
+ "_KNOB_6695_23": {
+  "value": 3,
+  "line": 6695,
+  "context": "if len(o)>=3 and o[0]=='BUY_SEED' and o[1] in available:"
+ },
+ "_KNOB_6685_27": {
+  "value": 3,
+  "line": 6685,
+  "context": "if not any(len(o)>=3 and o[0]=='BUY_SEED' and o[1] in ('WHEAT','CARROT') for o in market):return action"
+ },
+ "_KNOB_6683_16": {
+  "value": 624,
+  "line": 6683,
+  "context": "if step<624:return action"
+ },
+ "_KNOB_6669_42": {
+  "value": 648,
+  "line": 6669,
+  "context": "tape=_IMPL.chassis.routes[2 if t>=648 else route]"
+ },
+ "_KNOB_6645_81": {
+  "value": 3,
+  "line": 6645,
+  "context": "orders=[list(o) for o in action.get(\"market\",[]) if not (len(o)>=3 and o[0]==\"SELL\" and o[1]==\"WHEAT\")]"
+ },
+ "_KNOB_6644_23": {
+  "value": 31,
+  "line": 6644,
+  "context": "if price < 31:"
+ },
+ "_KNOB_6642_37": {
+  "value": 91,
+  "line": 6642,
+  "context": "if int(observation[\"step\"])==91:"
+ },
+ "_KNOB_6626_19": {
+  "value": 91,
+  "line": 6626,
+  "context": "if step == 91 and farm['hands'] and tuple(farm['hands'][0]) == (4,4) and action['hands'][0] == ['DROP']:"
+ },
+ "_KNOB_6623_19": {
+  "value": 89,
+  "line": 6623,
+  "context": "if step == 89:"
+ },
+ "_KNOB_6621_19": {
+  "value": 88,
+  "line": 6621,
+  "context": "if step == 88:"
+ },
+ "_KNOB_6583_84": {
+  "value": 3,
+  "line": 6583,
+  "context": "scheduled=sum(int(o[2]) for o in action.get('market',[]) if len(o)>=3 and o[:2]==['SELL','TOMATO'])"
+ },
+ "_KNOB_6555_21": {
+  "value": 57,
+  "line": 6555,
+  "context": "if step==57 and len(farm['hands'])>=1:"
+ },
+ "_KNOB_6554_21": {
+  "value": 55,
+  "line": 6554,
+  "context": "if step==55:_ALT_REPORT['restored_pasture_seen']=int(isinstance(site,dict) and site.get('kind')=='PASTURE')"
+ },
+ "_KNOB_6552_21": {
+  "value": 54,
+  "line": 6552,
+  "context": "if step==54:"
+ },
+ "_KNOB_6551_21": {
+  "value": 6,
+  "line": 6551,
+  "context": "if step==6:_ALT_REPORT['temporary_crop_seen']=int(isinstance(site,dict) and site.get('crop')=='WHEAT')"
+ },
+ "_KNOB_6521_21": {
+  "value": 10,
+  "line": 6521,
+  "context": "elif len(orders)<10:orders.append(['SELL',item,n])"
+ },
+ "_KNOB_6519_44": {
+  "value": 3,
+  "line": 6519,
+  "context": "sell=next((o for o in orders if len(o)>=3 and o[:2]==['SELL',item]),None)"
+ },
+ "_KNOB_6514_60": {
+  "value": 10,
+  "line": 6514,
+  "context": "assert max(len(a.get('market',[])) for a in tape[:96])<=10"
+ },
+ "_KNOB_6504_23": {
+  "value": 2,
+  "line": 6504,
+  "context": "assert cow[2]==2; cow[2]=1"
+ },
+ "_KNOB_6488_72": {
+  "value": 3,
+  "line": 6488,
+  "context": "tape[1]['market']=[o for o in tape[1]['market'] if not (len(o)>=3 and o[0] in ('BUY_PRODUCT','SELL') and o[1]=='WHEAT')]"
+ },
+ "_KNOB_6373_23": {
+  "value": 3,
+  "line": 6373,
+  "context": "if not all(len(o)>=3 and o[0]=='SELL' for o in market):return _E335_ORIGINAL_COMPACT(obs,action)"
+ },
+ "_KNOB_6372_43": {
+  "value": 2,
+  "line": 6372,
+  "context": "if int(obs['step'])<144 or len(market)<2:return action"
+ },
+ "_KNOB_6372_24": {
+  "value": 144,
+  "line": 6372,
+  "context": "if int(obs['step'])<144 or len(market)<_KNOB_6372_43:return action"
+ },
+ "_KNOB_6336_20": {
+  "value": 2,
+  "line": 6336,
+  "context": "if j-i>=2:segments.append((i,j))"
+ },
+ "_KNOB_6335_52": {
+  "value": 3,
+  "line": 6335,
+  "context": "while j<len(market) and len(market[j])>=3 and market[j][0]=='SELL' and market[j][1] in _E334_ITEMS:j+=1"
+ },
+ "_KNOB_6333_27": {
+  "value": 3,
+  "line": 6333,
+  "context": "if len(market[i])>=3 and market[i][0]=='SELL' and market[i][1] in _E334_ITEMS:"
+ },
+ "_KNOB_6330_43": {
+  "value": 2,
+  "line": 6330,
+  "context": "if int(obs['step'])<144 or len(market)<2:return action"
+ },
+ "_KNOB_6330_24": {
+  "value": 144,
+  "line": 6330,
+  "context": "if int(obs['step'])<144 or len(market)<_KNOB_6330_43:return action"
+ },
+ "_KNOB_6299_27": {
+  "value": 3,
+  "line": 6299,
+  "context": "if len(o)>=3 and o[0]=='SELL' and o[1]==prod and int(o[2])>0:"
+ },
+ "_KNOB_6294_68": {
+  "value": 3,
+  "line": 6294,
+  "context": "planned=sum(max(0,int(o[2])) for o in market if len(o)>=3 and o[0]=='SELL' and o[1]==prod)"
+ },
+ "_KNOB_6272_40": {
+  "value": 2,
+  "line": 6272,
+  "context": "elif op=='PLACE' and len(work)>=2 and work[1] in _Y_COST:"
+ },
+ "_KNOB_6265_62": {
+  "value": 2,
+  "line": 6265,
+  "context": "kind=work[1];qty=max(1,int(work[2])) if len(work)>2 else 1"
+ },
+ "_KNOB_6264_39": {
+  "value": 2,
+  "line": 6264,
+  "context": "if op=='PICKUP' and len(work)>=2 and work[1] in _Y_COST:"
+ },
+ "_KNOB_6245_23": {
+  "value": 3,
+  "line": 6245,
+  "context": "if len(o)>=3 and o[0]=='BUY_ANIMAL' and o[1] in _Y_COST and 1<=int(o[2])<=cfg.get('maxq',2):"
+ },
+ "_KNOB_6219_40": {
+  "value": 3,
+  "line": 6219,
+  "context": "elif op=='BUY_SEED' and len(o)>=3:cost+=int(o[2])*_Y_SEED.get(o[1],100)"
+ },
+ "_KNOB_6218_43": {
+  "value": 3,
+  "line": 6218,
+  "context": "elif op=='BUY_PRODUCT' and len(o)>=3:cost+=int(o[2])*(float(prices.get(o[1],0))+10)"
+ },
+ "_KNOB_6217_42": {
+  "value": 3,
+  "line": 6217,
+  "context": "elif op=='BUY_ANIMAL' and len(o)>=3:cost+=int(o[2])*_Y_COST.get(o[1],500)"
+ },
+ "_KNOB_6215_34": {
+  "value": 3,
+  "line": 6215,
+  "context": "if op=='SELL' and len(o)>=3:"
+ },
+ "_KNOB_6170_19": {
+  "value": 216,
+  "line": 6170,
+  "context": "if step >= 216 and (not _V44Y_REORDER_GATE or _v44y_clone_gate(observation)):"
+ },
+ "_KNOB_6162_75": {
+  "value": 4,
+  "line": 6162,
+  "context": "if step >= 696 and len(st.get('hist', [])) >= 4 and sum(st['hist']) >= 4:"
+ },
+ "_KNOB_6162_50": {
+  "value": 4,
+  "line": 6162,
+  "context": "if step >= 696 and len(st.get('hist', [])) >= 4 and sum(st['hist']) >= _KNOB_6162_75:"
+ },
+ "_KNOB_6162_15": {
+  "value": 696,
+  "line": 6162,
+  "context": "if step >= 696 and len(st.get('hist', [])) >= _KNOB_6162_50 and sum(st['hist']) >= _KNOB_6162_75:"
+ },
+ "_KNOB_6129_29": {
+  "value": 6,
+  "line": 6129,
+  "context": "if 2 <= j - i <= 6: blocks.append((i, j))"
+ },
+ "_KNOB_6129_15": {
+  "value": 2,
+  "line": 6129,
+  "context": "if 2 <= j - i <= _KNOB_6129_29: blocks.append((i, j))"
+ },
+ "_KNOB_6121_21": {
+  "value": 2,
+  "line": 6121,
+  "context": "if len(market) < 2: return action"
+ },
+ "_KNOB_6100_39": {
+  "value": 3,
+  "line": 6100,
+  "context": "if order and len(order) >= 3 and order[0] in ('SELL', 'BUY_PRODUCT') and order[1] in params:"
+ },
+ "_KNOB_6093_35": {
+  "value": 3,
+  "line": 6093,
+  "context": "if order and len(order) >= 3 and order[0] in ('SELL', 'BUY_PRODUCT') and order[1] in params:"
+ },
+ "_KNOB_6059_23": {
+  "value": 5000,
+  "line": 6059,
+  "context": "if guard > 5000: break"
+ },
+ "_KNOB_6052_35": {
+  "value": 3,
+  "line": 6052,
+  "context": "if o and len(o) >= 3 and o[0] in ('SELL', 'BUY_PRODUCT') and o[1] in params:"
+ },
+ "_KNOB_6010_43": {
+  "value": 10,
+  "line": 6010,
+  "context": "if not extra or len(orders)+len(extra)>10:return action"
+ },
+ "_KNOB_6007_57": {
+  "value": 2,
+  "line": 6007,
+  "context": "if item in _Y_ITEMS and int(prices.get(item,0))>=2:extra.append(['SELL',item,qty])"
+ },
+ "_KNOB_5997_20": {
+  "value": 10,
+  "line": 5997,
+  "context": "if len(orders)>=10:return action"
+ },
+ "_KNOB_5995_63": {
+  "value": 696,
+  "line": 5995,
+  "context": "if step%24 not in _Y_HOURS or step//24<_Y_MIN_DAY or step>=696:return action"
+ },
+ "_KNOB_5948_39": {
+  "value": 2,
+  "line": 5948,
+  "context": "need=sum(max(0,int(c[2]) if len(c)>2 else 1) for pos,c in zip(positions,commands) if pos in access and c[:2]==['PICKUP',"
+ },
+ "_KNOB_5942_57": {
+  "value": 23,
+  "line": 5942,
+  "context": "farm,private=_r127_fields(obs,action);night=step%24==23"
+ },
+ "_KNOB_5938_45": {
+  "value": 648,
+  "line": 5938,
+  "context": "future=_IMPL.chassis.routes[2 if step+1>=648 else native['route']][step+1]"
+ },
+ "_KNOB_5936_19": {
+  "value": 9,
+  "line": 5936,
+  "context": "if len(orders)>9 or any(o[:2] in (['BUY_PRODUCT','WHEAT'],['SELL','WHEAT']) for o in orders):return action"
+ },
+ "_KNOB_5934_21": {
+  "value": 695,
+  "line": 5934,
+  "context": "if not 144<=step<695:return action"
+ },
+ "_KNOB_5934_11": {
+  "value": 144,
+  "line": 5934,
+  "context": "if not 144<=step<_KNOB_5934_21:return action"
+ },
+ "_KNOB_5905_28": {
+  "value": 23,
+  "line": 5905,
+  "context": "if int(obs['step'])%24!=23:return action"
+ },
+ "_KNOB_5873_63": {
+  "value": 696,
+  "line": 5873,
+  "context": "if state is not None and 215<=int(observation['step'])<696:snapshot=_race_snapshot(observation)"
+ },
+ "_KNOB_5873_33": {
+  "value": 215,
+  "line": 5873,
+  "context": "if state is not None and 215<=int(observation['step'])<_KNOB_5873_63:snapshot=_race_snapshot(observation)"
+ },
+ "_KNOB_5865_34": {
+  "value": 696,
+  "line": 5865,
+  "context": "if standard and 216<=step<696 and _race_clone(observation,state):"
+ },
+ "_KNOB_5865_24": {
+  "value": 216,
+  "line": 5865,
+  "context": "if standard and 216<=step<_KNOB_5865_34 and _race_clone(observation,state):"
+ },
+ "_KNOB_5826_31": {
+  "value": 3,
+  "line": 5826,
+  "context": "return any(len(o)>=3 and o[0]=='SELL' and o[1]==item for o in future.get('market',[]))"
+ },
+ "_KNOB_5825_48": {
+  "value": 648,
+  "line": 5825,
+  "context": "future=_IMPL.chassis.routes[2 if t>=648 else native['route']][t]"
+ },
+ "_KNOB_5817_23": {
+  "value": 3,
+  "line": 5817,
+  "context": "if len(order)>=3 and order[0]=='SELL' and order[1] in _RACE_ITEMS:sold[order[1]]=1"
+ },
+ "_KNOB_5793_57": {
+  "value": 4,
+  "line": 5793,
+  "context": "return len(state['hist'])>=4 and sum(state['hist'])>=4 and _r37_similarity(observation)>=.95"
+ },
+ "_KNOB_5793_31": {
+  "value": 4,
+  "line": 5793,
+  "context": "return len(state['hist'])>=4 and sum(state['hist'])>=_KNOB_5793_57 and _r37_similarity(observation)>=.95"
+ },
+ "_KNOB_5792_30": {
+  "value": 6,
+  "line": 5792,
+  "context": "if len(state['hist'])>6:state['hist'].pop(0)"
+ },
+ "_KNOB_5746_41": {
+  "value": 10,
+  "line": 5746,
+  "context": "if len(market) < 10:"
+ },
+ "_KNOB_5742_37": {
+  "value": 3,
+  "line": 5742,
+  "context": "if len(o) >= 3 and o[:2] == [\"SELL\", product]:"
+ },
+ "_KNOB_5738_77": {
+  "value": 3,
+  "line": 5738,
+  "context": "planned = sum(max(0, int(o[2])) for o in market if len(o) >= 3 and o[:2] == [\"SELL\", product])"
+ },
+ "_KNOB_5713_35": {
+  "value": 2,
+  "line": 5713,
+  "context": "if len(cmd) >= 2 and cmd[0] == \"PLACE\" and cmd[1] == \"COW\" and pos == plan[\"places\"][key]:"
+ },
+ "_KNOB_5707_35": {
+  "value": 2,
+  "line": 5707,
+  "context": "if len(cmd) >= 2 and cmd[0] == \"PICKUP\" and cmd[1] == \"COW\":"
+ },
+ "_KNOB_5686_41": {
+  "value": 3,
+  "line": 5686,
+  "context": "if len(o) >= 3 and o[0] == \"BUY_ANIMAL\" and o[1] == \"COW\":"
+ },
+ "_KNOB_5658_51": {
+  "value": 3,
+  "line": 5658,
+  "context": "buys = [o for o in market if len(o) >= 3 and o[0] == \"BUY_ANIMAL\" and o[1] == \"COW\" and int(o[2]) > 0]"
+ },
+ "_KNOB_5580_29": {
+  "value": 2,
+  "line": 5580,
+  "context": "elif len(cmd) >= 2 and cmd[0] == \"PLACE\" and cmd[1] == \"COW\":"
+ },
+ "_KNOB_5579_71": {
+  "value": 2,
+  "line": 5579,
+  "context": "pickups.append((t, i, max(1, int(cmd[2]) if len(cmd) > 2 else 1)))"
+ },
+ "_KNOB_5578_29": {
+  "value": 2,
+  "line": 5578,
+  "context": "elif len(cmd) >= 2 and cmd[0] == \"PICKUP\" and cmd[1] == \"COW\":"
+ },
+ "_KNOB_5543_42": {
+  "value": 648,
+  "line": 5543,
+  "context": "tape = _IMPL.chassis.routes[2 if t >= 648 else native[\"route\"]]"
+ },
+ "_KNOB_5541_25": {
+  "value": 719,
+  "line": 5541,
+  "context": "if not native or t > 719:"
+ },
+ "_KNOB_5464_33": {
+  "value": 10,
+  "line": 5464,
+  "context": "if len(market) < 10:"
+ },
+ "_KNOB_5460_33": {
+  "value": 3,
+  "line": 5460,
+  "context": "if len(order) >= 3 and order[:2] == [\"SELL\", item]:"
+ },
+ "_KNOB_5456_69": {
+  "value": 3,
+  "line": 5456,
+  "context": "planned = sum(max(0, int(o[2])) for o in market if len(o) >= 3 and o[:2] == [\"SELL\", item])"
+ },
+ "_KNOB_5441_26": {
+  "value": 2,
+  "line": 5441,
+  "context": "elif len(work) >= 2 and work[0] == \"PLACE\" and work[1] == \"EGG\":"
+ },
+ "_KNOB_5436_26": {
+  "value": 2,
+  "line": 5436,
+  "context": "elif len(work) >= 2 and work[0] in (\"PICKUP\", \"PLACE\") and work[1] == \"GOOSE\":"
+ },
+ "_KNOB_5416_27": {
+  "value": 3,
+  "line": 5416,
+  "context": "elif len(order) >= 3 and order[0] in (\"BUY_ANIMAL\", \"BUY_SEED\", \"BUY_PRODUCT\"):"
+ },
+ "_KNOB_5409_25": {
+  "value": 3,
+  "line": 5409,
+  "context": "if len(order) >= 3 and order[0] == \"BUY_ANIMAL\" and order[1] == \"GOOSE\":"
+ },
+ "_KNOB_5367_43": {
+  "value": 3,
+  "line": 5367,
+  "context": "buys = [o for o in market if len(o) >= 3 and o[0] == \"BUY_ANIMAL\" and o[1] == \"GOOSE\"]"
+ },
+ "_KNOB_5326_33": {
+  "value": 3,
+  "line": 5326,
+  "context": "if len(order) >= 3 and order[0] == \"BUY_ANIMAL\" and order[1] == animal_of:"
+ },
+ "_KNOB_5322_50": {
+  "value": 648,
+  "line": 5322,
+  "context": "tape = _IMPL.chassis.routes[2 if t >= 648 else native[\"route\"]]"
+ },
+ "_KNOB_5218_34": {
+  "value": 10,
+  "line": 5218,
+  "context": "if len(market) >= 10:"
+ },
+ "_KNOB_5214_29": {
+  "value": 3,
+  "line": 5214,
+  "context": "if len(o) >= 3 and o[:2] == [\"SELL\", item]:"
+ },
+ "_KNOB_5205_57": {
+  "value": 2,
+  "line": 5205,
+  "context": "if spare > 0 and int(prices.get(item, 0)) >= 2:"
+ },
+ "_KNOB_5185_58": {
+  "value": 3,
+  "line": 5185,
+  "context": "held += max(1, int(cmd[2]) if len(cmd) >= 3 else 1)"
+ },
+ "_KNOB_5184_48": {
+  "value": 2,
+  "line": 5184,
+  "context": "elif op == \"PICKUP\" and len(cmd) >= 2 and _shed_adjacent(pos, view.board):"
+ },
+ "_KNOB_5166_27": {
+  "value": 3,
+  "line": 5166,
+  "context": "elif len(o) >= 3 and o[0] in (\"BUY_PRODUCT\", \"BUY_ANIMAL\"):"
+ },
+ "_KNOB_5162_25": {
+  "value": 3,
+  "line": 5162,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\":"
+ },
+ "_KNOB_5151_49": {
+  "value": 717,
+  "line": 5151,
+  "context": "if step % 24 not in _SR_HOURS or step >= 717 or not isinstance(action, dict):"
+ },
+ "_KNOB_5136_42": {
+  "value": 648,
+  "line": 5136,
+  "context": "tape = _IMPL.chassis.routes[2 if t >= 648 else native[\"route\"]]"
+ },
+ "_KNOB_5134_25": {
+  "value": 719,
+  "line": 5134,
+  "context": "if not native or t > 719:"
+ },
+ "_KNOB_5100_37": {
+  "value": 3,
+  "line": 5100,
+  "context": "if len(o) >= 3 and o[:2] == [\"SELL\", product]:"
+ },
+ "_KNOB_5096_69": {
+  "value": 3,
+  "line": 5096,
+  "context": "selling = sum(int(o[2]) for o in market if len(o) >= 3 and o[:2] == [\"SELL\", product])"
+ },
+ "_KNOB_5094_85": {
+  "value": 2,
+  "line": 5094,
+  "context": "if credit <= 0 or len(market) >= 10 or int(prices.get(product, 0)) < 2:"
+ },
+ "_KNOB_5094_49": {
+  "value": 10,
+  "line": 5094,
+  "context": "if credit <= 0 or len(market) >= 10 or int(prices.get(product, 0)) < _KNOB_5094_85:"
+ },
+ "_KNOB_5040_50": {
+  "value": 717,
+  "line": 5040,
+  "context": "if not isinstance(action, dict) or step > 717:"
+ },
+ "_KNOB_4989_42": {
+  "value": 648,
+  "line": 4989,
+  "context": "tape = _IMPL.chassis.routes[2 if t >= 648 else native[\"route\"]]"
+ },
+ "_KNOB_4987_25": {
+  "value": 719,
+  "line": 4987,
+  "context": "if not native or t > 719:"
+ },
+ "_KNOB_4950_29": {
+  "value": 3,
+  "line": 4950,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\" and o[1] in _OR2_ITEMS:"
+ },
+ "_KNOB_4929_29": {
+  "value": 3,
+  "line": 4929,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\" and int(o[2]) > 0 and o[1] not in bought:"
+ },
+ "_KNOB_4927_29": {
+  "value": 2,
+  "line": 4927,
+  "context": "if len(o) >= 2 and o[0] in (\"BUY_PRODUCT\", \"BUY_ANIMAL\"):"
+ },
+ "_KNOB_4906_209": {
+  "value": 2,
+  "line": 4906,
+  "context": "if best[0] > sval(weakest) + _OR2_SLOT_MARGIN and weakest[1] not in (\"WHEAT\", \"FERTILIZER\")                             "
+ },
+ "_KNOB_4890_51": {
+  "value": 3,
+  "line": 4890,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\" and o[1] == item)"
+ },
+ "_KNOB_4887_62": {
+  "value": 648,
+  "line": 4887,
+  "context": "tape = _IMPL.chassis.routes[2 if t >= 648 else native[\"route\"]]"
+ },
+ "_KNOB_4881_89": {
+  "value": 2,
+  "line": 4881,
+  "context": "if avail <= 0 or int(observation[\"market\"][\"prices\"].get(item, 0)) < 2:"
+ },
+ "_KNOB_4875_66": {
+  "value": 2,
+  "line": 4875,
+  "context": "bought_items = {o[1] for o in orders if len(o) >= 2 and o[0] in (\"BUY_PRODUCT\", \"BUY_ANIMAL\")}"
+ },
+ "_KNOB_4873_56": {
+  "value": 3,
+  "line": 4873,
+  "context": "sells = [o for o in orders if len(o) >= 3 and o[0] == \"SELL\"]"
+ },
+ "_KNOB_4870_72": {
+  "value": 10,
+  "line": 4870,
+  "context": "if _OR2_SLOT_H > 0 and 288 <= step < 694 and len(orders) >= 10:"
+ },
+ "_KNOB_4870_49": {
+  "value": 694,
+  "line": 4870,
+  "context": "if _OR2_SLOT_H > 0 and 288 <= step < 694 and len(orders) >= _KNOB_4870_72:"
+ },
+ "_KNOB_4870_35": {
+  "value": 288,
+  "line": 4870,
+  "context": "if _OR2_SLOT_H > 0 and 288 <= step < _KNOB_4870_49 and len(orders) >= _KNOB_4870_72:"
+ },
+ "_KNOB_4862_41": {
+  "value": 3,
+  "line": 4862,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\" and o[1] == item:"
+ },
+ "_KNOB_4854_51": {
+  "value": 3,
+  "line": 4854,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\" and o[1] == item)"
+ },
+ "_KNOB_4851_62": {
+  "value": 648,
+  "line": 4851,
+  "context": "tape = _IMPL.chassis.routes[2 if t >= 648 else native[\"route\"]]"
+ },
+ "_KNOB_4845_81": {
+  "value": 3,
+  "line": 4845,
+  "context": "selling = sum(max(0, int(o[2])) for o in orders if len(o) >= 3 and o[0] == \"SELL\" and o[1] == item)"
+ },
+ "_KNOB_4843_37": {
+  "value": 2,
+  "line": 4843,
+  "context": "if any(len(o) >= 2 and o[0] in (\"BUY_PRODUCT\", \"BUY_ANIMAL\") and o[1] == item for o in orders):"
+ },
+ "_KNOB_4841_95": {
+  "value": 10,
+  "line": 4841,
+  "context": "if int(observation[\"market\"][\"prices\"].get(item, 0)) < 2 or len(orders) >= 10:"
+ },
+ "_KNOB_4841_75": {
+  "value": 2,
+  "line": 4841,
+  "context": "if int(observation[\"market\"][\"prices\"].get(item, 0)) < 2 or len(orders) >= _KNOB_4841_95:"
+ },
+ "_KNOB_4835_46": {
+  "value": 694,
+  "line": 4835,
+  "context": "if _OR2_SN_K > 0 and 24 <= step < 694:"
+ },
+ "_KNOB_4835_33": {
+  "value": 24,
+  "line": 4835,
+  "context": "if _OR2_SN_K > 0 and 24 <= step < _KNOB_4835_46:"
+ },
+ "_KNOB_4703_65": {
+  "value": 3,
+  "line": 4703,
+  "context": "selling = sum(int(o[2]) for o in market if len(o) >= 3 and o[:2] == [\"SELL\", \"CARROT\"])"
+ },
+ "_KNOB_4700_59": {
+  "value": 10,
+  "line": 4700,
+  "context": "if st[\"credit\"] > 0 and p_c >= 2 and len(market) < 10:"
+ },
+ "_KNOB_4700_39": {
+  "value": 2,
+  "line": 4700,
+  "context": "if st[\"credit\"] > 0 and p_c >= 2 and len(market) < _KNOB_4700_59:"
+ },
+ "_KNOB_4692_64": {
+  "value": 3,
+  "line": 4692,
+  "context": "buying = sum(int(o[2]) for o in market if len(o) >= 3 and o[:2] == [\"BUY_SEED\", \"CARROT\"])"
+ },
+ "_KNOB_4690_72": {
+  "value": 10,
+  "line": 4690,
+  "context": "if _CA_FROM <= day <= _CA_TO - 1 and pays_now and len(market) < 10:"
+ },
+ "_KNOB_4678_25": {
+  "value": 3,
+  "line": 4678,
+  "context": "if len(o) >= 3 and o[0] == \"BUY_SEED\" and o[1] in (\"WHEAT\", \"CARROT\"):"
+ },
+ "_KNOB_4632_82": {
+  "value": 2,
+  "line": 4632,
+  "context": "if not _CA_RESCUE or (cmd and cmd[0] in _CA_MOVES) or day - planted < 2 or yu <= 0:"
+ },
+ "_KNOB_4627_36": {
+  "value": 2,
+  "line": 4627,
+  "context": "if day - planted >= 2 and yu > 0:"
+ },
+ "_KNOB_4600_50": {
+  "value": 717,
+  "line": 4600,
+  "context": "if not isinstance(action, dict) or step > 717:"
+ },
+ "_KNOB_4561_18": {
+  "value": 2,
+  "line": 4561,
+  "context": "if age >= 2 and now > best_rescue and t > now_step:"
+ },
+ "_KNOB_4558_42": {
+  "value": 2,
+  "line": 4558,
+  "context": "return (max(0, now) if age >= 2 else 0), best_rescue, rescue_t"
+ },
+ "_KNOB_4528_21": {
+  "value": 23,
+  "line": 4528,
+  "context": "if t % 24 == 23:"
+ },
+ "_KNOB_4491_42": {
+  "value": 648,
+  "line": 4491,
+  "context": "tape = _IMPL.chassis.routes[2 if t >= 648 else native[\"route\"]]"
+ },
+ "_KNOB_4489_25": {
+  "value": 719,
+  "line": 4489,
+  "context": "if not native or t > 719:"
+ },
+ "_KNOB_4458_33": {
+  "value": 29,
+  "line": 4458,
+  "context": "if int(obs['step']) // 24 == 29:"
+ },
+ "_KNOB_4445_18": {
+  "value": 28,
+  "line": 4445,
+  "context": "if day == 28 and not tile['cared_today'] and command is None:"
+ },
+ "_KNOB_4443_20": {
+  "value": 28,
+  "line": 4443,
+  "context": "elif day == 28 and tile['fertilizer_available']:"
+ },
+ "_KNOB_4439_18": {
+  "value": 28,
+  "line": 4439,
+  "context": "if day == 28 and not tile['fed_today'] and inv.get('WHEAT', 0):"
+ },
+ "_KNOB_4432_14": {
+  "value": 28,
+  "line": 4432,
+  "context": "if day == 28:"
+ },
+ "_KNOB_4427_25": {
+  "value": 29,
+  "line": 4427,
+  "context": "last = 717 if day == 29 else day * 24 + 23"
+ },
+ "_KNOB_4393_53": {
+  "value": 29,
+  "line": 4393,
+  "context": "if result is action or int(obs['step']) // 24 != 29 or not state.get('committed'):"
+ },
+ "_KNOB_4334_49": {
+  "value": 2,
+  "line": 4334,
+  "context": "pickups += int(c[2]) if len(c) > 2 else 1"
+ },
+ "_KNOB_4325_21": {
+  "value": 11,
+  "line": 4325,
+  "context": "if step // 24 != 11:"
+ },
+ "_KNOB_4293_63": {
+  "value": 29,
+  "line": 4293,
+  "context": "ret=_sl_dist(target,_v219_home(target))+1 if step//24==29 else 0"
+ },
+ "_KNOB_4287_36": {
+  "value": 29,
+  "line": 4287,
+  "context": "remaining=719-step if step//24==29 else 24-step%24"
+ },
+ "_KNOB_4278_76": {
+  "value": 29,
+  "line": 4278,
+  "context": "delivery=_sl_dist(path[-1],_v219_home(path[-1]))+1 if step//24==29 else 0"
+ },
+ "_KNOB_4258_21": {
+  "value": 6,
+  "line": 4258,
+  "context": "if len(targets)!=6:"
+ },
+ "_KNOB_4244_80": {
+  "value": 29,
+  "line": 4244,
+  "context": "delivery=_sl_dist(path[-1],_v219_home(path[-1]))+1 if int(obs['step'])//24==29 else 0"
+ },
+ "_KNOB_4179_41": {
+  "value": 10,
+  "line": 4179,
+  "context": "if len(orders) + len(released) > 10:"
+ },
+ "_KNOB_4160_22": {
+  "value": 10,
+  "line": 4160,
+  "context": "if len(orders) >= 10 or not _r97_budget(obs, orders):"
+ },
+ "_KNOB_4157_32": {
+  "value": 23,
+  "line": 4157,
+  "context": "if int(obs['step']) % 24 != 23:"
+ },
+ "_KNOB_4086_15": {
+  "value": 2,
+  "line": 4086,
+  "context": "if step == 2:"
+ },
+ "_KNOB_4028_39": {
+  "value": 3,
+  "line": 4028,
+  "context": "if len(o) >= 3 and o[:2] == [\"SELL\", item])"
+ },
+ "_KNOB_4016_43": {
+  "value": 10,
+  "line": 4016,
+  "context": "if not available or len(market) >= 10:"
+ },
+ "_KNOB_4013_76": {
+  "value": 2,
+  "line": 4013,
+  "context": "if item in blocked or item in glutted or view.prices.get(item, 0) < 2:"
+ },
+ "_KNOB_3987_25": {
+  "value": 696,
+  "line": 3987,
+  "context": "if not 192 <= step < 696:"
+ },
+ "_KNOB_3987_11": {
+  "value": 192,
+  "line": 3987,
+  "context": "if not 192 <= step < _KNOB_3987_25:"
+ },
+ "_KNOB_3931_46": {
+  "value": 3,
+  "line": 3931,
+  "context": "if o and o[0] == \"SELL\" and len(o) >= 3 and o[1] in PRODUCTS:"
+ },
+ "_KNOB_3867_50": {
+  "value": 3,
+  "line": 3867,
+  "context": "if o and o[0] == \"SELL\" and len(o) >= 3 and o[1] in V9_RACE_ITEMS:"
+ },
+ "_KNOB_3830_18": {
+  "value": 2,
+  "line": 3830,
+  "context": "if sold < 2:"
+ },
+ "_KNOB_3827_42": {
+  "value": 3,
+  "line": 3827,
+  "context": "if prev[\"prices\"].get(item, 0) <= 3:"
+ },
+ "_KNOB_3807_50": {
+  "value": 3,
+  "line": 3807,
+  "context": "if any(o and o[0] == \"SELL\" and len(o) >= 3 and o[1] == item and int(o[2]) > 0"
+ },
+ "_KNOB_3690_37": {
+  "value": 3,
+  "line": 3690,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\" and o[1] == item)"
+ },
+ "_KNOB_3671_29": {
+  "value": 700,
+  "line": 3671,
+  "context": "if step < 150 or step >= 700 or st[\"best\"] is None:"
+ },
+ "_KNOB_3671_14": {
+  "value": 150,
+  "line": 3671,
+  "context": "if step < 150 or step >= _KNOB_3671_29 or st[\"best\"] is None:"
+ },
+ "_KNOB_3630_23": {
+  "value": 2,
+  "line": 3630,
+  "context": "if sold >= 2:"
+ },
+ "_KNOB_3627_46": {
+  "value": 3,
+  "line": 3627,
+  "context": "if prev[\"prices\"].get(item, 0) <= 3:"
+ },
+ "_KNOB_3591_63": {
+  "value": 2,
+  "line": 3591,
+  "context": "ev = {(t, i): q for t, i, q in x[\"ev\"] if i <= 2}"
+ },
+ "_KNOB_3524_37": {
+  "value": 3,
+  "line": 3524,
+  "context": "if len(o) >= 3 and o[0] == \"SELL\" and o[1] == item)"
+ },
+ "_KNOB_3500_29": {
+  "value": 700,
+  "line": 3500,
+  "context": "if step < 150 or step >= 700:"
+ },
+ "_KNOB_3500_14": {
+  "value": 150,
+  "line": 3500,
+  "context": "if step < 150 or step >= _KNOB_3500_29:"
+ },
+ "_KNOB_3469_19": {
+  "value": 2,
+  "line": 3469,
+  "context": "if sold >= 2:"
+ },
+ "_KNOB_3466_42": {
+  "value": 3,
+  "line": 3466,
+  "context": "if prev[\"prices\"].get(item, 0) <= 3:"
+ },
+ "_KNOB_3447_24": {
+  "value": 255,
+  "line": 3447,
+  "context": "if d == 255:"
+ },
+ "_KNOB_3436_21": {
+  "value": 2,
+  "line": 3436,
+  "context": "if len(shops) == 2 and shops[0] in names and shops[1] in names:"
+ },
+ "_KNOB_3367_44": {
+  "value": 3,
+  "line": 3367,
+  "context": "wheat = [o for o in market if len(o) >= 3 and o[0] in (\"BUY_PRODUCT\", \"SELL\") and o[1] == \"WHEAT\"]"
+ },
+ "_KNOB_3272_42": {
+  "value": 700,
+  "line": 3272,
+  "context": "if day < V9_FERT_FIRST_DAY or step >= 700:"
+ },
+ "_KNOB_3221_105": {
+  "value": 2,
+  "line": 3221,
+  "context": "if extra > 0 and len(rewritten) < MAX_ORDERS and int(obs[\"market\"][\"prices\"].get(product, 0)) >= 2:"
+ },
+ "_KNOB_3218_64": {
+  "value": 3,
+  "line": 3218,
+  "context": "selling = sum(int(o[2]) for o in rewritten if len(o) >= 3 and o[:2] == [\"SELL\", product])"
+ },
+ "_KNOB_3216_73": {
+  "value": 718,
+  "line": 3216,
+  "context": "if native and native.get(\"route\") in _IMPL.chassis.routes and step < 718:"
+ },
+ "_KNOB_3208_23": {
+  "value": 2,
+  "line": 3208,
+  "context": "elif len(o) >= 2 and o[:2] == [\"SELL\", \"EGG\"] and not any(isinstance(t_, dict) and t_.get(\"animal\") == \"GOOSE\" for r_ in"
+ },
+ "_KNOB_3206_21": {
+  "value": 3,
+  "line": 3206,
+  "context": "if len(o) >= 3 and o[:2] == [\"BUY_ANIMAL\", \"GOOSE\"]:"
+ },
+ "_KNOB_3201_23": {
+  "value": 2,
+  "line": 3201,
+  "context": "elif len(c) >= 2 and c[0] in (\"PICKUP\", \"PLACE\") and c[1] == \"GOOSE\":"
+ },
+ "_KNOB_3187_41": {
+  "value": 2,
+  "line": 3187,
+  "context": "if step >= 216 and any(len(o) >= 2 and o[:2] == [\"BUY_ANIMAL\", \"GOOSE\"] for o in orders):"
+ },
+ "_KNOB_3187_19": {
+  "value": 216,
+  "line": 3187,
+  "context": "if step >= 216 and any(len(o) >= _KNOB_3187_41 and o[:2] == [\"BUY_ANIMAL\", \"GOOSE\"] for o in orders):"
+ },
+ "_KNOB_3114_92": {
+  "value": 2,
+  "line": 3114,
+  "context": "if stock > selling and len(market) < MAX_ORDERS and int(prices.get(\"CARROT\", 0)) >= 2:"
+ },
+ "_KNOB_3113_61": {
+  "value": 3,
+  "line": 3113,
+  "context": "selling = sum(int(o[2]) for o in market if len(o) >= 3 and o[:2] == [\"SELL\", \"CARROT\"])"
+ },
+ "_KNOB_3110_35": {
+  "value": 24,
+  "line": 3110,
+  "context": "if st.get(\"swapped\") and day < 24:"
+ },
+ "_KNOB_3104_25": {
+  "value": 3,
+  "line": 3104,
+  "context": "if len(o) >= 3 and o[:2] == [\"BUY_SEED\", \"WHEAT\"]:"
+ },
+ "_KNOB_3087_123": {
+  "value": 2,
+  "line": 3087,
+  "context": "if qty > 0 and len(market) < MAX_ORDERS and not any(o[:2] == [\"BUY_PRODUCT\", \"WHEAT\"] for o in market if len(o) >= 2):"
+ },
+ "_KNOB_2999_85": {
+  "value": 3,
+  "line": 2999,
+  "context": "existing = next((o for o in market if o and o[0] == \"SELL\" and len(o) >= 3 and o[1] == item), None)"
+ },
+ "_KNOB_2997_42": {
+  "value": 2,
+  "line": 2997,
+  "context": "if int(prices.get(item, 0)) < 2:"
+ },
+ "_KNOB_2944_15": {
+  "value": 718,
+  "line": 2944,
+  "context": "if step >= 718 or step % 24 < V9_COURIER_FROM_HOUR:"
+ },
+ "_KNOB_2873_12": {
+  "value": 288,
+  "line": 2873,
+  "context": "if step<288:"
+ },
+ "_KNOB_2863_27": {
+  "value": 10,
+  "line": 2863,
+  "context": "elif len(proposed)<10:proposed.append(['BUY_PRODUCT','WHEAT',shortage])"
+ },
+ "_KNOB_2835_39": {
+  "value": 2,
+  "line": 2835,
+  "context": "need=sum(max(0,int(c[2]) if len(c)>2 else 1) for pos,c in zip(positions,commands) if pos in access and c[:2]==['PICKUP',"
+ },
+ "_KNOB_2829_79": {
+  "value": 23,
+  "line": 2829,
+  "context": "positions=[tuple(farm['farmer']),*map(tuple,farm['hands'])];night=step%24==23"
+ },
+ "_KNOB_2824_19": {
+  "value": 10,
+  "line": 2824,
+  "context": "if len(orders)>10 or not _r97_budget(obs,orders):"
+ },
+ "_KNOB_2820_55": {
+  "value": 2,
+  "line": 2820,
+  "context": "demand=lambda cs:sum(max(0,int(c[2]) if len(c)>2 else 1) for c in cs if c[:2]==['PICKUP','WHEAT'])"
+ },
+ "_KNOB_2818_25": {
+  "value": 10,
+  "line": 2818,
+  "context": "if len(next_orders)==10 and not any(o[:2] in (['BUY_PRODUCT','WHEAT'],['SELL','WHEAT']) for o in next_orders):"
+ },
+ "_KNOB_2815_48": {
+  "value": 648,
+  "line": 2815,
+  "context": "following=_IMPL.chassis.routes[2 if step+2>=648 else native['route']][step+2]"
+ },
+ "_KNOB_2813_45": {
+  "value": 648,
+  "line": 2813,
+  "context": "future=_IMPL.chassis.routes[2 if step+1>=648 else native['route']][step+1]"
+ },
+ "_KNOB_2811_21": {
+  "value": 695,
+  "line": 2811,
+  "context": "if not 144<=step<695:return action"
+ },
+ "_KNOB_2811_11": {
+  "value": 144,
+  "line": 2811,
+  "context": "if not 144<=step<_KNOB_2811_21:return action"
+ },
+ "_KNOB_2802_24": {
+  "value": 2,
+  "line": 2802,
+  "context": "elif len(order)>2:"
+ },
+ "_KNOB_2774_22": {
+  "value": 3,
+  "line": 2774,
+  "context": "if len(order)<3:continue"
+ },
+ "_KNOB_2739_18": {
+  "value": 3,
+  "line": 2739,
+  "context": "if len(o)<3 or o[:2]!=['BUY_PRODUCT','WHEAT']:continue"
+ },
+ "_KNOB_2729_22": {
+  "value": 2,
+  "line": 2729,
+  "context": "if not any(len(o)>2 and o[:2]==['BUY_PRODUCT','WHEAT'] and int(o[2])>0 for o in orders):return action"
+ },
+ "_KNOB_2727_25": {
+  "value": 11,
+  "line": 2727,
+  "context": "if not 10<=step//24<=11:return action"
+ },
+ "_KNOB_2727_11": {
+  "value": 10,
+  "line": 2727,
+  "context": "if not 10<=step//24<=_KNOB_2727_25:return action"
+ },
+ "_KNOB_2722_70": {
+  "value": 12,
+  "line": 2722,
+  "context": "demand+=6*len({t//24 for t in range(step+1,step+49) if t//24>=12})"
+ },
+ "_KNOB_2721_58": {
+  "value": 2,
+  "line": 2721,
+  "context": "if obs['town']['unlocked_shops'].count('YARN_STORE')>=2:"
+ },
+ "_KNOB_2715_26": {
+  "value": 2,
+  "line": 2715,
+  "context": "if len(o)>2 and o[:2]==['SELL','WHEAT']:"
+ },
+ "_KNOB_2713_54": {
+  "value": 2,
+  "line": 2713,
+  "context": "demand+=max(0,int(c[2]) if len(c)>2 else 1)"
+ },
+ "_KNOB_2710_43": {
+  "value": 648,
+  "line": 2710,
+  "context": "a=_IMPL.chassis.routes[2 if t>=648 else route][t]"
+ },
+ "_KNOB_2691_22": {
+  "value": 29,
+  "line": 2691,
+  "context": "if next_use > 29:"
+ },
+ "_KNOB_2660_90": {
+  "value": 2,
+  "line": 2660,
+  "context": "wheat[actor]=max(0,wheat[actor]-max(0,int(command[2]) if len(command)>2 else 1))"
+ },
+ "_KNOB_2657_29": {
+  "value": 21,
+  "line": 2657,
+  "context": "if hour<=21:feeds.add(pos)"
+ },
+ "_KNOB_2654_72": {
+  "value": 2,
+  "line": 2654,
+  "context": "wheat[actor]+=max(0,int(command[2]) if len(command)>2 else 1)"
+ },
+ "_KNOB_2642_40": {
+  "value": 27,
+  "line": 2642,
+  "context": "tomorrow=day+1;route=2 if tomorrow>=27 else native['route'];key=(route,tomorrow)"
+ },
+ "_KNOB_2640_12": {
+  "value": 28,
+  "line": 2640,
+  "context": "if day==28:return True  # No second dawn follows before game termination."
+ },
+ "_KNOB_2626_20": {
+  "value": 23,
+  "line": 2626,
+  "context": "if step%24==23:result=_r51_close_warehouse(observation,result)"
+ },
+ "_KNOB_2607_56": {
+  "value": 2,
+  "line": 2607,
+  "context": "sold=sum(max(0,int(o[2])) for o in market if len(o)>2 and o[:2]==['SELL','FERTILIZER'])"
+ },
+ "_KNOB_2602_19": {
+  "value": 28,
+  "line": 2602,
+  "context": "if not 6<=day<=28:return action"
+ },
+ "_KNOB_2602_11": {
+  "value": 6,
+  "line": 2602,
+  "context": "if not 6<=day<=_KNOB_2602_19:return action"
+ },
+ "_KNOB_2583_80": {
+  "value": 2,
+  "line": 2583,
+  "context": "purchase=sum(max(0,int(o[2])) for o in a.get('market',[]) if len(o)>2 and o[:2]==['BUY_PRODUCT','FERTILIZER'])"
+ },
+ "_KNOB_2582_49": {
+  "value": 2,
+  "line": 2582,
+  "context": "pickup=sum(max(0,int(c[2]) if len(c)>2 else 1) for c in [a.get('farmer') or ['PASS'],*(a.get('hands') or [])] if len(c)>"
+ },
+ "_KNOB_2581_43": {
+  "value": 648,
+  "line": 2581,
+  "context": "a=_IMPL.chassis.routes[2 if t>=648 else route][t]"
+ },
+ "_KNOB_2550_34": {
+  "value": 21,
+  "line": 2550,
+  "context": "if not 10<=day<=28 or step%24>21:return action"
+ },
+ "_KNOB_2550_20": {
+  "value": 28,
+  "line": 2550,
+  "context": "if not 10<=day<=28 or step%24>_KNOB_2550_34:return action"
+ },
+ "_KNOB_2550_11": {
+  "value": 10,
+  "line": 2550,
+  "context": "if not 10<=day<=_KNOB_2550_20 or step%24>_KNOB_2550_34:return action"
+ },
+ "_KNOB_2529_49": {
+  "value": 11,
+  "line": 2529,
+  "context": "bonus+=sum(until<d and 8<=d+1-birth<=11 for d in range(day,day+3))"
+ },
+ "_KNOB_2529_35": {
+  "value": 8,
+  "line": 2529,
+  "context": "bonus+=sum(until<d and 8<=d+1-birth<=_KNOB_2529_49 for d in range(day,day+3))"
+ },
+ "_KNOB_2522_46": {
+  "value": 30,
+  "line": 2522,
+  "context": "if obs['market']['prices']['FERTILIZER']<=30:return True"
+ },
+ "_KNOB_2501_59": {
+  "value": 2,
+  "line": 2501,
+  "context": "quantity=max(0,int(command[2]) if len(command)>2 else 1)"
+ },
+ "_KNOB_2468_16": {
+  "value": 10,
+  "line": 2468,
+  "context": "if quantity>10:"
+ },
+ "_KNOB_2463_46": {
+  "value": 2,
+  "line": 2463,
+  "context": "native_need=sum(max(0,int(c[2]) if len(c)>2 else 1) for c in commands if len(c)>1 and c[:2]==['PICKUP','FERTILIZER'])"
+ },
+ "_KNOB_2456_22": {
+  "value": 3,
+  "line": 2456,
+  "context": "if len(order)<3:continue"
+ },
+ "_KNOB_2435_107": {
+  "value": 95,
+  "line": 2435,
+  "context": "if q<3 or len(action.get('market',[]))+2+i>10 or sum(stock.values())+purchases+total_q+q+topup>95:break"
+ },
+ "_KNOB_2435_55": {
+  "value": 10,
+  "line": 2435,
+  "context": "if q<3 or len(action.get('market',[]))+2+i>10 or sum(stock.values())+purchases+total_q+q+topup>_KNOB_2435_107:break"
+ },
+ "_KNOB_2435_17": {
+  "value": 3,
+  "line": 2435,
+  "context": "if q<3 or len(action.get('market',[]))+2+i>_KNOB_2435_55 or sum(stock.values())+purchases+total_q+q+topup>_KNOB_2435_107"
+ },
+ "_KNOB_2374_12": {
+  "value": 27,
+  "line": 2374,
+  "context": "if day==27 and not fertilizer:return None"
+ },
+ "_KNOB_2372_40": {
+  "value": 2,
+  "line": 2372,
+  "context": "if day not in (26,27,28) or step%24>2:return None"
+ },
+ "_KNOB_2349_56": {
+  "value": 10,
+  "line": 2349,
+  "context": "if qty and (existing is not None or len(orders)<10):"
+ },
+ "_KNOB_2348_52": {
+  "value": 3,
+  "line": 2348,
+  "context": "existing=next((o for o in orders if len(o)>=3 and o[:2]==['SELL','WHEAT']),None)"
+ },
+ "_KNOB_2342_93": {
+  "value": 2,
+  "line": 2342,
+  "context": "if len(c)>1 and c[:2]==['PICKUP','WHEAT']:reserve+=max(0,int(c[2]) if len(c)>2 else 1)"
+ },
+ "_KNOB_2340_48": {
+  "value": 648,
+  "line": 2340,
+  "context": "future=_IMPL.chassis.routes[2 if t>=648 else native['route']][t]"
+ },
+ "_KNOB_2333_25": {
+  "value": 10,
+  "line": 2333,
+  "context": "elif len(orders)<10:orders.append(['SELL',item,qty])"
+ },
+ "_KNOB_2331_52": {
+  "value": 3,
+  "line": 2331,
+  "context": "existing=next((o for o in orders if len(o)>=3 and o[:2]==['SELL',item]),None)"
+ },
+ "_KNOB_2322_19": {
+  "value": 3,
+  "line": 2322,
+  "context": "if len(o)>=3 and o[0]=='SELL':post[o[1]]=max(0,post.get(o[1],0)-max(0,int(o[2])))"
+ },
+ "_KNOB_2308_35": {
+  "value": 28,
+  "line": 2308,
+  "context": "if step%24!=23 or not 12<=day<=28:return action"
+ },
+ "_KNOB_2308_26": {
+  "value": 12,
+  "line": 2308,
+  "context": "if step%24!=23 or not 12<=day<=_KNOB_2308_35:return action"
+ },
+ "_KNOB_2308_16": {
+  "value": 23,
+  "line": 2308,
+  "context": "if step%24!=23 or not _KNOB_2308_26<=day<=_KNOB_2308_35:return action"
+ },
+ "_KNOB_2275_77": {
+  "value": 2,
+  "line": 2275,
+  "context": "next_native=planned[hour+1];native_pickups=sum(max(0,int(c[2]) if len(c)>2 else 1) for c in [next_native.get('farmer') o"
+ },
+ "_KNOB_2274_21": {
+  "value": 3,
+  "line": 2274,
+  "context": "elif len(o)>=3 and o[:2]==['BUY_PRODUCT','FERTILIZER']:available+=max(0,int(o[2]))"
+ },
+ "_KNOB_2273_19": {
+  "value": 3,
+  "line": 2273,
+  "context": "if len(o)>=3 and o[:2]==['SELL','FERTILIZER']:available=max(0,available-max(0,int(o[2])))"
+ },
+ "_KNOB_2268_121": {
+  "value": 2,
+  "line": 2268,
+  "context": "stock=projected_shed(action,FarmView(obs));purchases=sum(max(0,int(o[2])) for o in action.get('market',[]) if len(o)>2 a"
+ },
+ "_KNOB_2254_43": {
+  "value": 28,
+  "line": 2254,
+  "context": "if hour not in (1,2,3) or not 12<=day<=28:return action"
+ },
+ "_KNOB_2254_34": {
+  "value": 12,
+  "line": 2254,
+  "context": "if hour not in (1,2,3) or not 12<=day<=_KNOB_2254_43:return action"
+ },
+ "_KNOB_2215_18": {
+  "value": 2,
+  "line": 2215,
+  "context": "if depth>=2:"
+ },
+ "_KNOB_2166_42": {
+  "value": 648,
+  "line": 2166,
+  "context": "tape=_IMPL.chassis.routes[2 if t>=648 else route];a=tape[t]"
+ },
+ "_KNOB_2094_113": {
+  "value": 6,
+  "line": 2094,
+  "context": "funded='SE' in farm['unlocked_quadrants'] and (not pending['initial'] or private['shed'].get('SHEEP',0)>=6)"
+ },
+ "_KNOB_2082_11": {
+  "value": 11,
+  "line": 2082,
+  "context": "if day<11:return action"
+ },
+ "_KNOB_2066_89": {
+  "value": 100,
+  "line": 2066,
+  "context": "if quote<1 or farm['money']<1000+shortage*(quote+10) or sum(stock.values())+shortage>100:return action"
+ },
+ "_KNOB_2064_65": {
+  "value": 6,
+  "line": 2064,
+  "context": "if not 0<shortage<=6 or state.get('rescue_today',0)+shortage>6:return action"
+ },
+ "_KNOB_2064_23": {
+  "value": 6,
+  "line": 2064,
+  "context": "if not 0<shortage<=6 or state.get('rescue_today',0)+shortage>_KNOB_2064_65:return action"
+ },
+ "_KNOB_2051_51": {
+  "value": 14,
+  "line": 2051,
+  "context": "if not state['workers'] or int(obs['step'])%24>14:return action"
+ },
+ "_KNOB_2024_45": {
+  "value": 29,
+  "line": 2024,
+  "context": "if cargo and step%24 >= (22 if step//24==29 else 23)-distance:"
+ },
+ "_KNOB_2006_36": {
+  "value": 100,
+  "line": 2006,
+  "context": "if sum(stock.values())+incoming>100:"
+ },
+ "_KNOB_1984_31": {
+  "value": 6,
+  "line": 1984,
+  "context": "if 2<last_native_hire<=6:deadline=6"
+ },
+ "_KNOB_1984_11": {
+  "value": 2,
+  "line": 1984,
+  "context": "if 2<last_native_hire<=_KNOB_1984_31:deadline=6"
+ },
+ "_KNOB_1981_44": {
+  "value": 11,
+  "line": 1981,
+  "context": "deadline=2 if committed else (3 if day==11 else 1)"
+ },
+ "_KNOB_1979_42": {
+  "value": 11,
+  "line": 1979,
+  "context": "if not committed and (hour>(3 if day==11 else 1) or day not in (11,12) or not _v233_eligible(obs,native)):return action"
+ },
+ "_KNOB_1965_100": {
+  "value": 45,
+  "line": 1965,
+  "context": "if obs['town']['unlocked_shops'].count('YARN_STORE')<2 or prices['WOOL']<220 or prices['WHEAT']>45:return False"
+ },
+ "_KNOB_1965_77": {
+  "value": 220,
+  "line": 1965,
+  "context": "if obs['town']['unlocked_shops'].count('YARN_STORE')<2 or prices['WOOL']<220 or prices['WHEAT']>_KNOB_1965_100:return Fa"
+ },
+ "_KNOB_1965_57": {
+  "value": 2,
+  "line": 1965,
+  "context": "if obs['town']['unlocked_shops'].count('YARN_STORE')<2 or prices['WOOL']<_KNOB_1965_77 or prices['WHEAT']>_KNOB_1965_100"
+ },
+ "_KNOB_1964_27": {
+  "value": 10,
+  "line": 1964,
+  "context": "if len(farm['tiles'])!=10 or set(farm['unlocked_quadrants'])!={'NW','NE','SW'}:return False"
+ },
+ "_KNOB_1914_30": {
+  "value": 288,
+  "line": 1914,
+  "context": "if _R37_QUOTE and step >= 288:"
+ },
+ "_KNOB_1911_21": {
+  "value": 696,
+  "line": 1911,
+  "context": "if 288 <= step < 696:_R37_HORIZONS[player] = 4"
+ },
+ "_KNOB_1911_7": {
+  "value": 288,
+  "line": 1911,
+  "context": "if 288 <= step < _KNOB_1911_21:_R37_HORIZONS[player] = 4"
+ },
+ "_KNOB_1907_30": {
+  "value": 3,
+  "line": 1907,
+  "context": "if _R37_HORIZONS[player]==3 and probe_state['matched']:"
+ },
+ "_KNOB_1902_56": {
+  "value": 6,
+  "line": 1902,
+  "context": "if 336 <= step < 648 and state['streak'] >= 6:"
+ },
+ "_KNOB_1902_29": {
+  "value": 648,
+  "line": 1902,
+  "context": "if 336 <= step < 648 and state['streak'] >= _KNOB_1902_56:"
+ },
+ "_KNOB_1902_15": {
+  "value": 336,
+  "line": 1902,
+  "context": "if 336 <= step < _KNOB_1902_29 and state['streak'] >= _KNOB_1902_56:"
+ },
+ "_KNOB_1900_36": {
+  "value": 648,
+  "line": 1900,
+  "context": "if _R37_ADAPTIVE and step < 648:"
+ },
+ "_KNOB_1870_21": {
+  "value": 648,
+  "line": 1870,
+  "context": "if not 336<=step<648 or st['matched']:return"
+ },
+ "_KNOB_1870_11": {
+  "value": 336,
+  "line": 1870,
+  "context": "if not 336<=step<_KNOB_1870_21 or st['matched']:return"
+ },
+ "_KNOB_1860_48": {
+  "value": 100,
+  "line": 1860,
+  "context": "if st['money'] is not None and st['probe']>=100 and _r37_similarity(obs)>=.90:"
+ },
+ "_KNOB_1796_39": {
+  "value": 8,
+  "line": 1796,
+  "context": "return matches / total if total >= 8 else 0.0"
+ },
+ "_KNOB_1732_41": {
+  "value": 288,
+  "line": 1732,
+  "context": "if int(observation['step'])>=288:action=_v224_sales_first(action)"
+ },
+ "_KNOB_1709_85": {
+  "value": 3,
+  "line": 1709,
+  "context": "planned=sum(max(0,int(o[2])) for o in future.get('market',[]) if len(o)>=3 and o[:2]==['SELL',item])"
+ },
+ "_KNOB_1701_41": {
+  "value": 10,
+  "line": 1701,
+  "context": "if not available or len(market)>=10:continue"
+ },
+ "_KNOB_1699_54": {
+  "value": 2,
+  "line": 1699,
+  "context": "if item in blocked or view.prices.get(item,0)<2:continue"
+ },
+ "_KNOB_1679_21": {
+  "value": 696,
+  "line": 1679,
+  "context": "if not 192<=step<696:return action"
+ },
+ "_KNOB_1679_11": {
+  "value": 192,
+  "line": 1679,
+  "context": "if not 192<=step<_KNOB_1679_21:return action"
+ },
+ "_KNOB_1668_23": {
+  "value": 3,
+  "line": 1668,
+  "context": "if len(order)>=3 and order[0]=='SELL':"
+ },
+ "_KNOB_1661_25": {
+  "value": 696,
+  "line": 1661,
+  "context": "if step<288 or step>=696:"
+ },
+ "_KNOB_1661_12": {
+  "value": 288,
+  "line": 1661,
+  "context": "if step<288 or step>=_KNOB_1661_25:"
+ },
+ "_KNOB_1629_31": {
+  "value": 3,
+  "line": 1629,
+  "context": "if len(order)>=3 and order[:2]==['SELL','MILK'] and int(order[2])>0:"
+ },
+ "_KNOB_1625_70": {
+  "value": 3,
+  "line": 1625,
+  "context": "total_planned=sum(max(0,int(o[2])) for o in market if len(o)>=3 and o[:2]==['SELL','MILK'])"
+ },
+ "_KNOB_1619_24": {
+  "value": 2,
+  "line": 1619,
+  "context": "if 1<=quantity<=2 and quantity<=cap-state['confirmed']:"
+ },
+ "_KNOB_1617_54": {
+  "value": 2,
+  "line": 1617,
+  "context": "and counts['COW']>=4 and counts['SHEEP']>=2):"
+ },
+ "_KNOB_1617_31": {
+  "value": 4,
+  "line": 1617,
+  "context": "and counts['COW']>=4 and counts['SHEEP']>=_KNOB_1617_54):"
+ },
+ "_KNOB_1615_61": {
+  "value": 2,
+  "line": 1615,
+  "context": "and animal_orders[0][1]=='SHEEP' and milk_shops>=2 and 'YARN_STORE' not in shops"
+ },
+ "_KNOB_1612_39": {
+  "value": 3,
+  "line": 1612,
+  "context": "if (216<=step<=227 and len(shops)>=3 and state['confirmed']<cap and not state['reserved']"
+ },
+ "_KNOB_1612_19": {
+  "value": 227,
+  "line": 1612,
+  "context": "if (216<=step<=227 and len(shops)>=_KNOB_1612_39 and state['confirmed']<cap and not state['reserved']"
+ },
+ "_KNOB_1612_8": {
+  "value": 216,
+  "line": 1612,
+  "context": "if (216<=step<=_KNOB_1612_19 and len(shops)>=_KNOB_1612_39 and state['confirmed']<cap and not state['reserved']"
+ },
+ "_KNOB_1603_48": {
+  "value": 3,
+  "line": 1603,
+  "context": "animal_orders=[o for o in market if len(o)>=3 and o[0]=='BUY_ANIMAL']"
+ },
+ "_KNOB_1599_23": {
+  "value": 2,
+  "line": 1599,
+  "context": "if (len(work)>=2 and work[0]=='PLACE' and work[1] in ('COW','SHEEP','GOOSE')"
+ },
+ "_KNOB_1593_23": {
+  "value": 2,
+  "line": 1593,
+  "context": "if (len(work)>=2 and work[:2]==['PLACE','SHEEP']"
+ },
+ "_KNOB_1585_53": {
+  "value": 2,
+  "line": 1585,
+  "context": "quantity=max(0,int(work[2]) if len(work)>2 else 1)"
+ },
+ "_KNOB_1584_22": {
+  "value": 2,
+  "line": 1584,
+  "context": "if len(work)>=2 and work[:2]==['PICKUP','SHEEP']:"
+ },
+ "_KNOB_1517_37": {
+  "value": 144,
+  "line": 1517,
+  "context": "if int(observation[\"step\"])>=144:action=_v224_sales_first(action)"
+ },
+ "_KNOB_1496_88": {
+  "value": 3,
+  "line": 1496,
+  "context": "orders=[list(o) for o in original if o and (o[0] in ('HIRE','BUY_LAND') or (len(o)>=3 and int(o[2])>0))]"
+ },
+ "_KNOB_1487_54": {
+  "value": 144,
+  "line": 1487,
+  "context": "if APPLY_TIMING and int(observation['step'])>=144:action=_v224_sales_first(action)"
+ },
+ "_KNOB_1435_71": {
+  "value": 24,
+  "line": 1435,
+  "context": "'needs_fertilizer':pending['fertilizer'] and (day==24 or fertilizer_worker)}"
+ },
+ "_KNOB_1432_46": {
+  "value": 2,
+  "line": 1432,
+  "context": "elif pending['crop_workers']==2:targets=state['targets'][index*5:index*5+5]"
+ },
+ "_KNOB_1421_40": {
+  "value": 18,
+  "line": 1421,
+  "context": "if not state.get('eligible') or day<18:return action"
+ },
+ "_KNOB_1420_13": {
+  "value": 432,
+  "line": 1420,
+  "context": "if step==432:state['eligible']=_v219_qualifies(observation,native)"
+ },
+ "_KNOB_1393_19": {
+  "value": 29,
+  "line": 1393,
+  "context": "if day<29 and not tile.get('watered_today'):command=['WATER']"
+ },
+ "_KNOB_1387_18": {
+  "value": 18,
+  "line": 1387,
+  "context": "elif day==18 and not tomato:"
+ },
+ "_KNOB_1324_47": {
+  "value": 27,
+  "line": 1324,
+  "context": "count=crop_workers+int(fertilizer and day==27 and labor is None)"
+ },
+ "_KNOB_1321_83": {
+  "value": 28,
+  "line": 1321,
+  "context": "crop_workers=1 if day in (19,20,21,22,23,25) and offset<=2 else (3 if 26<=day<=28 else 2)"
+ },
+ "_KNOB_1321_74": {
+  "value": 26,
+  "line": 1321,
+  "context": "crop_workers=1 if day in (19,20,21,22,23,25) and offset<=2 else (3 if 26<=day<=_KNOB_1321_83 else 2)"
+ },
+ "_KNOB_1321_61": {
+  "value": 2,
+  "line": 1321,
+  "context": "crop_workers=1 if day in (19,20,21,22,23,25) and offset<=2 else (3 if _KNOB_1321_74<=day<=_KNOB_1321_83 else 2)"
+ },
+ "_KNOB_1310_60": {
+  "value": 6,
+  "line": 1310,
+  "context": "deadline=6 if state.get('committed') and 3<latest_hire<=6 else 3"
+ },
+ "_KNOB_1310_45": {
+  "value": 3,
+  "line": 1310,
+  "context": "deadline=6 if state.get('committed') and 3<latest_hire<=_KNOB_1310_60 else 3"
+ },
+ "_KNOB_1302_43": {
+  "value": 18,
+  "line": 1302,
+  "context": "if not state.get('committed') and day!=18:return action"
+ },
+ "_KNOB_1269_90": {
+  "value": 3,
+  "line": 1269,
+  "context": "if sum(s in ('PIZZA_SHOP','FARMERS_MARKET') for s in obs['town']['unlocked_shops']) < 3:"
+ },
+ "_KNOB_1267_23": {
+  "value": 12000,
+  "line": 1267,
+  "context": "if farm['money'] < 12000 or obs['market']['prices']['TOMATO'] < CROP_MIN_PRICE:"
+ },
+ "_KNOB_1265_29": {
+  "value": 10,
+  "line": 1265,
+  "context": "if len(farm['tiles']) != 10 or set(farm['unlocked_quadrants']) != {'NW','NE','SW'}:"
+ },
+ "_KNOB_1142_38": {
+  "value": 10,
+  "line": 1142,
+  "context": "if len(result['market'])>=10:break"
+ },
+ "_KNOB_1137_46": {
+  "value": 3,
+  "line": 1137,
+  "context": "if o and o[0]=='SELL' and len(o)>=3:planned[o[1]]=planned.get(o[1],0)+max(0,int(o[2]))"
+ },
+ "_KNOB_1130_20": {
+  "value": 23,
+  "line": 1130,
+  "context": "if step%24!=23:return action"
+ },
+ "_KNOB_1097_13": {
+  "value": 712,
+  "line": 1097,
+  "context": "if step!=712:return _PRE_TERMINAL_AGENT(observation,configuration)"
+ },
+ "_KNOB_1079_52": {
+  "value": 718,
+  "line": 1079,
+  "context": "if plan and plan.get('accepted') and 712<=step<=718:"
+ },
+ "_KNOB_1079_41": {
+  "value": 712,
+  "line": 1079,
+  "context": "if plan and plan.get('accepted') and 712<=step<=_KNOB_1079_52:"
+ },
+ "_KNOB_1060_137": {
+  "value": 100,
+  "line": 1060,
+  "context": "if len(market)!=9 or {o[1] for o in market}!=set(PRODUCTS) or any(o[0]!='SELL' or len(o)!=3 or type(o[2]) is not int or "
+ },
+ "_KNOB_1060_102": {
+  "value": 3,
+  "line": 1060,
+  "context": "if len(market)!=9 or {o[1] for o in market}!=set(PRODUCTS) or any(o[0]!='SELL' or len(o)!=3 or type(o[2]) is not int or "
+ },
+ "_KNOB_1060_28": {
+  "value": 9,
+  "line": 1060,
+  "context": "if len(market)!=9 or {o[1] for o in market}!=set(PRODUCTS) or any(o[0]!='SELL' or len(o)!=_KNOB_1060_102 or type(o[2]) i"
+ },
+ "_KNOB_1056_17": {
+  "value": 718,
+  "line": 1056,
+  "context": "if step==718:"
+ },
+ "_KNOB_1044_71": {
+  "value": 2,
+  "line": 1044,
+  "context": "if not state or state.get('last_step')!=711 or state.get('route')!=2:"
+ },
+ "_KNOB_1044_44": {
+  "value": 711,
+  "line": 1044,
+  "context": "if not state or state.get('last_step')!=711 or state.get('route')!=_KNOB_1044_71:"
+ },
+ "_KNOB_1001_34": {
+  "value": 718,
+  "line": 1001,
+  "context": "if _step_of(observation)>=718:"
+ },
+ "_KNOB_975_13": {
+  "value": 648,
+  "line": 975,
+  "context": "if step>=648 and not state.get('day27'):"
+ },
+ "_KNOB_966_13": {
+  "value": 144,
+  "line": 966,
+  "context": "if step>=144 and not state.get('day6'):"
+ },
+ "_KNOB_960_13": {
+  "value": 2,
+  "line": 960,
+  "context": "if step==2:"
+ },
+ "_KNOB_891_37": {
+  "value": 29,
+  "line": 891,
+  "context": "surplus = have if day >= 29 else have - self.future_sells(route, item, step + 1)"
+ },
+ "_KNOB_883_50": {
+  "value": 3,
+  "line": 883,
+  "context": "if o and o[0] == \"SELL\" and len(o) >= 3:"
+ },
+ "_KNOB_872_77": {
+  "value": 3,
+  "line": 872,
+  "context": "if o and o[0] in (\"BUY_PRODUCT\", \"BUY_ANIMAL\") and len(o) >= 3:"
+ },
+ "_KNOB_864_50": {
+  "value": 3,
+  "line": 864,
+  "context": "if o and o[0] == \"SELL\" and len(o) >= 3:"
+ },
+ "_KNOB_831_69": {
+  "value": 3,
+  "line": 831,
+  "context": "elif o[0] in (\"BUY_PRODUCT\", \"BUY_ANIMAL\") and len(o) >= 3:"
+ },
+ "_KNOB_829_44": {
+  "value": 3,
+  "line": 829,
+  "context": "if o[0] == \"SELL\" and len(o) >= 3:"
+ },
+ "_KNOB_763_50": {
+  "value": 3,
+  "line": 763,
+  "context": "if o and o[0] == \"SELL\" and len(o) >= 3:"
+ },
+ "_KNOB_725_52": {
+  "value": 2,
+  "line": 725,
+  "context": "qty = max(1, _int(o[2]) if len(o) > 2 else 1)"
+ },
+ "_KNOB_707_52": {
+  "value": 2,
+  "line": 707,
+  "context": "qty = max(1, _int(u[2]) if len(u) > 2 else 1)"
+ },
+ "_KNOB_678_40": {
+  "value": 3,
+  "line": 678,
+  "context": "if len(x) >= 3 and x[0] == \"SELL\" and x[1] == item)"
+ },
+ "_KNOB_672_55": {
+  "value": 3,
+  "line": 672,
+  "context": "if not (o and o[0] == \"SELL\" and len(o) >= 3 and o[1] in FRONT_RUN_ITEMS):"
+ },
+ "_KNOB_644_50": {
+  "value": 3,
+  "line": 644,
+  "context": "if o and o[0] == \"SELL\" and len(o) >= 3 and o[1] in PRODUCTS:"
+ },
+ "_KNOB_608_62": {
+  "value": 3,
+  "line": 608,
+  "context": "if order and order[0] == \"SELL\" and len(order) >= 3 and remaining.get(order[1], 0) > 0:"
+ },
+ "_KNOB_591_62": {
+  "value": 3,
+  "line": 591,
+  "context": "take = min(max(0, _int(act[2]) if len(act) >= 3 else 1),"
+ }
+}

@@ -1,0 +1,359 @@
+{
+ "_KNOB_3894_29": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 3894,
+  "context": "route = 2 if step >= 648 else (native or {}).get(\"route\")"
+ },
+ "_KNOB_3889_19": {
+  "default": 719,
+  "live": true,
+  "delta": 9981,
+  "line": 3889,
+  "context": "if step >= 719:"
+ },
+ "_KNOB_3825_38": {
+  "default": 718,
+  "live": true,
+  "delta": 9982,
+  "line": 3825,
+  "context": "if step % 24 == 23 or step >= 718:"
+ },
+ "_KNOB_3566_23": {
+  "default": 22,
+  "live": true,
+  "delta": 9322,
+  "line": 3566,
+  "context": "if day>=29 or hour<22:return action"
+ },
+ "_KNOB_3566_12": {
+  "default": 29,
+  "live": true,
+  "delta": 9329,
+  "line": 3566,
+  "context": "if day>=29 or hour<_KNOB_3566_23:return action"
+ },
+ "_KNOB_3442_63": {
+  "default": 696,
+  "live": true,
+  "delta": 9996,
+  "line": 3442,
+  "context": "if state is not None and 215<=int(observation['step'])<696:snapshot=_race_snapshot(observa"
+ },
+ "_KNOB_3434_34": {
+  "default": 696,
+  "live": true,
+  "delta": 9996,
+  "line": 3434,
+  "context": "if standard and 216<=step<696 and _race_clone(observation,state):"
+ },
+ "_KNOB_3260_24": {
+  "default": 695,
+  "live": true,
+  "delta": 9995,
+  "line": 3260,
+  "context": "if step<24 or step>=695 or step%24 in (22,23) or len(orders)>=_KNOB_3260_66:return action"
+ },
+ "_KNOB_3151_146": {
+  "default": 23,
+  "live": true,
+  "delta": 9323,
+  "line": 3151,
+  "context": "_,private=_r127_fields(obs,result);stock,_,_=_r97_market_stock(private['shed'],result['mar"
+ },
+ "_KNOB_3143_21": {
+  "default": 695,
+  "live": true,
+  "delta": 9995,
+  "line": 3143,
+  "context": "if not 144<=step<695 or _r97_budget(obs,action.get('market') or []):return action"
+ },
+ "_KNOB_3111_21": {
+  "default": 647,
+  "live": true,
+  "delta": 9947,
+  "line": 3111,
+  "context": "if not 144<=step<647:return result"
+ },
+ "_KNOB_3071_64": {
+  "default": 23,
+  "live": true,
+  "delta": 9323,
+  "line": 3071,
+  "context": "final,loss=_r97_delivery(stock,private,int(obs['step'])%24==23)"
+ },
+ "_KNOB_3070_76": {
+  "default": 23,
+  "live": true,
+  "delta": 9323,
+  "line": 3070,
+  "context": "oldfinal,oldloss=_r97_delivery(oldstock,oldprivate,int(obs['step'])%24==23)"
+ },
+ "_KNOB_3038_43": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 3038,
+  "context": "return _IMPL.chassis.routes[2 if step>=648 else native['route']][step]"
+ },
+ "_KNOB_2984_45": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 2984,
+  "context": "future=_IMPL.chassis.routes[2 if step+1>=648 else native['route']][step+1]"
+ },
+ "_KNOB_2980_21": {
+  "default": 695,
+  "live": true,
+  "delta": 9995,
+  "line": 2980,
+  "context": "if not 144<=step<695:return action"
+ },
+ "_KNOB_2775_48": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 2775,
+  "context": "following=_IMPL.chassis.routes[2 if step+2>=648 else native['route']][step+2]"
+ },
+ "_KNOB_2773_45": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 2773,
+  "context": "future=_IMPL.chassis.routes[2 if step+1>=648 else native['route']][step+1]"
+ },
+ "_KNOB_2771_21": {
+  "default": 695,
+  "live": true,
+  "delta": 9995,
+  "line": 2771,
+  "context": "if not 144<=step<695:return action"
+ },
+ "_KNOB_2670_43": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 2670,
+  "context": "a=_IMPL.chassis.routes[2 if t>=648 else route][t]"
+ },
+ "_KNOB_2602_40": {
+  "default": 27,
+  "live": true,
+  "delta": 9327,
+  "line": 2602,
+  "context": "tomorrow=day+1;route=2 if tomorrow>=27 else native['route'];key=(route,tomorrow)"
+ },
+ "_KNOB_2600_12": {
+  "default": 28,
+  "live": true,
+  "delta": 9328,
+  "line": 2600,
+  "context": "if day==28:return True  # No second dawn follows before game termination."
+ },
+ "_KNOB_2586_20": {
+  "default": 23,
+  "live": true,
+  "delta": 9323,
+  "line": 2586,
+  "context": "if step%24==23:result=_r51_close_warehouse(observation,result)"
+ },
+ "_KNOB_2562_19": {
+  "default": 28,
+  "live": true,
+  "delta": 9328,
+  "line": 2562,
+  "context": "if not 6<=day<=28:return action"
+ },
+ "_KNOB_2541_43": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 2541,
+  "context": "a=_IMPL.chassis.routes[2 if t>=648 else route][t]"
+ },
+ "_KNOB_2510_20": {
+  "default": 28,
+  "live": true,
+  "delta": 9328,
+  "line": 2510,
+  "context": "if not 10<=day<=28 or step%24>_KNOB_2510_34:return action"
+ },
+ "_KNOB_2334_12": {
+  "default": 27,
+  "live": true,
+  "delta": 9327,
+  "line": 2334,
+  "context": "if day==27 and not fertilizer:return None"
+ },
+ "_KNOB_2300_48": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 2300,
+  "context": "future=_IMPL.chassis.routes[2 if t>=648 else native['route']][t]"
+ },
+ "_KNOB_2268_35": {
+  "default": 28,
+  "live": true,
+  "delta": 9328,
+  "line": 2268,
+  "context": "if step%24!=23 or not 12<=day<=28:return action"
+ },
+ "_KNOB_2268_16": {
+  "default": 23,
+  "live": true,
+  "delta": 9323,
+  "line": 2268,
+  "context": "if step%24!=23 or not _KNOB_2268_26<=day<=_KNOB_2268_35:return action"
+ },
+ "_KNOB_2214_43": {
+  "default": 28,
+  "live": true,
+  "delta": 9328,
+  "line": 2214,
+  "context": "if hour not in (1,2,3) or not 12<=day<=28:return action"
+ },
+ "_KNOB_2126_42": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 2126,
+  "context": "tape=_IMPL.chassis.routes[2 if t>=648 else route];a=tape[t]"
+ },
+ "_KNOB_1875_21": {
+  "default": 696,
+  "live": true,
+  "delta": 9996,
+  "line": 1875,
+  "context": "if 288 <= step < 696:_R37_HORIZONS[player] = 4"
+ },
+ "_KNOB_1866_29": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 1866,
+  "context": "if 336 <= step < 648 and state['streak'] >= _KNOB_1866_56:"
+ },
+ "_KNOB_1864_36": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 1864,
+  "context": "if _R37_ADAPTIVE and step < 648:"
+ },
+ "_KNOB_1835_21": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 1835,
+  "context": "if not 336<=step<648 or st['matched']:return"
+ },
+ "_KNOB_1646_21": {
+  "default": 696,
+  "live": true,
+  "delta": 9996,
+  "line": 1646,
+  "context": "if not 216<=step<696:return action"
+ },
+ "_KNOB_1628_25": {
+  "default": 696,
+  "live": true,
+  "delta": 9996,
+  "line": 1628,
+  "context": "if step<216 or step>=696:"
+ },
+ "_KNOB_1402_71": {
+  "default": 24,
+  "live": true,
+  "delta": 9324,
+  "line": 1402,
+  "context": "'needs_fertilizer':pending['fertilizer'] and (day==24 or fertilizer_worker)}"
+ },
+ "_KNOB_1360_19": {
+  "default": 29,
+  "live": true,
+  "delta": 9329,
+  "line": 1360,
+  "context": "if day<29 and not tile.get('watered_today'):command=['WATER']"
+ },
+ "_KNOB_1291_47": {
+  "default": 27,
+  "live": true,
+  "delta": 9327,
+  "line": 1291,
+  "context": "count=crop_workers+int(fertilizer and day==27 and labor is None)"
+ },
+ "_KNOB_1288_83": {
+  "default": 28,
+  "live": true,
+  "delta": 9328,
+  "line": 1288,
+  "context": "crop_workers=1 if day in (19,20,21,22,23,25) and offset<=2 else (3 if 26<=day<=28 else 2)"
+ },
+ "_KNOB_1288_74": {
+  "default": 26,
+  "live": true,
+  "delta": 9326,
+  "line": 1288,
+  "context": "crop_workers=1 if day in (19,20,21,22,23,25) and offset<=2 else (3 if 26<=day<=_KNOB_1288_"
+ },
+ "_KNOB_1064_13": {
+  "default": 712,
+  "live": true,
+  "delta": 9988,
+  "line": 1064,
+  "context": "if step!=712:return _PRE_TERMINAL_AGENT(observation,configuration)"
+ },
+ "_KNOB_1046_52": {
+  "default": 718,
+  "live": true,
+  "delta": 9982,
+  "line": 1046,
+  "context": "if plan and plan.get('accepted') and 712<=step<=718:"
+ },
+ "_KNOB_1046_41": {
+  "default": 712,
+  "live": true,
+  "delta": 9988,
+  "line": 1046,
+  "context": "if plan and plan.get('accepted') and 712<=step<=_KNOB_1046_52:"
+ },
+ "_KNOB_1023_17": {
+  "default": 718,
+  "live": true,
+  "delta": 9982,
+  "line": 1023,
+  "context": "if step==718:"
+ },
+ "_KNOB_1011_44": {
+  "default": 711,
+  "live": true,
+  "delta": 9989,
+  "line": 1011,
+  "context": "if not state or state.get('last_step')!=711 or state.get('route')!=_KNOB_1011_71:"
+ },
+ "_KNOB_968_34": {
+  "default": 718,
+  "live": true,
+  "delta": 9982,
+  "line": 968,
+  "context": "if _step_of(observation)>=718:"
+ },
+ "_KNOB_942_13": {
+  "default": 648,
+  "live": true,
+  "delta": 9948,
+  "line": 942,
+  "context": "if step>=648 and not state.get('day27'):"
+ },
+ "_KNOB_876_37": {
+  "default": 29,
+  "live": true,
+  "delta": 9329,
+  "line": 876,
+  "context": "surplus = have if day >= 29 else have - self.future_sells(route, item, step + 1)"
+ }
+}
