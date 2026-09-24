@@ -95,7 +95,7 @@ def fetch_agent(ref):
 
 def champion_path():
     if os.path.exists(CHAMPION):
-        p = json.load(open(CHAMPION)).get("path")
+        p = json.load(open(CHAMPION, encoding="utf-8-sig")).get("path")
         if p and os.path.exists(p):
             return p
     return os.path.join(ROOT, "submissions", "hybrid2965_tuned.py")
@@ -104,7 +104,7 @@ def champion_path():
 def apply_flags(src_path, out_path):
     """Append our tuned knob values, but only those the file actually defines."""
     src = open(src_path, encoding="utf-8").read()
-    flags = json.load(open(FLAGS)) if os.path.exists(FLAGS) else {}
+    flags = json.load(open(FLAGS, encoding="utf-8-sig")) if os.path.exists(FLAGS) else {}
     used = {k: v for k, v in flags.items()
             if re.search(rf"^{re.escape(k)}\s*=", src, re.M)}
     block = ["", "", "# " + "-" * 92,
