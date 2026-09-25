@@ -1,0 +1,48 @@
+{
+  "_about": [
+    "Evaluation pool that mirrors the opponents met at the target rating band, per lineage.",
+    "Weights come from scripts/ladder_mix.py (band 2450-2850, episodes since 2026-09-19,",
+    "research/ladder/mix_2450-2850_2026-09-19.tsv), renormalised over the lineages below.",
+    "Unnamed lineages (~24% of labelled seats, no local agent file) are left out.",
+    "herd-safe is too new for the dataset (it ends 2026-09-23); its weight is a manual prior.",
+    "Each agent's h48 was checked against the lineage hash in research/ladder/fingerprints_raw.txt.",
+    "A lineage's weight is split evenly over its agents. Paths are relative to the repo root;",
+    "the agent files live in gitignored folders on this machine."
+  ],
+  "band": [2450, 2850],
+  "since": "2026-09-19",
+  "lineages": {
+    "hybrid": {
+      "share": 0.285,
+      "h48": "2f3c9bd1386a5888",
+      "agents": ["submissions/hybrid2965_tuned.py",
+                 "research/ladder_pool/the-2965-master-hybrid-engine.py"]
+    },
+    "wonderful-life": {
+      "share": 0.271,
+      "h48": "06b189c7fd867753",
+      "agents": ["research/ladder_pool/a-wonderful-life.py",
+                 "research/ladder_pool/cha22-agent.py"]
+    },
+    "v53": {
+      "share": 0.103,
+      "h48": "38c22e65d5dacbd1",
+      "agents": ["research/ladder_pool/kaggriculture-v53-opening-signature.py",
+                 "research/ladder_pool/kaggriculture-k0013-v46-advance6.py"]
+    },
+    "2945": {
+      "share": 0.100,
+      "h48": "d487f84b721f843d",
+      "agents": ["research/ladder_pool/god-s-mode-hacked-stores.py",
+                 "research/ladder_pool/kaggriculture-thomas-2944-candidate.py"]
+    },
+    "herd-safe": {
+      "share": 0.100,
+      "share_note": "manual prior: 5 public herd-safe forks appeared 09-24/25, none in the dataset yet",
+      "h48": "a27f596de4501080",
+      "agents": ["research/ladder_pool/the-shepherds-ledger-herd-safe-sovereign.py",
+                 "research/ladder_pool/kaggriculture-population-robust-economy.py"]
+    }
+  },
+  "walls": ["v53", "herd-safe"]
+}
