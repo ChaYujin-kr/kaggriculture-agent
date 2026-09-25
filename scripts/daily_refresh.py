@@ -1,6 +1,10 @@
 """Daily meta refresh: pull the newest public agents, test them against our champion, and submit
 a better one (with our tuned knobs applied) if it clearly wins.
 
+Head to head against the champion is only the first filter. The best challenger, with our knobs
+applied, is submitted only if it passes the lineage-weighted gauntlet (scripts/gauntlet.py,
+research/gauntlet.json): it has to hold the wall lineages and outscore the champion.
+
 The public meta in this competition turns over daily, so the champion file must keep up.
 
 usage: python scripts/daily_refresh.py [--dry-run] [--seeds 3] [--workers 2] [--max-new 6]
@@ -147,6 +151,9 @@ def main():
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--max-new", type=int, default=6)
     ap.add_argument("--win-threshold", type=float, default=0.60)
+    ap.add_argument("--gauntlet-seeds", type=int, default=6)
+    ap.add_argument("--wall-min", type=float, default=0.5)
+    ap.add_argument("--gauntlet-margin", type=float, default=0.0)
     a = ap.parse_args()
     os.makedirs(POOL, exist_ok=True)
     champ = champion_path()
@@ -192,16 +199,25 @@ def main():
     tuned = os.path.join(ROOT, "submissions", f"auto_{dt.date.today():%m%d}_{os.path.basename(best)}")
     used = apply_flags(best, tuned)
     log(f"applying flags {used} to {os.path.basename(best)}")
-    seeds2 = list(range(21000, 21000 + a.seeds + 2))
-    w, n = duel(tuned, champ, seeds2, a.workers)
-    log(f"validation on fresh seeds: {w}/{n}")
-    if w / n < a.win_threshold:
-        log("did not hold up on fresh seeds; champion keeps its place")
+
+    # Beating the champion head to head is only a cheap filter: on 09-25 it promoted an agent that
+    # loses to hybrid and V53, the ladder's biggest lineages. Submission needs the weighted gauntlet.
+    import gauntlet
+    cfg = json.load(open(gauntlet.CONFIG, encoding="utf-8"))
+    gseeds = list(range(gauntlet.SEED0, gauntlet.SEED0 + a.gauntlet_seeds))
+    base = gauntlet.score(champ, gseeds, a.workers, cfg)
+    res = gauntlet.score(tuned, gseeds, a.workers, cfg)
+    lines = ", ".join(f"{k} {v:.0%}" for k, v in res["lineages"].items())
+    log(f"gauntlet: {res['score']:.1%} vs champion {base['score']:.1%} ({lines})")
+    ok, why = gauntlet.verdict(res, cfg, a.wall_min, base, a.gauntlet_margin)
+    if not ok:
+        log("gauntlet rejects: " + "; ".join(why) + "; champion keeps its place")
         return
     if a.dry_run:
         log(f"DRY RUN: would submit {os.path.basename(tuned)}")
         return
-    msg = f"auto: {os.path.basename(best)[:-3]} (public, Apache-2.0) + our knob search; {w}/{n} vs previous champion"
+    msg = (f"auto: {os.path.basename(best)[:-3]} (public, Apache-2.0) + our knob search; "
+           f"gauntlet {res['score']:.0%} vs previous champion {base['score']:.0%}")
     r = run([KAGGLE, "competitions", "submit", "kaggriculture", "-f", tuned, "-m", msg])
     out = (r.stdout or "").strip()
     log(f"submit: {out.splitlines()[-1] if out else (r.stderr or '')[:200]}")

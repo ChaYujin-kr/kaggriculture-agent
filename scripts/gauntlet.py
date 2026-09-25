@@ -8,7 +8,7 @@ baseline, outscores it by --margin.
 Game results are cached per (agent file, opponent file, seed) in research/ladder/gauntlet_cache.json,
 keyed by file content, so re-scoring the champion or changing the pool only plays the new games.
 
-usage: python scripts/gauntlet.py CANDIDATE [CANDIDATE ...] [--baseline PATH] [--seeds 3] [--workers 2]
+usage: python scripts/gauntlet.py CANDIDATE [CANDIDATE ...] [--baseline PATH] [--seeds 6] [--workers 2]
 """
 import argparse
 import hashlib
@@ -83,7 +83,7 @@ def verdict(res, cfg, wall_min, baseline=None, margin=0.0):
     hide behind a 6/6 against the weaker K0013 V46 of the same lineage."""
     reasons = [f"wall {w}: worst agent {res['worst'][w]:.0%} < {wall_min:.0%}"
                for w in cfg.get("walls", []) if res["worst"][w] < wall_min]
-    if baseline is not None and res["score"] < baseline["score"] + margin:
+    if baseline is not None and res["score"] <= baseline["score"] + margin:
         reasons.append(f"score {res['score']:.1%} does not beat baseline {baseline['score']:.1%} + {margin:.0%}")
     return not reasons, reasons
 
@@ -100,7 +100,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("candidates", nargs="+")
     ap.add_argument("--baseline", help="agent to beat, e.g. the current champion")
-    ap.add_argument("--seeds", type=int, default=3)
+    # 3 seeds flipped the champion's hybrid and V53 results from 2/6 to 8/12 once 3 more were
+    # added: outcomes cluster by seed, so fewer than 6 is noise
+    ap.add_argument("--seeds", type=int, default=6)
     ap.add_argument("--seed0", type=int, default=SEED0)
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--wall-min", type=float, default=0.5)
