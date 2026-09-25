@@ -2,8 +2,8 @@
 
 Each pool agent is played on every seed from both seats. A lineage's win rate is the mean over its
 agents, and the score is the lineage win rates weighted by their ladder share at the target band.
-A candidate passes when it holds every wall lineage (win rate >= --wall-min) and, given a
-baseline, outscores it by --margin.
+A candidate passes when it holds every wall lineage (each of its agents >= --wall-min) and, given a
+baseline, outscores it by more than --margin.
 
 Game results are cached per (agent file, opponent file, seed) in research/ladder/gauntlet_cache.json,
 keyed by file content, so re-scoring the champion or changing the pool only plays the new games.
@@ -43,7 +43,7 @@ def save_cache(cache):
 
 
 def score(path, seeds, workers, config=None, log=print):
-    """Returns {"score", "lineages": {name: win rate}, "agents": {file: (wins, games, margin)}, "walls_ok"}."""
+    """Returns {"score", "lineages": {name: win rate}, "worst": {name: weakest agent}, "agents": {file: (wins, games, margin)}}."""
     cfg = config or json.load(open(CONFIG, encoding="utf-8"))
     cache = load_cache()
     me = file_hash(path)
