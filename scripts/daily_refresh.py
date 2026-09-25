@@ -127,6 +127,19 @@ def duel(a_path, b_path, seeds, workers):
     return w, len(rs)
 
 
+def playoff(paths, n_seeds, workers):
+    """Round-robin the challengers tied against the champion; sorting by path would pick by name."""
+    seeds = list(range(20500, 20500 + n_seeds))
+    wins = {p: 0.0 for p in paths}
+    for i, p in enumerate(paths):
+        for q in paths[i + 1:]:
+            w, n = duel(p, q, seeds, workers)
+            wins[p] += w
+            wins[q] += n - w
+            log(f"  playoff: {os.path.basename(p)} vs {os.path.basename(q)}: {w}/{n}")
+    return max(paths, key=lambda p: wins[p])
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -174,7 +187,8 @@ def main():
         return
 
     challengers.sort(reverse=True)
-    best = challengers[0][1]
+    top = [p for r, p in challengers if r == challengers[0][0]]
+    best = top[0] if len(top) == 1 else playoff(top, a.seeds, a.workers)
     tuned = os.path.join(ROOT, "submissions", f"auto_{dt.date.today():%m%d}_{os.path.basename(best)}")
     used = apply_flags(best, tuned)
     log(f"applying flags {used} to {os.path.basename(best)}")
