@@ -1,0 +1,49 @@
+# openhash (md5 of first 48 actions, 10 hex) -> lineage. spend0 = turn-0 spend. Source: session 2026-09-25 fingerprint of research/ladder_pool
+hash	lineage	spend0	agent_file
+aa4c3c2202	V52/V53 + K0013 V46	135.0	kaggriculture-k0013-v46-advance6.py
+aa4c3c2202	V52/V53 + K0013 V46	135.0	kaggriculture-v52-lean-flock-yarn-route.py
+aa4c3c2202	V52/V53 + K0013 V46	135.0	kaggriculture-v53-opening-signature.py
+2ace6534ce	farm2945 / god-s-mode / thomas2944 / m4a	147.0	god-s-mode-hacked-stores.py
+2ace6534ce	farm2945 / god-s-mode / thomas2944 / m4a	147.0	kaggriculture-m4a-metav4-sr18-2690-1.py
+2ace6534ce	farm2945 / god-s-mode / thomas2944 / m4a	147.0	kaggriculture-thomas-2944-candidate.py
+2a65069d82	herd-safe	145.0	herd-safe-v3-experimental-risk-aware-fee.py
+2a65069d82	herd-safe	145.0	kaggriculture-herd-safe-sale-window-race.py
+2a65069d82	herd-safe	145.0	kaggriculture-herd-safe-sale-window-subm.py
+2a65069d82	herd-safe	145.0	kaggriculture-population-robust-economy.py
+2a65069d82	herd-safe	145.0	the-shepherds-ledger-herd-safe-sovereign.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	best-agent-ranking.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	demand-preserving-turn-sale-timing.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	farmer-john-and-the-idle-seller.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	farmer-john-and-the-wheat-seller.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-7-turn-rescue-historical-l.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-auto-top1.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-harvest-ledger.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-hybu-submit.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-late-purchase-v16-submit.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-master-engine-v3.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-more-wheat-smarter-sales.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-one-more-wheat.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-top-2-master-engine-v4.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-v15stack-nb.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-v15stack-submit.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-v40-challenger.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-v54-productive-wheat-and-p.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-v55-one-turn-market-race-e.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	kaggriculture-v56-smarter-seeds-and-fert.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	order-book-v3-response-improvement.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	pioneers-of-kaggle-town.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	the-2965-master-hybrid-engine.py
+c2b3c0360e	hybrid2965 / master-engine / v54-57	157.0	your-market-list-is-an-order-book.py
+14c1ec572a	hybrid2965 live on 09-22		(ladder only; see memory)
+11822d45ce	v7 (aurax7)		(ladder only; see memory)
+0e9273aa6d	?	0.0	a-song-of-ice-and-fire-fixed-flexible.py
+36a9cf3f07	?	146.0	cha22-agent.py
+7da68ab858	?	377.0	kaggriculture-a1-t31-guard.py
+36a9cf3f07	?	146.0	kaggriculture-autonomous-ai-farming-agen.py
+907a6c53c5	?	157.0	kaggriculture-frontier-the-moon-counts-m.py
+907a6c53c5	?	157.0	kaggriculture-frontier-the-soil-remember.py
+7da68ab858	?	377.0	kaggriculture-hack.py
+159f98b7ce	?	157.0	kaggriculture-tetsutani-demand-preservin.py
+4d8e5d3c36	?	11.0	kaggriculture-utils-v1.py
+36a9cf3f07	?	146.0	kaggriculture.py
+b34bab77b7	?	32.0	pioneers-of-kaggle-town-candidate-2.py
