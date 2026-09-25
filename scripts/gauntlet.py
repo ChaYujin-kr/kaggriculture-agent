@@ -69,16 +69,20 @@ def score(path, seeds, workers, config=None, log=print):
         w = sum(1 for a, b in rs if a > b) + 0.5 * sum(1 for a, b in rs if a == b)
         agents[os.path.relpath(opp, ROOT)] = (w, len(rs), sum(a - b for a, b in rs) / len(rs))
         lineages.setdefault(name, []).append(w / len(rs))
+    worst = {k: min(v) for k, v in lineages.items()}
     lineages = {k: sum(v) / len(v) for k, v in lineages.items()}
     total = sum(l["share"] for l in cfg["lineages"].values())
     s = sum(cfg["lineages"][k]["share"] * wr for k, wr in lineages.items()) / total
-    return {"score": s, "lineages": lineages, "agents": agents}
+    return {"score": s, "lineages": lineages, "worst": worst, "agents": agents}
 
 
 def verdict(res, cfg, wall_min, baseline=None, margin=0.0):
-    """(passed, reasons) for a scored candidate against the walls and an optional baseline score."""
-    reasons = [f"wall {w}: {res['lineages'][w]:.0%} < {wall_min:.0%}"
-               for w in cfg.get("walls", []) if res["lineages"][w] < wall_min]
+    """(passed, reasons) for a scored candidate against the walls and an optional baseline score.
+
+    A wall is held only if every agent of that lineage is held: averaging let a 0/6 against V53
+    hide behind a 6/6 against the weaker K0013 V46 of the same lineage."""
+    reasons = [f"wall {w}: worst agent {res['worst'][w]:.0%} < {wall_min:.0%}"
+               for w in cfg.get("walls", []) if res["worst"][w] < wall_min]
     if baseline is not None and res["score"] < baseline["score"] + margin:
         reasons.append(f"score {res['score']:.1%} does not beat baseline {baseline['score']:.1%} + {margin:.0%}")
     return not reasons, reasons
@@ -87,7 +91,7 @@ def verdict(res, cfg, wall_min, baseline=None, margin=0.0):
 def report(path, res):
     print(f"\n{os.path.basename(path)}: weighted score {res['score']:.1%}")
     for k, wr in res["lineages"].items():
-        print(f"  {k:<15} {wr:5.0%}")
+        print(f"  {k:<15} {wr:5.0%}  (worst agent {res['worst'][k]:.0%})")
     for a, (w, n, m) in res["agents"].items():
         print(f"    {os.path.basename(a):<50} {w:4.1f}/{n}  margin {m:+6.0f}")
 
