@@ -1,11 +1,17 @@
-"""Download the newest public agents (up to 80 kernels) into research/ladder_pool/ for fingerprinting."""
+"""Download public agents into research/ladder_pool/ for fingerprinting.
+
+usage: python scripts/ladder_fetch_pool.py [REFS_FILE]
+Without REFS_FILE, takes the newest 80 competition kernels. REFS_FILE lists one owner/slug per line,
+e.g. research/ladder/public_kernels_new.txt from a keyword search (the competition listing only
+returns a few dozen kernels).
+"""
 import sys, os, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import daily_refresh as dr
 
 DST = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "research", "ladder_pool")
 os.makedirs(DST, exist_ok=True)
-refs = dr.newest_kernels(80)
+refs = open(sys.argv[1]).read().split() if len(sys.argv) > 1 else dr.newest_kernels(80)
 print(len(refs), "kernels", flush=True)
 for ref in refs:
     name = ref.split("/")[1][:40]
