@@ -72,15 +72,13 @@ def score(path, seeds, workers, config=None, log=print, seats=2):
     if todo:
         log(f"  {os.path.basename(path)}: playing {len(todo)} games ({len(opps) * len(plan) - len(todo)} cached)")
         jobs = [(path, None, opp, None, s, bool(swap)) for opp, s, swap in todo]
-        res = []
+        # save as games finish: a run killed for low memory keeps what it already played
         with ProcessPoolExecutor(max_workers=workers) as ex:
-            for r in ex.map(league.run_pair, jobs, chunksize=1):
-                res.append(r)
-                if len(res) % 12 == 0 or len(res) == len(jobs):
-                    log(f"    {len(res)}/{len(jobs)} games")
-        for (opp, s, swap), r in zip(todo, res):
-            cache[key(opp, s, swap)] = list(r)
-        save_cache(cache)
+            for i, ((opp, s, swap), r) in enumerate(zip(todo, ex.map(league.run_pair, jobs, chunksize=1)), 1):
+                cache[key(opp, s, swap)] = list(r)
+                if i % 12 == 0 or i == len(jobs):
+                    save_cache(cache)
+                    log(f"    {i}/{len(jobs)} games")
 
     agents, lineages = {}, {}
     for name, opp in opps:
