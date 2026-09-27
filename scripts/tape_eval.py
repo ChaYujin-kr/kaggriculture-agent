@@ -26,6 +26,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TAPES = os.path.join(ROOT, "research", "ladder_tapes")
 PLAYED = {"shepherd_0925": "submissions/auto_0925_the-shepherds-ledger-herd-safe-sovereign.py",
           "hybrid_resub": "submissions/hybrid2965_tuned.py",
+          "shepherd_p6": "submissions/shepherd_p6.py",
+          "hybrid_cxd_p8": "submissions/hybrid_cxd_p8.py",
           "hybrid_tuned": "submissions/hybrid2965_tuned.py",
           "v7_endgame": "submissions/v7_endgame.py"}
 

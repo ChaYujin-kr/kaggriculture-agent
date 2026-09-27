@@ -12,7 +12,9 @@ S = os.path.join(ROOT, "research", "ladder")
 RP = os.path.join(S, "rp")
 KAGGLE = os.path.join(ROOT, ".venv", "Scripts", "kaggle.exe")
 OUT = os.path.join(S, "summaries.jsonl")
-SUBS = {"56482583": "v7_endgame", "56481388": "v7_base", "56473646": "hybrid_tuned"}
+SUBS = {"56482583": "v7_endgame", "56481388": "v7_base", "56473646": "hybrid_tuned",
+        "56541496": "shepherd_0925", "56549345": "hybrid_resub",
+        "56612456": "shepherd_p6", "56612448": "hybrid_cxd_p8"}
 ME = "Yujin Cha"
 
 
@@ -126,7 +128,10 @@ def main():
                 done.add(d["ep"])
     todo = []
     for sub in SUBS:
-        for row in csv.DictReader(open(os.path.join(S, f"eps_{sub}.csv"), encoding="utf-8")):
+        eps = os.path.join(S, f"eps_{sub}.csv")
+        if not os.path.exists(eps):   # written by ladder_track.py once the submission is active
+            continue
+        for row in csv.DictReader(open(eps, encoding="utf-8")):
             if row["id"] and row["id"].isdigit() and "COMPLETED" in (row["state"] or "") and row["id"] not in done:
                 todo.append((row["id"], sub, row["createTime"]))
     print(len(todo), "to do", flush=True)
