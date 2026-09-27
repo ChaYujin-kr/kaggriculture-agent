@@ -1,4 +1,4 @@
-﻿kaggle-environments>=1.32.7  # install with --no-deps on Windows (long-path issue); then: jsonschema requests termcolor pyjson5 tenacity Flask gymnasium
+﻿kaggle-environments==1.32.7  # install with --no-deps on Windows (long-path issue); then: jsonschema requests termcolor pyjson5 tenacity Flask gymnasium
 kaggle
 numpy
 pandas
