@@ -13,7 +13,7 @@ S = os.path.join(ROOT, "research", "ladder")
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from ladder_harvest import KAGGLE, SUBS, env  # noqa: E402
 
-ACTIVE = ["56612456", "56612448"]   # shepherd_p6, hybrid_cxd_p8 (submitted 2026-09-27 15:17 UTC)
+ACTIVE = ["56633420", "56612456"]   # ttv1_flags (2026-09-28 07:30 UTC), shepherd_p6 (2026-09-27 15:17 UTC)
 
 
 def kaggle(*args):

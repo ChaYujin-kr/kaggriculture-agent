@@ -9,7 +9,7 @@ scripts/make_tape_agent.py). Each candidate plays the tape on that game's seed a
 --build N first makes tapes for the N most recent boards (of the selected lineage) that have none,
 downloading each replay and deleting it afterwards.
 
-usage: python scripts/tape_eval.py [--md5 H | --not-md5 H] [--build N] [--workers 1] CANDIDATE [CANDIDATE ...]
+usage: python scripts/tape_eval.py [--md5 H | --not-md5 H] [--min-opp-lb 2300] [--subs a,b] [--build N] [--workers 1] CANDIDATE [CANDIDATE ...]
 """
 import argparse
 import json
@@ -28,6 +28,7 @@ PLAYED = {"shepherd_0925": "submissions/auto_0925_the-shepherds-ledger-herd-safe
           "hybrid_resub": "submissions/hybrid2965_tuned.py",
           "shepherd_p6": "submissions/shepherd_p6.py",
           "hybrid_cxd_p8": "submissions/hybrid_cxd_p8.py",
+          "ttv1_flags": "submissions/auto_0928_kaggriculture-ttv1.py",
           "hybrid_tuned": "submissions/hybrid2965_tuned.py",
           "v7_endgame": "submissions/v7_endgame.py"}
 
@@ -46,9 +47,20 @@ def build_tape(r):
     return os.path.exists(out)
 
 
+def opp_scores():
+    """team name -> score from the newest public leaderboard snapshot in research/ladder/."""
+    import csv
+    import glob
+    snaps = sorted(glob.glob(os.path.join(ROOT, "research", "ladder", "*publicleaderboard*.csv")))
+    if not snaps:
+        return {}
+    return {r["TeamName"]: float(r["Score"]) for r in csv.DictReader(open(snaps[-1], encoding="utf-8"))}
+
+
 def keep(r, a):
     return (r["sub"] in PLAYED and r.get("seed") and (a.md5 is None or r["openhash_op"] == a.md5)
-            and (a.not_md5 is None or r["openhash_op"] != a.not_md5))
+            and (a.not_md5 is None or r["openhash_op"] != a.not_md5)
+            and (a.min_opp_lb is None or a.lb.get(r["opp"], 0) >= a.min_opp_lb))
 
 
 def play(job):
@@ -64,9 +76,12 @@ def main():
     ap.add_argument("--md5", default=None, help="only boards whose opponent opening hash matches")
     ap.add_argument("--not-md5", default=None, help="only boards whose opponent opening hash differs")
     ap.add_argument("--subs", default="shepherd_0925,hybrid_resub", help="for --build: which submissions' games")
+    ap.add_argument("--min-opp-lb", type=float, default=None,
+                    help="only boards whose opponent team is rated at least this on the newest leaderboard snapshot")
     ap.add_argument("--build", type=int, default=0)
     ap.add_argument("--workers", type=int, default=1)
     a = ap.parse_args()
+    a.lb = opp_scores() if a.min_opp_lb is not None else {}
     sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
     os.makedirs(TAPES, exist_ok=True)
 

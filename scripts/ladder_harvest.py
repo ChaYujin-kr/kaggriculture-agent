@@ -14,7 +14,8 @@ KAGGLE = os.path.join(ROOT, ".venv", "Scripts", "kaggle.exe")
 OUT = os.path.join(S, "summaries.jsonl")
 SUBS = {"56482583": "v7_endgame", "56481388": "v7_base", "56473646": "hybrid_tuned",
         "56541496": "shepherd_0925", "56549345": "hybrid_resub",
-        "56612456": "shepherd_p6", "56612448": "hybrid_cxd_p8"}
+        "56612456": "shepherd_p6", "56612448": "hybrid_cxd_p8",
+        "56633420": "ttv1_flags"}
 ME = "Yujin Cha"
 
 
