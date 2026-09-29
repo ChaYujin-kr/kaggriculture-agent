@@ -170,9 +170,11 @@ def main():
 
     # A known kernel name is not a known agent: authors re-run the same notebook with new code.
     # So refetch any kernel whose last run changed since we saw it, and call it new by content hash.
+    # Candidates stay staged in the download folder until evaluate() finishes; only then do they
+    # join the pool and the kernel runs count as seen, so a run killed midway re-tests them.
     known = {md5(p) for p in glob.glob(os.path.join(POOL, "*.py"))}
     seen = json.load(open(SEEN, encoding="utf-8")) if os.path.exists(SEEN) else {}
-    stamp = dt.datetime.now().strftime("%m%d_%H%M")
+    stamp = dt.datetime.now().strftime("%m%d_%H%M%S")
     new = []
     for ref, ran in newest_kernel_runs():
         if seen.get(ref) == ran:
@@ -183,22 +185,30 @@ def main():
         if not os.path.isdir(dest):
             continue  # download failed: leave it unseen so the next run retries
         if p and md5(p) not in known:
-            dst = os.path.join(POOL, name[:40] + ".py")
-            if os.path.exists(dst):
-                dst = os.path.join(POOL, f"{name[:30]}_{stamp[:4]}_{md5(p)[:6]}.py")
-            shutil.copy(p, dst)
+            pool_name = name[:40] + ".py"
+            if os.path.exists(os.path.join(POOL, pool_name)):
+                pool_name = f"{name[:30]}_{stamp[:4]}_{md5(p)[:6]}.py"
+            # outside dest, or a refetch into dest would find this copy; the name also names auto_ files
+            staged = os.path.join(OUTPUTS, "_runs", "_staged", stamp, pool_name)
+            os.makedirs(os.path.dirname(staged), exist_ok=True)
+            shutil.copy(p, staged)
             known.add(md5(p))
-            new.append(dst)
-            log(f"new candidate: {ref} (run {ran}) -> {os.path.basename(dst)} "
-                f"({os.path.getsize(dst) // 1024} KB)")
+            new.append(staged)
+            log(f"new candidate: {ref} (run {ran}) -> {pool_name} ({os.path.getsize(staged) // 1024} KB)")
         seen[ref] = ran
         if len(new) >= a.max_new:
             break
-    json.dump(seen, open(SEEN, "w", encoding="utf-8"), indent=1)
-    if not new:
+    if new:
+        evaluate(a, champ, new)
+    else:
         log("no new public agents today")
-        return
+    for p in new:
+        shutil.copy(p, os.path.join(POOL, os.path.basename(p)))
+    json.dump(seen, open(SEEN, "w", encoding="utf-8"), indent=1)
 
+
+def evaluate(a, champ, new):
+    """Duel the new agents against the champion, gauntlet the best, and submit it if it passes."""
     seeds = list(range(20000, 20000 + a.seeds))
     challengers = []
     for p in new:
