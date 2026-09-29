@@ -14,6 +14,7 @@ import argparse
 import ast
 import datetime as dt
 import glob
+import hashlib
 import json
 import os
 import re
@@ -31,6 +32,7 @@ POOL = os.path.join(ROOT, "research", "pool")
 OUTPUTS = os.path.join(ROOT, "research", "outputs")
 LOG = os.path.join(ROOT, "research", "daily_log.txt")
 CHAMPION = os.path.join(ROOT, "tuning", "champion.json")
+SEEN = os.path.join(ROOT, "research", "kernel_runs_seen.json")  # kernel ref -> lastRunTime fetched
 FLAGS = os.path.join(ROOT, "tuning", "best_flags_v1.json")
 
 
@@ -57,21 +59,28 @@ def run(args, **kw):
                           encoding="utf-8", errors="replace", **kw)
 
 
-def newest_kernels(limit=25):
+def newest_kernel_runs(limit=25):
+    """[(ref, lastRunTime)], newest run first. Titles can hold quoted commas, so parse as CSV."""
+    import csv
     out = run([KAGGLE, "kernels", "list", "--competition", "kaggriculture",
                "--sort-by", "dateRun", "--page-size", str(limit), "-v"]).stdout
-    refs = []
-    for line in out.splitlines()[1:]:
-        parts = line.split(",")
-        if len(parts) >= 4 and "/" in parts[0]:
-            refs.append(parts[0].strip())
-    return refs
+    return [(r["ref"].strip(), r.get("lastRunTime", "").strip())
+            for r in csv.DictReader(ln for ln in out.splitlines() if ln.strip())
+            if "/" in (r.get("ref") or "")]
 
 
-def fetch_agent(ref):
+def newest_kernels(limit=25):
+    return [ref for ref, _ in newest_kernel_runs(limit)]
+
+
+def md5(path):
+    return hashlib.md5(open(path, "rb").read()).hexdigest()
+
+
+def fetch_agent(ref, dest=None):
     """Download a kernel's output and return the path of a usable single-file agent, or None."""
     name = ref.split("/")[1]
-    dest = os.path.join(OUTPUTS, name)
+    dest = dest or os.path.join(OUTPUTS, name)
     if not os.path.exists(dest):
         r = run([KAGGLE, "kernels", "output", ref, "-p", dest])
         if r.returncode != 0:
@@ -159,21 +168,33 @@ def main():
     champ = champion_path()
     log(f"=== daily refresh; champion = {os.path.basename(champ)}")
 
-    known = {os.path.basename(p)[:-3] for p in glob.glob(os.path.join(POOL, "*.py"))}
+    # A known kernel name is not a known agent: authors re-run the same notebook with new code.
+    # So refetch any kernel whose last run changed since we saw it, and call it new by content hash.
+    known = {md5(p) for p in glob.glob(os.path.join(POOL, "*.py"))}
+    seen = json.load(open(SEEN, encoding="utf-8")) if os.path.exists(SEEN) else {}
+    stamp = dt.datetime.now().strftime("%m%d_%H%M")
     new = []
-    for ref in newest_kernels():
+    for ref, ran in newest_kernel_runs():
+        if seen.get(ref) == ran:
+            continue
         name = ref.split("/")[1]
-        if name[:40] in known or any(k.startswith(name[:25]) for k in known):
-            continue
-        p = fetch_agent(ref)
-        if not p:
-            continue
-        dst = os.path.join(POOL, name[:40] + ".py")
-        shutil.copy(p, dst)
-        new.append(dst)
-        log(f"new candidate: {ref} -> {os.path.basename(dst)} ({os.path.getsize(dst) // 1024} KB)")
+        dest = os.path.join(OUTPUTS, "_runs", name, stamp)  # apart from fetch_agent's default folders
+        p = fetch_agent(ref, dest)
+        if not os.path.isdir(dest):
+            continue  # download failed: leave it unseen so the next run retries
+        if p and md5(p) not in known:
+            dst = os.path.join(POOL, name[:40] + ".py")
+            if os.path.exists(dst):
+                dst = os.path.join(POOL, f"{name[:30]}_{stamp[:4]}_{md5(p)[:6]}.py")
+            shutil.copy(p, dst)
+            known.add(md5(p))
+            new.append(dst)
+            log(f"new candidate: {ref} (run {ran}) -> {os.path.basename(dst)} "
+                f"({os.path.getsize(dst) // 1024} KB)")
+        seen[ref] = ran
         if len(new) >= a.max_new:
             break
+    json.dump(seen, open(SEEN, "w", encoding="utf-8"), indent=1)
     if not new:
         log("no new public agents today")
         return
