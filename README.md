@@ -31,6 +31,7 @@ between still-active submissions, run for about two weeks after the 2026-09-30 d
 | `scripts/ladder_harvest.py`, `ladder_track.py` | Harvest our ladder games; track the active pair by time and opponent lineage |
 | `scripts/ladder_replay.py` | Replays our ladder games locally on their real seeds and seats |
 | `scripts/replay_summary.py`, `replay_actions.py`, `clone_diff.py` | Ladder replay analysis |
+| `scripts/highlight_gif.py`, `pixel_sprites.py` | Renders a replay as an animated GIF with our own 16x16 pixel art |
 | `scripts/daily_refresh.py` | Daily: pull new public agents, duel the champion, gate on the gauntlet (dry-run) |
 
 Setup: `python -m venv .venv`, `.venv\Scripts\pip install -r requirements.txt` (pins
