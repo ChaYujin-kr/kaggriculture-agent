@@ -1,0 +1,2008 @@
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+built 98/98 tapes
+172 boards; ladder record on them 34/172
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+HP_TELEMETRY {'extension_signals': 142, 'rejected_signals': 115}
+HP_TELEMETRY {'extension_signals': 152, 'rejected_signals': 119}
+HP_TELEMETRY {'extension_signals': 159, 'rejected_signals': 84}
+HP_TELEMETRY {'extension_signals': 139, 'rejected_signals': 93}
+HP_TELEMETRY {'extension_signals': 24, 'rejected_signals': 146}
+HP_TELEMETRY {'extension_signals': 0, 'rejected_signals': 248}
+HP_TELEMETRY {'extension_signals': 53, 'rejected_signals': 87}
+HP_TELEMETRY {'extension_signals': 478, 'rejected_signals': 255}
+HP_TELEMETRY {'extension_signals': 400, 'rejected_signals': 320}
+HP_TELEMETRY {'extension_signals': 66, 'rejected_signals': 604}
+HP_TELEMETRY {'extension_signals': 222, 'rejected_signals': 570}
+HP_TELEMETRY {'extension_signals': 407, 'rejected_signals': 379}
+HP_TELEMETRY {'extension_signals': 355, 'rejected_signals': 387}
+HP_TELEMETRY {'extension_signals': 84, 'rejected_signals': 594}
+HP_TELEMETRY {'extension_signals': 468, 'rejected_signals': 330}
+HP_TELEMETRY {'extension_signals': 33, 'rejected_signals': 388}
+HP_TELEMETRY {'extension_signals': 283, 'rejected_signals': 456}
+HP_TELEMETRY {'extension_signals': 169, 'rejected_signals': 531}
+HP_TELEMETRY {'extension_signals': 382, 'rejected_signals': 370}
+HP_TELEMETRY {'extension_signals': 22, 'rejected_signals': 501}
+HP_TELEMETRY {'extension_signals': 113, 'rejected_signals': 244}
+HP_TELEMETRY {'extension_signals': 233, 'rejected_signals': 434}
+HP_TELEMETRY {'extension_signals': 49, 'rejected_signals': 491}
+HP_TELEMETRY {'extension_signals': 386, 'rejected_signals': 335}
+HP_TELEMETRY {'extension_signals': 364, 'rejected_signals': 411}
+HP_TELEMETRY {'extension_signals': 237, 'rejected_signals': 487}
+HP_TELEMETRY {'extension_signals': 425, 'rejected_signals': 258}
+HP_TELEMETRY {'extension_signals': 396, 'rejected_signals': 317}
+HP_TELEMETRY {'extension_signals': 282, 'rejected_signals': 431}
+HP_TELEMETRY {'extension_signals': 72, 'rejected_signals': 605}
+HP_TELEMETRY {'extension_signals': 279, 'rejected_signals': 394}
+HP_TELEMETRY {'extension_signals': 241, 'rejected_signals': 409}
+HP_TELEMETRY {'extension_signals': 490, 'rejected_signals': 276}
+HP_TELEMETRY {'extension_signals': 560, 'rejected_signals': 171}
+HP_TELEMETRY {'extension_signals': 414, 'rejected_signals': 373}
+HP_TELEMETRY {'extension_signals': 184, 'rejected_signals': 574}
+HP_TELEMETRY {'extension_signals': 62, 'rejected_signals': 544}
+HP_TELEMETRY {'extension_signals': 354, 'rejected_signals': 379}
+HP_TELEMETRY {'extension_signals': 149, 'rejected_signals': 455}
+HP_TELEMETRY {'extension_signals': 521, 'rejected_signals': 192}
+HP_TELEMETRY {'extension_signals': 476, 'rejected_signals': 352}
+HP_TELEMETRY {'extension_signals': 339, 'rejected_signals': 420}
+HP_TELEMETRY {'extension_signals': 469, 'rejected_signals': 300}
+HP_TELEMETRY {'extension_signals': 195, 'rejected_signals': 530}
+HP_TELEMETRY {'extension_signals': 86, 'rejected_signals': 439}
+HP_TELEMETRY {'extension_signals': 531, 'rejected_signals': 151}
+HP_TELEMETRY {'extension_signals': 430, 'rejected_signals': 332}
+HP_TELEMETRY {'extension_signals': 48, 'rejected_signals': 497}
+HP_TELEMETRY {'extension_signals': 4, 'rejected_signals': 741}
+HP_TELEMETRY {'extension_signals': 367, 'rejected_signals': 383}
+HP_TELEMETRY {'extension_signals': 419, 'rejected_signals': 295}
+HP_TELEMETRY {'extension_signals': 59, 'rejected_signals': 417}
+HP_TELEMETRY {'extension_signals': 57, 'rejected_signals': 352}
+HP_TELEMETRY {'extension_signals': 451, 'rejected_signals': 287}
+HP_TELEMETRY {'extension_signals': 239, 'rejected_signals': 481}
+HP_TELEMETRY {'extension_signals': 304, 'rejected_signals': 405}
+HP_TELEMETRY {'extension_signals': 477, 'rejected_signals': 258}
+HP_TELEMETRY {'extension_signals': 328, 'rejected_signals': 428}
+HP_TELEMETRY {'extension_signals': 422, 'rejected_signals': 290}
+HP_TELEMETRY {'extension_signals': 409, 'rejected_signals': 345}
+HP_TELEMETRY {'extension_signals': 490, 'rejected_signals': 265}
+HP_TELEMETRY {'extension_signals': 312, 'rejected_signals': 470}
+HP_TELEMETRY {'extension_signals': 401, 'rejected_signals': 284}
+HP_TELEMETRY {'extension_signals': 398, 'rejected_signals': 389}
+HP_TELEMETRY {'extension_signals': 391, 'rejected_signals': 364}
+HP_TELEMETRY {'extension_signals': 377, 'rejected_signals': 318}
+HP_TELEMETRY {'extension_signals': 26, 'rejected_signals': 534}
+HP_TELEMETRY {'extension_signals': 241, 'rejected_signals': 541}
+HP_TELEMETRY {'extension_signals': 237, 'rejected_signals': 487}
+HP_TELEMETRY {'extension_signals': 517, 'rejected_signals': 226}
+HP_TELEMETRY {'extension_signals': 396, 'rejected_signals': 317}
+HP_TELEMETRY {'extension_signals': 243, 'rejected_signals': 552}
+HP_TELEMETRY {'extension_signals': 202, 'rejected_signals': 522}
+HP_TELEMETRY {'extension_signals': 409, 'rejected_signals': 257}
+HP_TELEMETRY {'extension_signals': 353, 'rejected_signals': 390}
+HP_TELEMETRY {'extension_signals': 332, 'rejected_signals': 363}
+HP_TELEMETRY {'extension_signals': 395, 'rejected_signals': 357}
+HP_TELEMETRY {'extension_signals': 105, 'rejected_signals': 384}
+HP_TELEMETRY {'extension_signals': 467, 'rejected_signals': 288}
+HP_TELEMETRY {'extension_signals': 62, 'rejected_signals': 544}
+HP_TELEMETRY {'extension_signals': 41, 'rejected_signals': 471}
+HP_TELEMETRY {'extension_signals': 478, 'rejected_signals': 333}
+HP_TELEMETRY {'extension_signals': 521, 'rejected_signals': 192}
+HP_TELEMETRY {'extension_signals': 70, 'rejected_signals': 187}
+HP_TELEMETRY {'extension_signals': 156, 'rejected_signals': 68}
+HP_TELEMETRY {'extension_signals': 195, 'rejected_signals': 39}
+HP_TELEMETRY {'extension_signals': 154, 'rejected_signals': 88}
+HP_TELEMETRY {'extension_signals': 122, 'rejected_signals': 115}
+HP_TELEMETRY {'extension_signals': 81, 'rejected_signals': 199}
+HP_TELEMETRY {'extension_signals': 36, 'rejected_signals': 180}
+HP_TELEMETRY {'extension_signals': 136, 'rejected_signals': 109}
+HP_TELEMETRY {'extension_signals': 150, 'rejected_signals': 463}
+HP_TELEMETRY {'extension_signals': 395, 'rejected_signals': 347}
+HP_TELEMETRY {'extension_signals': 518, 'rejected_signals': 214}
+HP_TELEMETRY {'extension_signals': 398, 'rejected_signals': 310}
+HP_TELEMETRY {'extension_signals': 291, 'rejected_signals': 483}
+HP_TELEMETRY {'extension_signals': 105, 'rejected_signals': 491}
+HP_TELEMETRY {'extension_signals': 302, 'rejected_signals': 421}
+HP_TELEMETRY {'extension_signals': 481, 'rejected_signals': 271}
+HP_TELEMETRY {'extension_signals': 411, 'rejected_signals': 314}
+HP_TELEMETRY {'extension_signals': 236, 'rejected_signals': 451}
+HP_TELEMETRY {'extension_signals': 401, 'rejected_signals': 284}
+HP_TELEMETRY {'extension_signals': 398, 'rejected_signals': 389}
+HP_TELEMETRY {'extension_signals': 389, 'rejected_signals': 389}
+HP_TELEMETRY {'extension_signals': 284, 'rejected_signals': 451}
+HP_TELEMETRY {'extension_signals': 26, 'rejected_signals': 534}
+HP_TELEMETRY {'extension_signals': 241, 'rejected_signals': 541}
+HP_TELEMETRY {'extension_signals': 37, 'rejected_signals': 421}
+HP_TELEMETRY {'extension_signals': 301, 'rejected_signals': 481}
+HP_TELEMETRY {'extension_signals': 363, 'rejected_signals': 337}
+HP_TELEMETRY {'extension_signals': 243, 'rejected_signals': 552}
+HP_TELEMETRY {'extension_signals': 40, 'rejected_signals': 645}
+HP_TELEMETRY {'extension_signals': 398, 'rejected_signals': 332}
+HP_TELEMETRY {'extension_signals': 437, 'rejected_signals': 279}
+HP_TELEMETRY {'extension_signals': 424, 'rejected_signals': 269}
+HP_TELEMETRY {'extension_signals': 304, 'rejected_signals': 457}
+HP_TELEMETRY {'extension_signals': 389, 'rejected_signals': 382}
+HP_TELEMETRY {'extension_signals': 27, 'rejected_signals': 483}
+HP_TELEMETRY {'extension_signals': 41, 'rejected_signals': 471}
+HP_TELEMETRY {'extension_signals': 478, 'rejected_signals': 333}
+HP_TELEMETRY {'extension_signals': 427, 'rejected_signals': 373}
+HP_TELEMETRY {'extension_signals': 122, 'rejected_signals': 545}
+HP_TELEMETRY {'extension_signals': 221, 'rejected_signals': 426}
+HP_TELEMETRY {'extension_signals': 380, 'rejected_signals': 334}
+HP_TELEMETRY {'extension_signals': 413, 'rejected_signals': 318}
+HP_TELEMETRY {'extension_signals': 34, 'rejected_signals': 457}
+HP_TELEMETRY {'extension_signals': 425, 'rejected_signals': 290}
+HP_TELEMETRY {'extension_signals': 324, 'rejected_signals': 451}
+HP_TELEMETRY {'extension_signals': 276, 'rejected_signals': 480}
+HP_TELEMETRY {'extension_signals': 350, 'rejected_signals': 369}
+HP_TELEMETRY {'extension_signals': 434, 'rejected_signals': 296}
+HP_TELEMETRY {'extension_signals': 386, 'rejected_signals': 403}
+HP_TELEMETRY {'extension_signals': 488, 'rejected_signals': 273}
+HP_TELEMETRY {'extension_signals': 77, 'rejected_signals': 501}
+HP_TELEMETRY {'extension_signals': 399, 'rejected_signals': 311}
+HP_TELEMETRY {'extension_signals': 269, 'rejected_signals': 501}
+HP_TELEMETRY {'extension_signals': 518, 'rejected_signals': 214}
+HP_TELEMETRY {'extension_signals': 426, 'rejected_signals': 292}
+HP_TELEMETRY {'extension_signals': 162, 'rejected_signals': 489}
+HP_TELEMETRY {'extension_signals': 288, 'rejected_signals': 406}
+HP_TELEMETRY {'extension_signals': 33, 'rejected_signals': 388}
+HP_TELEMETRY {'extension_signals': 304, 'rejected_signals': 424}
+HP_TELEMETRY {'extension_signals': 236, 'rejected_signals': 451}
+HP_TELEMETRY {'extension_signals': 102, 'rejected_signals': 580}
+HP_TELEMETRY {'extension_signals': 402, 'rejected_signals': 424}
+HP_TELEMETRY {'extension_signals': 233, 'rejected_signals': 434}
+HP_TELEMETRY {'extension_signals': 49, 'rejected_signals': 491}
+HP_TELEMETRY {'extension_signals': 414, 'rejected_signals': 323}
+HP_TELEMETRY {'extension_signals': 402, 'rejected_signals': 401}
+HP_TELEMETRY {'extension_signals': 35, 'rejected_signals': 538}
+HP_TELEMETRY {'extension_signals': 0, 'rejected_signals': 480}
+HP_TELEMETRY {'extension_signals': 239, 'rejected_signals': 464}
+HP_TELEMETRY {'extension_signals': 449, 'rejected_signals': 264}
+HP_TELEMETRY {'extension_signals': 284, 'rejected_signals': 388}
+HP_TELEMETRY {'extension_signals': 241, 'rejected_signals': 409}
+HP_TELEMETRY {'extension_signals': 401, 'rejected_signals': 314}
+HP_TELEMETRY {'extension_signals': 424, 'rejected_signals': 269}
+HP_TELEMETRY {'extension_signals': 414, 'rejected_signals': 373}
+HP_TELEMETRY {'extension_signals': 184, 'rejected_signals': 574}
+HP_TELEMETRY {'extension_signals': 83, 'rejected_signals': 643}
+HP_TELEMETRY {'extension_signals': 401, 'rejected_signals': 306}
+HP_TELEMETRY {'extension_signals': 448, 'rejected_signals': 244}
+HP_TELEMETRY {'extension_signals': 477, 'rejected_signals': 253}
+HP_TELEMETRY {'extension_signals': 151, 'rejected_signals': 121}
+HP_TELEMETRY {'extension_signals': 121, 'rejected_signals': 147}
+HP_TELEMETRY {'extension_signals': 75, 'rejected_signals': 133}
+HP_TELEMETRY {'extension_signals': 27, 'rejected_signals': 162}
+HP_TELEMETRY {'extension_signals': 84, 'rejected_signals': 119}
+HP_TELEMETRY {'extension_signals': 144, 'rejected_signals': 78}
+HP_TELEMETRY {'extension_signals': 386, 'rejected_signals': 403}
+HP_TELEMETRY {'extension_signals': 483, 'rejected_signals': 274}
+HP_TELEMETRY {'extension_signals': 355, 'rejected_signals': 357}
+HP_TELEMETRY {'extension_signals': 236, 'rejected_signals': 547}
+HP_TELEMETRY {'extension_signals': 367, 'rejected_signals': 374}
+HP_TELEMETRY {'extension_signals': 426, 'rejected_signals': 292}
+HP_TELEMETRY {'extension_signals': 162, 'rejected_signals': 489}
+HP_TELEMETRY {'extension_signals': 422, 'rejected_signals': 290}
+HP_TELEMETRY {'extension_signals': 409, 'rejected_signals': 345}
+HP_TELEMETRY {'extension_signals': 490, 'rejected_signals': 265}
+HP_TELEMETRY {'extension_signals': 312, 'rejected_signals': 461}
+HP_TELEMETRY {'extension_signals': 102, 'rejected_signals': 580}
+HP_TELEMETRY {'extension_signals': 402, 'rejected_signals': 424}
+HP_TELEMETRY {'extension_signals': 320, 'rejected_signals': 428}
+HP_TELEMETRY {'extension_signals': 463, 'rejected_signals': 278}
+HP_TELEMETRY {'extension_signals': 402, 'rejected_signals': 401}
+HP_TELEMETRY {'extension_signals': 344, 'rejected_signals': 375}
+HP_TELEMETRY {'extension_signals': 0, 'rejected_signals': 410}
+HP_TELEMETRY {'extension_signals': 86, 'rejected_signals': 379}
+HP_TELEMETRY {'extension_signals': 449, 'rejected_signals': 264}
+HP_TELEMETRY {'extension_signals': 76, 'rejected_signals': 440}
+HP_TELEMETRY {'extension_signals': 317, 'rejected_signals': 506}
+HP_TELEMETRY {'extension_signals': 401, 'rejected_signals': 314}
+HP_TELEMETRY {'extension_signals': 319, 'rejected_signals': 398}
+HP_TELEMETRY {'extension_signals': 498, 'rejected_signals': 243}
+HP_TELEMETRY {'extension_signals': 431, 'rejected_signals': 292}
+HP_TELEMETRY {'extension_signals': 426, 'rejected_signals': 275}
+HP_TELEMETRY {'extension_signals': 536, 'rejected_signals': 231}
+HP_TELEMETRY {'extension_signals': 56, 'rejected_signals': 576}
+HP_TELEMETRY {'extension_signals': 297, 'rejected_signals': 424}
+HP_TELEMETRY {'extension_signals': 507, 'rejected_signals': 235}
+HP_TELEMETRY {'extension_signals': 554, 'rejected_signals': 132}
+HP_TELEMETRY {'extension_signals': 452, 'rejected_signals': 249}
+HP_TELEMETRY {'extension_signals': 36, 'rejected_signals': 611}
+HP_TELEMETRY {'extension_signals': 452, 'rejected_signals': 290}
+HP_TELEMETRY {'extension_signals': 78, 'rejected_signals': 505}
+HP_TELEMETRY {'extension_signals': 14, 'rejected_signals': 511}
+HP_TELEMETRY {'extension_signals': 273, 'rejected_signals': 435}
+HP_TELEMETRY {'extension_signals': 5, 'rejected_signals': 562}
+HP_TELEMETRY {'extension_signals': 505, 'rejected_signals': 246}
+HP_TELEMETRY {'extension_signals': 405, 'rejected_signals': 373}
+HP_TELEMETRY {'extension_signals': 292, 'rejected_signals': 431}
+HP_TELEMETRY {'extension_signals': 481, 'rejected_signals': 251}
+HP_TELEMETRY {'extension_signals': 197, 'rejected_signals': 441}
+HP_TELEMETRY {'extension_signals': 432, 'rejected_signals': 310}
+HP_TELEMETRY {'extension_signals': 407, 'rejected_signals': 379}
+HP_TELEMETRY {'extension_signals': 355, 'rejected_signals': 387}
+HP_TELEMETRY {'extension_signals': 291, 'rejected_signals': 483}
+HP_TELEMETRY {'extension_signals': 468, 'rejected_signals': 330}
+HP_TELEMETRY {'extension_signals': 302, 'rejected_signals': 421}
+HP_TELEMETRY {'extension_signals': 481, 'rejected_signals': 271}
+HP_TELEMETRY {'extension_signals': 406, 'rejected_signals': 335}
+HP_TELEMETRY {'extension_signals': 205, 'rejected_signals': 540}
+HP_TELEMETRY {'extension_signals': 399, 'rejected_signals': 352}
+HP_TELEMETRY {'extension_signals': 425, 'rejected_signals': 325}
+HP_TELEMETRY {'extension_signals': 113, 'rejected_signals': 266}
+HP_TELEMETRY {'extension_signals': 389, 'rejected_signals': 389}
+HP_TELEMETRY {'extension_signals': 463, 'rejected_signals': 278}
+HP_TELEMETRY {'extension_signals': 393, 'rejected_signals': 402}
+HP_TELEMETRY {'extension_signals': 344, 'rejected_signals': 375}
+HP_TELEMETRY {'extension_signals': 298, 'rejected_signals': 487}
+HP_TELEMETRY {'extension_signals': 86, 'rejected_signals': 379}
+HP_TELEMETRY {'extension_signals': 337, 'rejected_signals': 447}
+HP_TELEMETRY {'extension_signals': 40, 'rejected_signals': 645}
+HP_TELEMETRY {'extension_signals': 398, 'rejected_signals': 332}
+HP_TELEMETRY {'extension_signals': 437, 'rejected_signals': 279}
+HP_TELEMETRY {'extension_signals': 319, 'rejected_signals': 398}
+HP_TELEMETRY {'extension_signals': 498, 'rejected_signals': 243}
+HP_TELEMETRY {'extension_signals': 431, 'rejected_signals': 292}
+HP_TELEMETRY {'extension_signals': 426, 'rejected_signals': 275}
+HP_TELEMETRY {'extension_signals': 536, 'rejected_signals': 231}
+HP_TELEMETRY {'extension_signals': 56, 'rejected_signals': 576}
+HP_TELEMETRY {'extension_signals': 105, 'rejected_signals': 496}
+HP_TELEMETRY {'extension_signals': 80, 'rejected_signals': 129}
+HP_TELEMETRY {'extension_signals': 136, 'rejected_signals': 85}
+HP_TELEMETRY {'extension_signals': 9, 'rejected_signals': 202}
+HP_TELEMETRY {'extension_signals': 152, 'rejected_signals': 80}
+HP_TELEMETRY {'extension_signals': 41, 'rejected_signals': 189}
+HP_TELEMETRY {'extension_signals': 94, 'rejected_signals': 135}
+HP_TELEMETRY {'extension_signals': 124, 'rejected_signals': 123}
+HP_TELEMETRY {'extension_signals': 47, 'rejected_signals': 388}
+HP_TELEMETRY {'extension_signals': 443, 'rejected_signals': 288}
+HP_TELEMETRY {'extension_signals': 239, 'rejected_signals': 481}
+HP_TELEMETRY {'extension_signals': 304, 'rejected_signals': 405}
+HP_TELEMETRY {'extension_signals': 465, 'rejected_signals': 270}
+HP_TELEMETRY {'extension_signals': 328, 'rejected_signals': 428}
+HP_TELEMETRY {'extension_signals': 284, 'rejected_signals': 418}
+HP_TELEMETRY {'extension_signals': 329, 'rejected_signals': 405}
+HP_TELEMETRY {'extension_signals': 455, 'rejected_signals': 263}
+HP_TELEMETRY {'extension_signals': 198, 'rejected_signals': 558}
+HP_TELEMETRY {'extension_signals': 64, 'rejected_signals': 510}
+HP_TELEMETRY {'extension_signals': 420, 'rejected_signals': 325}
+HP_TELEMETRY {'extension_signals': 206, 'rejected_signals': 448}
+HP_TELEMETRY {'extension_signals': 391, 'rejected_signals': 364}
+HP_TELEMETRY {'extension_signals': 377, 'rejected_signals': 318}
+HP_TELEMETRY {'extension_signals': 54, 'rejected_signals': 511}
+HP_TELEMETRY {'extension_signals': 439, 'rejected_signals': 313}
+HP_TELEMETRY {'extension_signals': 517, 'rejected_signals': 226}
+HP_TELEMETRY {'extension_signals': 239, 'rejected_signals': 464}
+HP_TELEMETRY {'extension_signals': 337, 'rejected_signals': 447}
+HP_TELEMETRY {'extension_signals': 202, 'rejected_signals': 522}
+HP_TELEMETRY {'extension_signals': 409, 'rejected_signals': 257}
+HP_TELEMETRY {'extension_signals': 353, 'rejected_signals': 390}
+HP_TELEMETRY {'extension_signals': 332, 'rejected_signals': 363}
+HP_TELEMETRY {'extension_signals': 395, 'rejected_signals': 357}
+HP_TELEMETRY {'extension_signals': 105, 'rejected_signals': 384}
+HP_TELEMETRY {'extension_signals': 467, 'rejected_signals': 288}
+HP_TELEMETRY {'extension_signals': 83, 'rejected_signals': 643}
+HP_TELEMETRY {'extension_signals': 401, 'rejected_signals': 306}
+HP_TELEMETRY {'extension_signals': 448, 'rejected_signals': 244}
+HP_TELEMETRY {'extension_signals': 474, 'rejected_signals': 252}
+HP_TELEMETRY {'extension_signals': 105, 'rejected_signals': 496}
+HP_TELEMETRY {'extension_signals': 423, 'rejected_signals': 268}
+HP_TELEMETRY {'extension_signals': 449, 'rejected_signals': 270}
+HP_TELEMETRY {'extension_signals': 507, 'rejected_signals': 249}
+HP_TELEMETRY {'extension_signals': 49, 'rejected_signals': 653}
+HP_TELEMETRY {'extension_signals': 196, 'rejected_signals': 544}
+HP_TELEMETRY {'extension_signals': 342, 'rejected_signals': 390}
+HP_TELEMETRY {'extension_signals': 101, 'rejected_signals': 502}
+HP_TELEMETRY {'extension_signals': 96, 'rejected_signals': 576}
+HP_TELEMETRY {'extension_signals': 336, 'rejected_signals': 412}
+HP_TELEMETRY {'extension_signals': 121, 'rejected_signals': 415}
+HP_TELEMETRY {'extension_signals': 65, 'rejected_signals': 470}
+HP_TELEMETRY {'extension_signals': 480, 'rejected_signals': 252}
+HP_TELEMETRY {'extension_signals': 451, 'rejected_signals': 266}
+HP_TELEMETRY {'extension_signals': 91, 'rejected_signals': 609}
+HP_TELEMETRY {'extension_signals': 222, 'rejected_signals': 570}
+HP_TELEMETRY {'extension_signals': 367, 'rejected_signals': 374}
+HP_TELEMETRY {'extension_signals': 398, 'rejected_signals': 310}
+HP_TELEMETRY {'extension_signals': 84, 'rejected_signals': 594}
+HP_TELEMETRY {'extension_signals': 105, 'rejected_signals': 491}
+HP_TELEMETRY {'extension_signals': 329, 'rejected_signals': 405}
+HP_TELEMETRY {'extension_signals': 455, 'rejected_signals': 263}
+HP_TELEMETRY {'extension_signals': 169, 'rejected_signals': 531}
+HP_TELEMETRY {'extension_signals': 64, 'rejected_signals': 510}
+HP_TELEMETRY {'extension_signals': 22, 'rejected_signals': 501}
+HP_TELEMETRY {'extension_signals': 206, 'rejected_signals': 448}
+HP_TELEMETRY {'extension_signals': 320, 'rejected_signals': 428}
+HP_TELEMETRY {'extension_signals': 284, 'rejected_signals': 451}
+HP_TELEMETRY {'extension_signals': 54, 'rejected_signals': 511}
+HP_TELEMETRY {'extension_signals': 439, 'rejected_signals': 313}
+HP_TELEMETRY {'extension_signals': 425, 'rejected_signals': 258}
+HP_TELEMETRY {'extension_signals': 363, 'rejected_signals': 337}
+HP_TELEMETRY {'extension_signals': 282, 'rejected_signals': 431}
+HP_TELEMETRY {'extension_signals': 72, 'rejected_signals': 605}
+HP_TELEMETRY {'extension_signals': 76, 'rejected_signals': 440}
+HP_TELEMETRY {'extension_signals': 317, 'rejected_signals': 506}
+HP_TELEMETRY {'extension_signals': 490, 'rejected_signals': 276}
+HP_TELEMETRY {'extension_signals': 560, 'rejected_signals': 171}
+HP_TELEMETRY {'extension_signals': 306, 'rejected_signals': 453}
+HP_TELEMETRY {'extension_signals': 389, 'rejected_signals': 382}
+HP_TELEMETRY {'extension_signals': 27, 'rejected_signals': 483}
+HP_TELEMETRY {'extension_signals': 354, 'rejected_signals': 379}
+HP_TELEMETRY {'extension_signals': 149, 'rejected_signals': 455}
+HP_TELEMETRY {'extension_signals': 427, 'rejected_signals': 373}
+(as played)                                      wins  34/172  mean margin   -4301  exact vs ladder 172/172
+ttv1_p6.py                                       wins  51/172  mean margin   -2805

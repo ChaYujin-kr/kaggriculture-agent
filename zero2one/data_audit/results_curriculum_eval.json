@@ -1,0 +1,292 @@
+{
+ "elo_scale": {
+  "games_used": 777,
+  "s_hat": 160.66273707423738,
+  "s_ci95": [
+   129.43750806363565,
+   208.35586725052013
+  ],
+  "note": "Elo convention has s=400; a larger s means rating gaps translate into smaller win-rate edges",
+  "abs_pre_gap_median": 35.55962156290934
+ },
+ "winprob_calibration": [
+  {
+   "gap_bin": "(-200, -100]",
+   "games": 19,
+   "win_rate": 0.2632,
+   "gap_mean": -118.6904,
+   "pred": 0.1543
+  },
+  {
+   "gap_bin": "(-100, -50]",
+   "games": 97,
+   "win_rate": 0.2784,
+   "gap_mean": -69.8683,
+   "pred": 0.2687
+  },
+  {
+   "gap_bin": "(-50, 0]",
+   "games": 266,
+   "win_rate": 0.4173,
+   "gap_mean": -23.5186,
+   "pred": 0.4165
+  },
+  {
+   "gap_bin": "(0, 50]",
+   "games": 253,
+   "win_rate": 0.5968,
+   "gap_mean": 23.9977,
+   "pred": 0.5851
+  },
+  {
+   "gap_bin": "(50, 100]",
+   "games": 127,
+   "win_rate": 0.748,
+   "gap_mean": 69.5877,
+   "pred": 0.7305
+  },
+  {
+   "gap_bin": "(100, 200]",
+   "games": 15,
+   "win_rate": 0.8667,
+   "gap_mean": 120.0882,
+   "pred": 0.8483
+  }
+ ],
+ "elo_scale_latest_rating_gap": {
+  "games_used": 59471,
+  "s_hat": 1176.717781153452
+ },
+ "elo_scale_all_pre_ratings_unfiltered_games": 32878,
+ "tier_medians_latest_rating": {
+  "G1": 2638.899360329211,
+  "G2": 2431.6924194213448,
+  "G3": 2151.179992752606,
+  "G4": 1740.6154499460954
+ },
+ "tier_steps": {
+  "G2->G1": {
+   "median_rating_lo": 2431.6924194213448,
+   "median_rating_hi": 2638.899360329211,
+   "gap": 207.20694090786628,
+   "p_lower_beats_higher_fitted": 0.04881611181128058,
+   "p_lower_beats_higher_elo400": 0.23276227636973676
+  },
+  "G3->G2": {
+   "median_rating_lo": 2151.179992752606,
+   "median_rating_hi": 2431.6924194213448,
+   "gap": 280.51242666873895,
+   "p_lower_beats_higher_fitted": 0.01763207817746277,
+   "p_lower_beats_higher_elo400": 0.16592889128860627
+  },
+  "G4->G3": {
+   "median_rating_lo": 1740.6154499460954,
+   "median_rating_hi": 2151.179992752606,
+   "gap": 410.5645428065104,
+   "p_lower_beats_higher_fitted": 0.0027755524838223287,
+   "p_lower_beats_higher_elo400": 0.08600658608464612
+  },
+  "G3->G1": {
+   "median_rating_lo": 2151.179992752606,
+   "median_rating_hi": 2638.899360329211,
+   "gap": 487.71936757660524,
+   "p_lower_beats_higher_fitted": 0.0009202973380032692,
+   "p_lower_beats_higher_elo400": 0.05691817372691896
+  },
+  "G4->G1": {
+   "median_rating_lo": 1740.6154499460954,
+   "median_rating_hi": 2638.899360329211,
+   "gap": 898.2839103831157,
+   "p_lower_beats_higher_fitted": 2.5637958692770417e-06,
+   "p_lower_beats_higher_elo400": 0.005647168401906211
+  }
+ },
+ "gap_for_30pct_win_fitted": 59.120157505208525,
+ "gap_for_30pct_win_elo400": 147.19071411783779,
+ "tier_vs_tier_winrate": [
+  {
+   "tier": "G1",
+   "otier": "G1",
+   "games": 1082,
+   "win_rate": 0.5
+  },
+  {
+   "tier": "G1",
+   "otier": "G2",
+   "games": 541,
+   "win_rate": 0.6895
+  },
+  {
+   "tier": "G1",
+   "otier": "G3",
+   "games": 109,
+   "win_rate": 0.9083
+  },
+  {
+   "tier": "G1",
+   "otier": "G4",
+   "games": 3005,
+   "win_rate": 0.7398
+  },
+  {
+   "tier": "G2",
+   "otier": "G1",
+   "games": 541,
+   "win_rate": 0.3105
+  },
+  {
+   "tier": "G2",
+   "otier": "G2",
+   "games": 1010,
+   "win_rate": 0.5
+  },
+  {
+   "tier": "G2",
+   "otier": "G3",
+   "games": 393,
+   "win_rate": 0.7226
+  },
+  {
+   "tier": "G2",
+   "otier": "G4",
+   "games": 4073,
+   "win_rate": 0.7326
+  },
+  {
+   "tier": "G3",
+   "otier": "G1",
+   "games": 109,
+   "win_rate": 0.0917
+  },
+  {
+   "tier": "G3",
+   "otier": "G2",
+   "games": 393,
+   "win_rate": 0.2774
+  },
+  {
+   "tier": "G3",
+   "otier": "G3",
+   "games": 2376,
+   "win_rate": 0.5
+  },
+  {
+   "tier": "G3",
+   "otier": "G4",
+   "games": 11443,
+   "win_rate": 0.7557
+  },
+  {
+   "tier": "G4",
+   "otier": "G1",
+   "games": 3005,
+   "win_rate": 0.2602
+  },
+  {
+   "tier": "G4",
+   "otier": "G2",
+   "games": 4073,
+   "win_rate": 0.2674
+  },
+  {
+   "tier": "G4",
+   "otier": "G3",
+   "games": 11443,
+   "win_rate": 0.2443
+  },
+  {
+   "tier": "G4",
+   "otier": "G4",
+   "games": 75346,
+   "win_rate": 0.5
+  }
+ ],
+ "winrate_vs_opponent_latest_gap": [
+  {
+   "gap_bin": "(-2000, -400]",
+   "games": 16554,
+   "win_rate": 0.766
+  },
+  {
+   "gap_bin": "(-400, -300]",
+   "games": 5234,
+   "win_rate": 0.7306
+  },
+  {
+   "gap_bin": "(-300, -200]",
+   "games": 7414,
+   "win_rate": 0.6934
+  },
+  {
+   "gap_bin": "(-200, -100]",
+   "games": 12227,
+   "win_rate": 0.6125
+  },
+  {
+   "gap_bin": "(-100, -50]",
+   "games": 8455,
+   "win_rate": 0.5752
+  },
+  {
+   "gap_bin": "(-50, 50]",
+   "games": 19152,
+   "win_rate": 0.5
+  },
+  {
+   "gap_bin": "(50, 100]",
+   "games": 8455,
+   "win_rate": 0.4248
+  },
+  {
+   "gap_bin": "(100, 200]",
+   "games": 12227,
+   "win_rate": 0.3875
+  },
+  {
+   "gap_bin": "(200, 300]",
+   "games": 7414,
+   "win_rate": 0.3066
+  },
+  {
+   "gap_bin": "(300, 400]",
+   "games": 5234,
+   "win_rate": 0.2694
+  },
+  {
+   "gap_bin": "(400, 2000]",
+   "games": 16554,
+   "win_rate": 0.234
+  }
+ ],
+ "eval_sample_size": {
+  "close_games_all": 9973,
+  "close_games_G1": 266,
+  "sd_bank_close_all": 23892.3892540919,
+  "sd_bank_close_G1": 22778.665074159515,
+  "sd_margin_close_all": 14015.46970459393,
+  "sd_margin_close_G1": 2859.630896277542,
+  "robust_sd_margin_close_G1_IQR": 1068.1986656782801,
+  "sd_margin_close_G1_no_crash_banks": 2859.630896277542,
+  "sd_bank_close_G1_no_crash": 22778.665074159515,
+  "share_G1_close_games_with_a_bank_below_20k": 0.0,
+  "median_abs_margin_close_G1": 687.0,
+  "share_close_G1_decided_by_lt_1k": 0.6052631578947368,
+  "winrate": {
+   "h2h_A_vs_B_detect_55pct_games": 782.5259552102923,
+   "h2h_A_vs_B_detect_60pct_games": 193.84728588314755,
+   "two_arms_vs_pool_+5pp_from_50_games_per_arm": 1564.67205277495,
+   "two_arms_vs_pool_+10pp_from_50_games_per_arm": 387.33851669903584
+  },
+  "margin": {
+   "sd_used": 2859.630896277542,
+   "h2h_mean_margin_$1k_games": 64.18412661423514,
+   "h2h_mean_margin_$2k_games": 16.046031653558785,
+   "two_arms_vs_same_opponents_seeds_rho0_$1k_games_per_arm": 128.36825322847028,
+   "two_arms_vs_same_opponents_seeds_rho0_$2k_games_per_arm": 32.09206330711757,
+   "two_arms_paired_rho0.5_$1k_games_per_arm": 64.18412661423514,
+   "two_arms_paired_rho0.5_$2k_games_per_arm": 16.046031653558785,
+   "with_repo_sd_9000_h2h_$1k": 635.7592584822762,
+   "with_repo_sd_9000_h2h_$2k": 158.93981462056905
+  }
+ }
+}

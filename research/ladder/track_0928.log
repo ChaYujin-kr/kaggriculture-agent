@@ -1,0 +1,54 @@
+204 to do
+0 113917698 shepherd_0925 Ak None
+10 114467846 shepherd_p6 Winter Lamb None
+20 114406231 shepherd_p6 Atakan Aldemir None
+30 114344531 shepherd_p6 Seyit kaan Gunes None
+40 114315864 shepherd_p6 tangaii None
+50 114302612 shepherd_p6 GG-bond None
+60 114289725 shepherd_p6 Colt None
+70 114276142 shepherd_p6 Rotation Theory None
+80 114265824 shepherd_p6 Camarillo Kull None
+90 114251107 shepherd_p6 John Gates None
+100 114237741 shepherd_p6 Joe Muller None
+110 114439831 hybrid_cxd_p8 Alex Oranov None
+120 114371523 hybrid_cxd_p8 Asakusa Agricultural Co., Ltd None
+130 114318953 hybrid_cxd_p8 Carson Zhang None
+140 114305575 hybrid_cxd_p8 Rayk Kretzschmar None
+150 114293766 hybrid_cxd_p8 takumina None
+160 114281862 hybrid_cxd_p8 JianYuan Deng None
+170 114273094 hybrid_cxd_p8 Kamma None
+180 114258422 hybrid_cxd_p8 HarvestZero None
+190 114246970 hybrid_cxd_p8 Yi Yu None
+200 114234905 hybrid_cxd_p8 zshandy None
+utc	sub	name	score
+2026-09-27 05:20	56549345	hybrid_resub	1903.2
+2026-09-27 05:20	56541496	shepherd_0925	2052.0
+2026-09-28 02:40	56612456	shepherd_p6	1791.3
+2026-09-28 02:40	56612448	hybrid_cxd_p8	1784.8
+
+===== hybrid_cxd_p8: 97 games, win 0.61, last game 2026-09-28 02:06:07.914000
+                      n   win  opp_lb
+blk                                  
+2026-09-27 12:00:00  49  0.76  1756.7
+2026-09-27 18:00:00  41  0.44  2096.7
+2026-09-28 00:00:00   7  0.57  2106.6
+                           n   win   margin   opp_lb
+lin                                                 
+hybrid2965 (opening vs n  21  0.76    442.0  2099.10
+other                     16  0.31  -2500.5  2293.75
+herd-safe                 13  0.38   -398.0  2241.40
+a-wonderful-life / cha22   9  0.11   -360.0  2335.20
+farm2945 / god-s-mode /    1  1.00   1928.0  2096.70
+v7 (aurax7)                1  0.00 -13691.0  2106.60
+===== shepherd_p6: 100 games, win 0.68, last game 2026-09-28 02:30:08.191000
+                      n   win   opp_lb
+blk                                   
+2026-09-27 12:00:00  45  0.84  1628.10
+2026-09-27 18:00:00  43  0.58  1976.85
+2026-09-28 00:00:00  12  0.42  1949.65
+                           n   win  margin  opp_lb
+lin                                               
+hybrid2965 (opening vs n  19  0.68   797.0  1982.8
+herd-safe                 15  0.47  -371.0  2170.6
+other                      7  0.43  -303.0  2163.8
+a-wonderful-life / cha22   5  0.40     0.0  2272.3

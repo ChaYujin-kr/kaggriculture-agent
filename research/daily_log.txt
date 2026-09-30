@@ -5,3 +5,109 @@
 2026-09-23 11:58    kaggriculture-master-engine-v3.py vs champion: 0.0/4
 2026-09-23 11:58    kaggriculture-thomas-2944-candidate.py vs champion: 0.0/4
 2026-09-23 11:58  champion holds
+2026-09-24 14:33  === daily refresh; champion = v7_endgame.py
+2026-09-24 14:34  new candidate: hanifnoerrofiq/pioneers-of-kaggle-town-candidate-2 -> pioneers-of-kaggle-town-candidate-2.py (1162 KB)
+2026-09-24 14:34  new candidate: haideptry/the-2965-master-hybrid-engine -> the-2965-master-hybrid-engine.py (1016 KB)
+2026-09-24 14:34  new candidate: haodou092/kaggriculture-harvest-ledger -> kaggriculture-harvest-ledger.py (1012 KB)
+2026-09-24 14:34  new candidate: nihilisticneuralnet/kaggriculture-population-robust-economy -> kaggriculture-population-robust-economy.py (955 KB)
+2026-09-25 14:47  === daily refresh; champion = v7_endgame.py
+2026-09-25 14:48  new candidate: haideptry/the-shepherds-ledger-herd-safe-sovereign -> the-shepherds-ledger-herd-safe-sovereign.py (1014 KB)
+2026-09-25 14:48  new candidate: haideptry/the-2965-master-hybrid-engine -> the-2965-master-hybrid-engine.py (1016 KB)
+2026-09-25 14:48  new candidate: leoprovorov/a-song-of-ice-and-fire-fixed-flexible -> a-song-of-ice-and-fire-fixed-flexible.py (876 KB)
+2026-09-25 14:49  new candidate: leoprovorov/god-s-mode-hacked-stores -> god-s-mode-hacked-stores.py (839 KB)
+2026-09-25 14:49  new candidate: degnonguidi/kaggriculture-utils-v1 -> kaggriculture-utils-v1.py (314 KB)
+2026-09-25 14:49  new candidate: tetsutani/demand-preserving-turn-sale-timing -> demand-preserving-turn-sale-timing.py (998 KB)
+2026-09-25 14:51    the-shepherds-ledger-herd-safe-sovereign.py vs champion: 6.0/6
+2026-09-25 14:53    the-2965-master-hybrid-engine.py vs champion: 0.0/6
+2026-09-25 14:54    a-song-of-ice-and-fire-fixed-flexible.py vs champion: 6.0/6
+2026-09-25 14:56    god-s-mode-hacked-stores.py vs champion: 6.0/6
+2026-09-25 14:56    kaggriculture-utils-v1.py vs champion: 1.0/6
+2026-09-25 14:57    demand-preserving-turn-sale-timing.py vs champion: 0.0/6
+2026-09-25 14:57  applying flags {'_V92_P_TOP': 2, '_CA_MARGIN': -15.0, '_CA_BUFFER': 12, '_OR2_CAP': 20, '_OR2_SLOT_H': 8, '_OR2_SLOT_MARGIN': 30.0, '_CH_SHED': 95, '_SR_MARGIN': 12} to the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 14:59  validation on fresh seeds: 8.0/10
+2026-09-25 14:59  submit: Successfully submitted to Kaggriculture
+2026-09-25 14:59  new champion: auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 16:32  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 16:32  no new public agents today
+2026-09-25 17:38  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 17:38  no new public agents today
+2026-09-25 17:46  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 17:46  no new public agents today
+2026-09-25 18:06  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 18:07  no new public agents today
+2026-09-25 18:57  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 18:57  no new public agents today
+2026-09-25 19:43  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 19:44  no new public agents today
+2026-09-25 20:50  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 20:50  new candidate: syedtahahassan/kaggriculture-hack -> kaggriculture-hack.py (292 KB)
+2026-09-25 20:50    kaggriculture-hack.py vs champion: 0.0/6
+2026-09-25 20:50  champion holds
+2026-09-25 21:22  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-25 21:23  no new public agents today
+2026-09-26 00:14  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-26 00:14  new candidate: guruprasaathas111/kaggriculture-top-2-master-engine-v4 -> kaggriculture-top-2-master-engine-v4.py (992 KB)
+2026-09-26 00:16    kaggriculture-top-2-master-engine-v4.py vs champion: 0.0/6
+2026-09-26 00:16  champion holds
+2026-09-26 00:32  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-26 00:32  no new public agents today
+2026-09-26 02:29  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-26 02:29  no new public agents today
+2026-09-26 11:24  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-26 11:25  no new public agents today
+2026-09-26 12:14  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-26 12:14  no new public agents today
+2026-09-27 13:26  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-27 13:26  no new public agents today
+2026-09-27 20:45  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-27 20:45  new candidate: evgendvorkin/kaggriculture-version-31-26-09-bronze-going-up -> kaggriculture-version-31-26-09-bronze-go.py (292 KB)
+2026-09-27 20:45  new candidate: lynnsakurai/farmer-john-and-the-idle-seller -> farmer-john-and-the-idle-seller.py (1035 KB)
+2026-09-27 20:45    kaggriculture-version-31-26-09-bronze-go.py vs champion: 0.0/6
+2026-09-27 20:46    farmer-john-and-the-idle-seller.py vs champion: 0.0/6
+2026-09-27 20:46  champion holds
+2026-09-28 02:31  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-28 11:10  no new public agents today
+2026-09-28 11:16  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-28 11:16  new candidate: kunaldesale2408/kaggriculture-ttv1 -> kaggriculture-ttv1.py (1168 KB)
+2026-09-28 11:18    kaggriculture-ttv1.py vs champion: 6.0/6
+2026-09-28 11:18  applying flags {'_V92_P_TOP': 6, '_CA_MARGIN': -15.0, '_CA_BUFFER': 12, '_OR2_CAP': 20, '_OR2_SLOT_H': 8, '_OR2_SLOT_MARGIN': 30.0, '_CH_SHED': 95, '_SR_MARGIN': 12} to kaggriculture-ttv1.py
+2026-09-28 11:35  gauntlet: 87.1% vs champion 81.2% (hybrid 92%, wonderful-life 83%, v53 92%, 2945 100%, herd-safe 67%, utils 100%, a1-hack 100%)
+2026-09-28 11:35  DRY RUN: would submit auto_0928_kaggriculture-ttv1.py
+2026-09-28 11:40  === daily refresh; champion = auto_0925_the-shepherds-ledger-herd-safe-sovereign.py
+2026-09-28 11:40  new candidate: leoprovorov/2965-master-engine -> 2965-master-engine.py (1168 KB)
+2026-09-28 11:42    2965-master-engine.py vs champion: 6.0/6
+2026-09-28 11:42  applying flags {'_V92_P_TOP': 6, '_CA_MARGIN': -15.0, '_CA_BUFFER': 12, '_OR2_CAP': 20, '_OR2_SLOT_H': 8, '_OR2_SLOT_MARGIN': 30.0, '_CH_SHED': 95, '_SR_MARGIN': 12} to 2965-master-engine.py
+2026-09-28 12:04  gauntlet: 87.1% vs champion 81.2% (hybrid 92%, wonderful-life 83%, v53 92%, 2945 100%, herd-safe 67%, utils 100%, a1-hack 100%)
+2026-09-28 12:04  DRY RUN: would submit auto_0928_2965-master-engine.py
+2026-09-28 16:28  === daily refresh; champion = shepherd_p6.py
+2026-09-28 16:28  no new public agents today
+2026-09-28 20:03  === daily refresh; champion = shepherd_p6.py
+2026-09-28 20:03  no new public agents today
+2026-09-29 11:18  === daily refresh; champion = shepherd_p6.py
+2026-09-29 11:18  no new public agents today
+2026-09-29 11:25  === daily refresh; champion = shepherd_p6.py
+2026-09-29 11:25  no new public agents today
+2026-09-29 12:58  === daily refresh; champion = shepherd_p6.py
+2026-09-29 12:58  no new public agents today
+2026-09-29 18:40  === daily refresh; champion = shepherd_p6.py
+2026-09-29 18:40  no new public agents today
+2026-09-29 19:50  === daily refresh; champion = shepherd_p6.py
+2026-09-29 19:50  no new public agents today
+2026-09-29 20:00  === daily refresh; champion = shepherd_p6.py
+2026-09-29 20:00  new candidate: flexonafft/kaggriculture-multi-route-farming-agent (run 2026-09-29 10:09:40.360000) -> kaggriculture-multi-route-farming-agent.py (876 KB)
+2026-09-29 20:01  new candidate: haodou092/kaggriculture-harvest-ledger (run 2026-09-29 08:26:50.640000) -> kaggriculture-harvest-ledger_0929_c7b0aa.py (1170 KB)
+2026-09-29 20:01  new candidate: guruprasaathas111/game-theoretic-master-discrete-optimization (run 2026-09-29 04:50:38.953000) -> game-theoretic-master-discrete-optimizat.py (427 KB)
+2026-09-30 02:02  === daily refresh; champion = shepherd_p6.py
+2026-09-30 02:02  new candidate: flexonafft/kaggriculture-multi-route-farming-agent (run 2026-09-29 16:28:43.537000) -> kaggriculture-multi-route-farm_0930_ee99a6.py (1121 KB)
+2026-09-30 02:05    kaggriculture-multi-route-farm_0930_ee99a6.py vs champion: 6.0/6
+2026-09-30 02:05  applying flags {'_V92_P_TOP': 6, '_CA_MARGIN': -15.0, '_CA_BUFFER': 12, '_OR2_CAP': 20, '_OR2_SLOT_H': 8, '_OR2_SLOT_MARGIN': 30.0, '_CH_SHED': 95, '_SR_MARGIN': 12} to kaggriculture-multi-route-farm_0930_ee99a6.py
+2026-09-30 02:34  gauntlet: 87.1% vs champion 95.4% (hybrid 92%, wonderful-life 83%, v53 92%, 2945 100%, herd-safe 67%, utils 100%, a1-hack 100%)
+2026-09-30 02:34  gauntlet rejects: score 87.1% does not beat baseline 95.4% + 0%; champion keeps its place
+2026-09-30 10:07  === daily refresh; champion = shepherd_p6.py
+2026-09-30 10:29  no new public agents today
+2026-09-30 14:11  === daily refresh; champion = shepherd_p6.py
+2026-09-30 14:11  new candidate: haodou092/kaggriculture-harvest-ledger (run 2026-09-30 03:07:34.317000) -> kaggriculture-harvest-ledger_0930_cde14b.py (994 KB)
+2026-09-30 14:12    kaggriculture-harvest-ledger_0930_cde14b.py vs champion: 0.0/6
+2026-09-30 14:12  champion holds
+2026-09-30 15:21  === daily refresh; champion = shepherd_p6.py
+2026-09-30 15:22  no new public agents today

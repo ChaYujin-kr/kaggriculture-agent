@@ -1,0 +1,6 @@
+{'G4': 4706, 'G1': 1268, 'G3': 1166, 'G2': 1006} 78
+  G1_farmer_byepisode N=25 acc=0.9774 t=244s
+  G1_farmer_byepisode N=50 acc=0.9839 t=364s
+  G1_farmer_byepisode N=100 acc=0.9869 t=461s
+  G1_farmer_byepisode N=200 acc=0.9884 t=752s
+  G1_farmer_byepisode N=400 acc=0.9891 t=7633s
