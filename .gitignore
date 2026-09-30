@@ -21,3 +21,11 @@ research/ladder/gauntlet_cache.json
 research/ladder_tapes/
 research/ladder_pool_fresh/
 research/outputs_fresh/
+research/ladder/rp_*/
+research/ladder/tapes/
+research/ladder/band_tapes*/
+research/highlights/
+research/daily_task.log
+zero2one/data_audit/raw/
+zero2one/data_audit/turns*/
+*.parquet
