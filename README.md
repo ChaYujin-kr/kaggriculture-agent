@@ -1,3 +1,7 @@
+<p align="right">
+  <a href="README.ko.md"><img src="https://img.shields.io/badge/KOR-%ED%95%9C%EA%B5%AD%EC%96%B4-2e6a3b?style=for-the-badge" alt="KOR: 한국어로 보기"></a>
+</p>
+
 # Kaggriculture Agent
 
 Work on Kaggle's [Kaggriculture](https://www.kaggle.com/competitions/kaggriculture) simulation
@@ -5,12 +9,20 @@ competition: a two-player, 30-day (720-turn) farming-economy game where the agen
 final bank wins. Final standings come from a single Bradley-Terry fit over every episode played
 between still-active submissions, run for about two weeks after the 2026-09-30 deadline.
 
-## Write-ups
+## Read the write-ups
 
-- **[Kaggriculture Field Notes](https://claude.ai/artifact/BYMHh4TorbGE6sY7PouutP)**: the game, how
-  it is scored, the ladder's lineages, our evaluation tools and the measurements behind the final pair.
-- **[Kaggriculture Retrospective](https://claude.ai/artifact/Jo6pavKahQu6zJc78KgX7G)**: the ten days
-  told from the commit log and all 13 submissions, with the lessons we keep.
+<p>
+  <a href="https://claude.ai/artifact/BYMHh4TorbGE6sY7PouutP"><img src="https://img.shields.io/badge/Read-Field%20Notes-2e6a3b?style=for-the-badge" alt="Read the Field Notes"></a>
+  &nbsp;
+  <a href="https://claude.ai/artifact/Jo6pavKahQu6zJc78KgX7G"><img src="https://img.shields.io/badge/Read-Retrospective-9a6614?style=for-the-badge" alt="Read the Retrospective"></a>
+</p>
+
+| Page | What is in it |
+| --- | --- |
+| **[Kaggriculture Field Notes](https://claude.ai/artifact/BYMHh4TorbGE6sY7PouutP)** | The game, how it is scored, the ladder's lineages, three highlight replays as pixel-art GIFs, our evaluation tools and the measurements behind the final pair |
+| **[Kaggriculture Retrospective](https://claude.ai/artifact/Jo6pavKahQu6zJc78KgX7G)** | The ten days told from the commit log and all 13 submissions, with the lessons we keep |
+
+Both pages have an English/Korean switch and a glossary.
 
 ## What is here
 
