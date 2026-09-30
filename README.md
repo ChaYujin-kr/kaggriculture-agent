@@ -12,17 +12,19 @@ between still-active submissions, run for about two weeks after the 2026-09-30 d
 ## Read the write-ups
 
 <p>
-  <a href="https://claude.ai/artifact/BYMHh4TorbGE6sY7PouutP"><img src="https://img.shields.io/badge/Read-Field%20Notes-2e6a3b?style=for-the-badge" alt="Read the Field Notes"></a>
+  <a href="docs/field-notes.html"><img src="https://img.shields.io/badge/Read-Field%20Notes-2e6a3b?style=for-the-badge" alt="Read the Field Notes"></a>
   &nbsp;
-  <a href="https://claude.ai/artifact/Jo6pavKahQu6zJc78KgX7G"><img src="https://img.shields.io/badge/Read-Retrospective-9a6614?style=for-the-badge" alt="Read the Retrospective"></a>
+  <a href="docs/retrospective.html"><img src="https://img.shields.io/badge/Read-Retrospective-9a6614?style=for-the-badge" alt="Read the Retrospective"></a>
 </p>
 
 | Page | What is in it |
 | --- | --- |
-| **[Kaggriculture Field Notes](https://claude.ai/artifact/BYMHh4TorbGE6sY7PouutP)** | The game, how it is scored, the ladder's lineages, three highlight replays as pixel-art GIFs, our evaluation tools and the measurements behind the final pair |
-| **[Kaggriculture Retrospective](https://claude.ai/artifact/Jo6pavKahQu6zJc78KgX7G)** | The ten days told from the commit log and all 13 submissions, with the lessons we keep |
+| **[Kaggriculture Field Notes](docs/field-notes.html)** | The game, how it is scored, the ladder's lineages, three highlight replays as pixel-art GIFs, our evaluation tools and the measurements behind the final pair |
+| **[Kaggriculture Retrospective](docs/retrospective.html)** | The ten days told from the commit log and all 13 submissions, with the lessons we keep |
 
-Both pages have an English/Korean switch and a glossary.
+Both pages have an English/Korean switch and a glossary. They are plain HTML files in `docs/`, so no
+login is needed: GitHub shows HTML as source, so clone or download the repository and open
+`docs/field-notes.html` in a browser.
 
 ## What is here
 

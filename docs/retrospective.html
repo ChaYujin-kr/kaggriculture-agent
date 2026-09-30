@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>Kaggriculture Retrospective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: one ledger column; the rating chart and the dated log run full width of it, day stamps in a left gutter; sticky language bar. */
+:root {
+  --bg: #f6f7f2; --surface: #eceee6; --fg: #1b221c; --muted: #58645a; --rule: #d3d9cd;
+  --accent: #2e6a3b; --wheat: #9a6614; --bar: #3f7d4b; --bar-dim: #b9c7b5;
+  --display: "Zilla Slab", "IBM Plex Sans KR", "Rockwell", Georgia, serif;
+  --body: "IBM Plex Sans", "IBM Plex Sans KR", "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+  --ko: "IBM Plex Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121612; --surface: #1b211b; --fg: #e3e8df; --muted: #9ba699; --rule: #2d352c;
+  --accent: #86c28b; --wheat: #dcaa4e; --bar: #79b981; --bar-dim: #3b4a3b; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121612; --surface: #1b211b; --fg: #e3e8df; --muted: #9ba699; --rule: #2d352c;
+  --accent: #86c28b; --wheat: #dcaa4e; --bar: #79b981; --bar-dim: #3b4a3b; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--body); }
+.langbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; justify-content: flex-end; padding-inline: 20px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); }
+.langbar button { font: 600 12px/1 var(--mono); letter-spacing: .1em; border: 1px solid var(--fg); background: var(--bg); color: var(--fg); padding: 8px 14px; border-radius: 4px; cursor: pointer; }
+.langbar button:hover { background: var(--surface); }
+button:focus-visible, summary:focus-visible, a:focus-visible, .bar-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 46rem; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; display: grid; gap: 44px; }
+.wrap[data-lang="ko"] { font-family: var(--ko); word-break: keep-all; line-height: 1.75; }
+.wrap[data-lang="ko"] h1, .wrap[data-lang="ko"] h2, .wrap[data-lang="ko"] .day time { font-family: var(--ko); font-weight: 700; letter-spacing: -.01em; }
+header { display: grid; gap: 14px; border-bottom: 2px solid var(--fg); padding-bottom: 24px; }
+.eyebrow, .tag { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tag { color: var(--wheat); }
+h1 { font: 700 clamp(2.1rem, 6vw, 3.3rem)/1.1 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 1.55rem/1.25 var(--display); margin: 0; text-wrap: balance; }
+h3 { font-weight: 600; font-size: 1.05rem; line-height: 1.35; margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.lede { font-size: 1.1rem; }
+section { display: grid; gap: 16px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+code, .mono { font-family: var(--mono); font-size: .88em; }
+ul { margin: 0; padding-left: 1.25rem; display: grid; gap: 8px; }
+
+/* glossary */
+details.gloss { border: 1px solid var(--rule); background: var(--surface); border-radius: 4px; }
+details.gloss summary { cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; list-style: none; }
+details.gloss summary::-webkit-details-marker { display: none; }
+details.gloss summary::after { content: "+"; font: 600 18px/1 var(--mono); color: var(--accent); }
+details.gloss[open] summary::after { content: "−"; }
+details.gloss summary small { font-weight: 400; color: var(--muted); }
+.terms { margin: 0; padding: 4px 16px 16px; display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr; gap: 10px 16px; }
+.terms dt { font-weight: 600; min-width: 0; }
+.terms dt span { display: block; font: 400 12px/1.4 var(--mono); color: var(--muted); }
+.terms dd { margin: 0; min-width: 0; }
+
+/* rating chart: single series, one hue; retired rows dimmed, active rows and the peak full */
+.chart { display: grid; gap: 4px; border-top: 1px solid var(--fg); padding-top: 12px; overflow-x: auto; }
+.bar-row { display: grid; grid-template-columns: 4.2rem minmax(9rem, 13rem) 1fr; gap: 10px; align-items: center; font-size: 13.5px; position: relative; border-radius: 2px; }
+.bar-row:hover { background: var(--surface); }
+.bar-row .d { font: 400 12px/1.2 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar-row .name { min-width: 0; overflow-wrap: anywhere; }
+.track { position: relative; height: 18px; min-width: 8rem; }
+.fill { position: absolute; left: 0; top: 3px; bottom: 3px; background: var(--bar-dim); border-radius: 0 4px 4px 0; }
+.bar-row.active .fill, .bar-row.peak .fill { background: var(--bar); }
+.val { position: absolute; top: 0; font: 500 12px/18px var(--mono); color: var(--fg); padding-left: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.axis { display: grid; grid-template-columns: 4.2rem minmax(9rem, 13rem) 1fr; gap: 10px; font: 400 11px/1 var(--mono); color: var(--muted); }
+.ticks { position: relative; height: 14px; border-top: 1px solid var(--rule); min-width: 8rem; }
+.ticks span { position: absolute; top: 3px; transform: translateX(-50%); }
+.ticks span:first-child { transform: none; }
+.tip { position: absolute; z-index: 2; right: 0; top: -2.4rem; background: var(--fg); color: var(--bg); font: 400 12px/1.4 var(--body); padding: 6px 9px; border-radius: 4px; pointer-events: none; max-width: 22rem; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; color: var(--muted); }
+.legend i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+/* dated log */
+.log { display: grid; gap: 0; border-top: 1px solid var(--fg); }
+.day { display: grid; grid-template-columns: 5.2rem 1fr; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--rule); }
+.day time { font: 600 1.15rem/1.2 var(--display); color: var(--accent); }
+.day time small { display: block; font: 400 11px/1.6 var(--mono); color: var(--muted); letter-spacing: .05em; text-transform: uppercase; }
+.day > div { display: grid; gap: 8px; min-width: 0; }
+.sha { font: 500 11.5px/1 var(--mono); color: var(--muted); background: var(--surface); padding: 2px 5px; border-radius: 3px; white-space: nowrap; }
+.lessons { counter-reset: l; list-style: none; padding: 0; display: grid; gap: 18px; }
+.lessons li { display: grid; gap: 4px; padding-left: 2.4rem; position: relative; }
+.lessons li::before { counter-increment: l; content: counter(l); position: absolute; left: 0; top: -2px; font: 600 1.4rem/1 var(--display); color: var(--wheat); }
+.note { background: var(--surface); border-left: 3px solid var(--wheat); padding: 14px 16px; display: grid; gap: 6px; }
+footer { border-top: 1px solid var(--rule); padding-top: 18px; color: var(--muted); font-size: 14px; display: grid; gap: 8px; }
+@media (max-width: 520px) {
+  .bar-row, .axis { grid-template-columns: 3.4rem 1fr; }
+  .bar-row .track, .axis .ticks { grid-column: 1 / -1; }
+  .axis > span:nth-child(2) { display: none; }
+  .day { grid-template-columns: 1fr; gap: 6px; }
+  .terms { grid-template-columns: 1fr; gap: 2px 0; } .terms dd { margin-bottom: 10px; }
+}
+</style>
+</head>
+<body>
+<div class="langbar"><button type="button" id="lang-btn" aria-label="한국어로 보기">KOR</button></div>
+
+<!-- ============================== ENGLISH ============================== -->
+<div class="wrap" data-lang="en" lang="en">
+<header>
+  <span class="eyebrow">Kaggriculture · 21–30 Sep 2026 · told from 34 commits and 13 submissions</span>
+  <h1>Kaggriculture Retrospective</h1>
+  <p class="lede">Ten days, from a scratch planner rated 437 to a pair of tuned public forks, with one expensive detour in between. The companion page, <a class="xlink" data-base="field-notes.html" href="field-notes.html">Kaggriculture Field Notes</a>, explains the game, the scoring and the tools, and replays three highlight games. This page covers what happened, in order, and what we would keep.</p>
+</header>
+
+<details class="gloss">
+  <summary><span>Glossary <small>· 12 terms used on this page</small></span></summary>
+  <dl class="terms">
+    <dt>Agent</dt><dd>The program that plays the game. One Python file per agent.</dd>
+    <dt>Submission, slot</dt><dd>Uploading an agent. Only the latest 2 (the active slots) keep playing; a new one retires the older.</dd>
+    <dt>Ladder, rating</dt><dd>The live table where agents play each other; the rating rises on wins and falls on losses. New agents start near 600.</dd>
+    <dt>Fork, lineage</dt><dd>A fork is a modified copy of someone's agent. Forks of one ancestor form a lineage.</dd>
+    <dt>Tape</dt><dd>A recorded sequence of actions. Most strong agents replay tapes and adjust a few decisions.</dd>
+    <dt>Seed, seat</dt><dd>The seed fixes the game's random events; the seat is whether an agent plays first or second.</dd>
+    <dt>Gauntlet, wall</dt><dd>A test pool weighted by the ladder's lineage mix; a wall is a lineage a candidate must beat.</dd>
+    <dt>Knob</dt><dd>A tunable constant inside an agent's code, such as <code>_V92_P_TOP</code>.</dd>
+    <dt>Hold-out</dt><dd>Games kept aside while choosing, used only to confirm the choice.</dd>
+    <dt>Commit</dt><dd>One saved change in the project's git history. The grey codes (like <span class="sha">aabe21e</span>) point to them.</dd>
+    <dt>Dry-run</dt><dd>Running the daily pipeline without actually submitting.</dd>
+    <dt>fastsim</dt><dd>Our headless copy of the game engine that reproduces ladder games exactly.</dd>
+  </dl>
+</details>
+
+<section>
+  <span class="tag">Every submission</span>
+  <h2>Ladder rating by submission</h2>
+  <p>A retired submission stops playing, so its rating freezes at the moment it left. The ladder deflated through the last week, which means the late bars sit lower than the same agents would have on 22 Sep.</p>
+  <div class="legend" aria-hidden="true"><span><i style="background:var(--bar)"></i>Active at the deadline, or our peak</span><span><i style="background:var(--bar-dim)"></i>Retired</span></div>
+  <div class="chart" id="chart-en" role="table" aria-label="Ladder rating of each submission, 30 Sep 2026"></div>
+</section>
+
+<section>
+  <span class="tag">The log</span>
+  <h2>Day by day</h2>
+  <div class="log">
+    <div class="day"><time>21 Sep<small>Mon</small></time><div>
+      <h3>Our own planner, then the public baselines</h3>
+      <p>We started with a market-aware tile planner and a greedy task scheduler of our own <span class="sha">aabe21e</span>, plus a fast simulator and an evolution-strategy tuner <span class="sha">112fca9</span>. v1 and v2 rated 437 and 499. The unmodified public 2945 Farm, submitted as a baseline, rated 2065. A fertilizer gap-filling layer on a tape agent gained nothing and was kept only for the record <span class="sha">0fbe804</span>.</p>
+    </div></div>
+    <div class="day"><time>22 Sep<small>Tue</small></time><div>
+      <h3>The best rating we ever held</h3>
+      <p>The public 2965 Master Hybrid rated 2369 unmodified. A search over eight of its exposed constants won 14/16 against the unmodified agent and took it to <strong>2644.5</strong>, about 200th on the board.</p>
+    </div></div>
+    <div class="day"><time>23 Sep<small>Wed</small></time><div>
+      <h3>v7, the pool mistake, and the pivot</h3>
+      <p>The flag search was validated <span class="sha">45e9a59</span> and wrapped into a daily refresh: pull new public agents, duel the champion, submit if better <span class="sha">a37ffff</span>. It picked aurax7's v7, which had beaten everything in our local pool, and we tuned its late-season gates <span class="sha">02afdda</span>. On the ladder, v7 and v7_endgame rated about 1650, a thousand below hybrid. Our pool had no V52/V53 and no herd-safe agents, and V53 beats v7 in 93% of games.</p>
+      <p>The same day we pivoted to a "zero to one" effort: four competing tracks to build an agent of our own (top-down rules, imitation of strong agents, whole-game RL, and a zoo of off-meta farms). The tracks wrote proposals, criticised each other's, revised, and audited 219k episodes from the community dataset. None reached a playable agent before the deadline. Our scratch planner banked 73k solo against 170k for the champion, and the gap was execution: 83 CARE actions against 410, and 60 fertilizer collections against 372.</p>
+    </div></div>
+    <div class="day"><time>24 Sep<small>Thu</small></time><div>
+      <p>A PowerShell-written file with a byte-order mark crashed the daily refresh before it did anything <span class="sha">a33f292</span>.</p>
+    </div></div>
+    <div class="day"><time>25 Sep<small>Fri</small></time><div>
+      <h3>Measure the population you will actually meet</h3>
+      <p>Twelve commits. The overnight refresh had auto-submitted the Shepherd's Ledger, which beat v7 6/6 locally, so the refresh went to dry-run. We moved the lineage tools into the repo <span class="sha">8d5a604</span>, measured the opponent mix in our target band <span class="sha">0c988ba</span>, and built a lineage-weighted gauntlet with walls that a candidate must hold against every agent <span class="sha">316ad9a</span> <span class="sha">7b637e9</span>. Daily submissions now had to pass it <span class="sha">a7ecb82</span>. Splitting v7's bulk endgame sales made it worse, which ruled out that explanation of its losses <span class="sha">e0e6b45</span>. Replaying our own ladder games on their real seeds showed fastsim matches the ladder to the coin <span class="sha">fc50edc</span>. We also resubmitted hybrid to re-measure it on the current ladder; it settled at 1830.</p>
+    </div></div>
+    <div class="day"><time>26 Sep<small>Sat</small></time><div>
+      <p>We re-read the official Evaluation, Timeline and Rules pages. Only the latest two submissions count, so every new submission retires one. A gauntlet run killed for low memory lost all its games, so results are now saved as they finish <span class="sha">35ad462</span>. Kaggle's top-episode dumps showed the top 23 teams open unlike any public lineage.</p>
+    </div></div>
+    <div class="day"><time>27 Sep<small>Sun</small></time><div>
+      <h3>One constant that mattered</h3>
+      <p><code>_V92_P_TOP</code>, the number of predicted opponent sales the agent front-runs, went from 2 to 6: the Shepherd's Ledger rose from 81.2% to 95.4% on the gauntlet <span class="sha">6d8e45a</span>. We submitted shepherd_p6 and hybrid_cxd_p8 as the active pair.</p>
+    </div></div>
+    <div class="day"><time>28 Sep<small>Mon</small></time><div>
+      <h3>Tapes of real opponents</h3>
+      <p>The gauntlet said our agents beat the cha22 lineage. The ladder said cha22 beat the Shepherd's Ledger in 72% of 93 games, because its ladder versions differ from every public file by day 2. So we replayed candidates against open-loop tapes of the actual opponents on our actual boards <span class="sha">168e667</span>. On 195 boards the played files reproduced 195/195. A public re-upload of harvest-ledger (ttv1) won 141 of them against 119 for shepherd_p6, though the gauntlet ranked it lower. We submitted it <span class="sha">28ee0ee</span> and pinned the engine to 1.32.7 <span class="sha">a76bf5f</span>.</p>
+    </div></div>
+    <div class="day"><time>29 Sep<small>Tue</small></time><div>
+      <h3>Near-level boards and a knob screen</h3>
+      <p>We built tapes from the community dataset: 188 games by 117 teams rated 2300–2399. <code>_V92_P_TOP</code> 6 against 8 made no difference; ttv1 beat the Shepherd's Ledger 133 to 118. A 16-knob screen found one real lever: selling ahead of the agent's own plan (<code>_S738_LOOK</code>). Entering tomatoes more readily cost 16 wins. The daily refresh learned to spot re-run kernels by content hash <span class="sha">63b0a88</span> <span class="sha">ee39b96</span>.</p>
+    </div></div>
+    <div class="day"><time>30 Sep<small>Wed · deadline</small></time><div>
+      <h3>Hold-out, then the last submission</h3>
+      <p>The session-only schedule meant to run the check at 00:30 UTC died with a session restart, so the work started at 05:20 instead. On 152 boards that had played no part in the choice, the <code>_S738_LOOK = 10</code> variant won 9 more and lost none; over all 340 boards, +15/−0. We submitted it at 07:50 UTC as the second half of the final pair <span class="sha">563c8bb</span>.</p>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">What we keep</span>
+  <h2>Lessons</h2>
+  <ol class="lessons">
+    <li><h3>Evaluate against the population you will face</h3><p>A pool missing the ladder's main lineages picked v7 and cost about 1,000 rating points. Fingerprint what the ladder actually serves, weight by it, and treat the lineages that beat you as walls.</p></li>
+    <li><h3>Local copies of an opponent are not the opponent</h3><p>Public files of a lineage can be far weaker than its ladder versions. Tapes of the real games were the only evaluation that matched the ladder's verdict.</p></li>
+    <li><h3>Reproduce before you trust</h3><p>Every evaluation began by checking that the file that played reproduces the ladder's banks exactly. When that holds, a disagreement between candidates is real.</p></li>
+    <li><h3>Pair everything and count the noise</h3><p>Margins swing about $9k a game and outcomes cluster by seed. Same seeds, both seats, at least six seeds, and a reason to distrust any gain found in 40 games.</p></li>
+    <li><h3>Choose on one set, confirm on another</h3><p><code>_S738_LOOK</code> was picked on 188 boards and confirmed on 152 new ones. A gain that survives unseen boards is worth a submission slot.</p></li>
+    <li><h3>A constant is dead until a board changes</h3><p>Many exposed knobs never change a single game (<code>_V92_Q_*</code> in ttv1). Screen for "boards changed" before tuning, and stop at saturation: <code>_V92_P_TOP</code> helped from 2 to 6 and did nothing after.</p></li>
+    <li><h3>Automation near a slot rule needs a brake</h3><p>Only two submissions stay active, so an unattended auto-submit retires a keeper. The daily refresh went to dry-run and a gauntlet gate. Anything scheduled must also survive a restart; ours did not.</p></li>
+  </ol>
+  <div class="note"><strong>What we would do differently</strong><p>Build the tape evaluation on day one instead of day eight. Keep the from-scratch effort to one track with a hard gate, since the gap was execution quality and four parallel designs did not close it in a week. Keep one slot for a different lineage only if tapes show it covers a real weakness.</p></div>
+</section>
+
+<footer>
+  <p>Written 30 Sep 2026, before final standings (about 15 Oct). Ratings are live values on 30 Sep, not results.</p>
+</footer>
+</div>
+
+<!-- ============================== KOREAN ============================== -->
+<div class="wrap" data-lang="ko" lang="ko" hidden>
+<header>
+  <span class="eyebrow">Kaggriculture · 2026년 9월 21~30일 · 커밋 34개와 제출 13개로 돌아본 열흘</span>
+  <h1>Kaggriculture 회고록</h1>
+  <p class="lede">9월 21일부터 30일까지 열흘 동안 있었던 일을 날짜순으로 적었어요. 직접 만든 437점짜리 에이전트에서 시작해서, 공개 에이전트를 고쳐 쓰는 방법으로 바뀌기까지의 이야기예요. 중간에 크게 돌아간 길도 있었어요. 게임 규칙과 도구 설명, 하이라이트 경기 세 판은 <a class="xlink" data-base="field-notes.html" href="field-notes.html#ko">현장 노트</a>에 있어요.</p>
+</header>
+
+<details class="gloss">
+  <summary><span>용어집 <small>· 눌러서 열기 · 이 페이지에 나오는 말 12개</small></span></summary>
+  <dl class="terms">
+    <dt>에이전트<span>agent</span></dt><dd>사람 대신 게임을 두는 프로그램이에요. 파이썬 파일 하나가 에이전트 하나예요.</dd>
+    <dt>제출 · 슬롯<span>submission · slot</span></dt><dd>에이전트를 대회에 올리는 게 제출이에요. 경기에 나가는 자리(슬롯)는 최근 2개뿐이라, 새로 내면 오래된 쪽이 빠져요.</dd>
+    <dt>래더 · 레이팅<span>ladder · rating</span></dt><dd>래더는 에이전트끼리 자동으로 계속 경기하는 순위표, 레이팅은 거기서 매겨지는 실력 점수예요. 이기면 오르고 지면 내려가요. 새 에이전트는 600점쯤에서 시작해요.</dd>
+    <dt>포크 · 계열<span>fork · lineage</span></dt><dd>남의 에이전트를 복사해서 고친 게 포크예요. 한 조상에서 나온 포크들의 가족을 계열이라고 불러요.</dd>
+    <dt>테이프<span>tape</span></dt><dd>녹화해 둔 행동 순서예요. 강한 에이전트들은 대부분 테이프를 따라 두면서 몇 가지만 상황에 맞게 바꿔요.</dd>
+    <dt>시드 · 자리<span>seed · seat</span></dt><dd>시드는 게임 속 운(가게가 열리는 순서 등)을 정하는 번호예요. 자리는 첫 번째 플레이어인지 두 번째인지예요.</dd>
+    <dt>게이틀릿 · 벽<span>gauntlet · wall</span></dt><dd>여러 계열의 상대를 래더에서 만나는 비율대로 모은 시험장이 게이틀릿이에요. 벽은 꼭 이겨야 통과하는 상대예요.</dd>
+    <dt>노브<span>knob</span></dt><dd>에이전트 코드 안에서 조절할 수 있는 숫자예요. 라디오 볼륨 손잡이처럼 돌리면 행동이 달라져요. 예: <code>_V92_P_TOP</code></dd>
+    <dt>홀드아웃<span>hold-out</span></dt><dd>고를 때는 쓰지 않고 남겨 둔 시험 경기예요. 처음 보는 문제에서도 잘해야 진짜니까요.</dd>
+    <dt>커밋<span>commit</span></dt><dd>프로젝트 기록(git)에 저장한 변경 한 번이에요. 회색 글자(예: <span class="sha">aabe21e</span>)가 그 커밋의 번호예요.</dd>
+    <dt>드라이런<span>dry-run</span></dt><dd>실제로 제출하지는 않고 "제출한다면 이걸 냈을 거야"까지만 해 보는 연습 실행이에요.</dd>
+    <dt>fastsim</dt><dd>대회와 똑같은 게임을 내 컴퓨터에서 빠르게 돌리는 우리 도구예요.</dd>
+  </dl>
+</details>
+
+<section>
+  <span class="tag">모든 제출</span>
+  <h2>제출한 에이전트별 레이팅</h2>
+  <p>슬롯에서 빠진 에이전트는 경기를 멈추기 때문에, 레이팅이 빠진 순간에 멈춰 있어요. 그리고 마지막 주에 래더 전체의 점수가 내려갔어요. 그래서 뒤쪽 막대들은 같은 에이전트가 9월 22일에 받았을 점수보다 낮게 보여요.</p>
+  <div class="legend" aria-hidden="true"><span><i style="background:var(--bar)"></i>마감 때 경기 중이거나, 우리 최고 기록</span><span><i style="background:var(--bar-dim)"></i>슬롯에서 빠짐</span></div>
+  <div class="chart" id="chart-ko" role="table" aria-label="제출한 에이전트별 레이팅, 2026년 9월 30일 기준"></div>
+</section>
+
+<section>
+  <span class="tag">일기</span>
+  <h2>날짜별 이야기</h2>
+  <div class="log">
+    <div class="day"><time>9월 21일<small>월요일</small></time><div>
+      <h3>직접 만든 에이전트, 그리고 공개 에이전트</h3>
+      <p>처음엔 시장 상황을 보고 밭을 계획하는 에이전트를 직접 만들었어요 <span class="sha">aabe21e</span>. 빠른 연습 경기장과, 좋은 설정을 자동으로 찾는 도구도 만들었어요 <span class="sha">112fca9</span>. 그런데 레이팅은 437점, 고친 버전도 499점이었어요. 비교하려고 남이 공개한 "2945 Farm"을 그대로 냈더니 2065점이 나왔어요. 공개 에이전트에 비료 주는 일꾼을 더해 봤지만 나아지지 않아서, 기록으로만 남겼어요 <span class="sha">0fbe804</span>.</p>
+    </div></div>
+    <div class="day"><time>9월 22일<small>화요일</small></time><div>
+      <h3>우리 최고 기록</h3>
+      <p>공개된 "2965 Master Hybrid"는 그대로 내도 2369점이었어요. 여기 들어 있는 노브 8개의 좋은 값을 찾아 바꾸니, 원래 버전과 16판 중 14판을 이겼어요. 래더에서는 <strong>2644.5점</strong>, 전체 200등쯤까지 올라갔어요. 대회 기간 중 우리 최고 기록이에요.</p>
+    </div></div>
+    <div class="day"><time>9월 23일<small>수요일</small></time><div>
+      <h3>v7, 연습 상대 실수, 그리고 방향 바꾸기</h3>
+      <p>매일 새 공개 에이전트를 받아서 우리 챔피언과 붙여 보고, 더 강하면 제출하는 자동 도구를 만들었어요 <span class="sha">a37ffff</span>. 이 도구가 고른 v7은 우리 연습 상대를 모두 이겼어요. 그런데 래더에서는 1650점쯤으로, hybrid보다 1,000점이나 낮았어요. 우리 연습 상대 중에 V53 계열이 없었거든요. V53은 v7을 93%나 이겨요.</p>
+      <p>같은 날 "0에서 1로"라는 큰 계획을 시작했어요. 네 팀으로 나눠서 우리만의 에이전트를 새로 만들어 보는 계획이었어요. 각 팀이 계획서를 쓰고, 서로 비판하고, 고치고, 21만 9천 개 경기 데이터를 조사했어요. 하지만 마감까지 실제로 경기할 수 있는 에이전트는 만들지 못했어요. 우리 에이전트는 혼자 게임할 때 7만 3천 달러, 챔피언은 17만 달러를 벌었어요. 차이는 일을 얼마나 꼼꼼히 해내느냐였어요. 동물 돌보기(CARE)를 우리는 83번, 챔피언은 410번 했거든요.</p>
+    </div></div>
+    <div class="day"><time>9월 24일<small>목요일</small></time><div>
+      <p>설정 파일 맨 앞에 눈에 안 보이는 글자(BOM)가 들어가서, 자동 도구가 시작하자마자 멈췄어요. 고쳤어요 <span class="sha">a33f292</span>.</p>
+    </div></div>
+    <div class="day"><time>9월 25일<small>금요일</small></time><div>
+      <h3>진짜 만날 상대로 시험하기</h3>
+      <p>커밋이 12개나 된 바쁜 날이에요. 밤사이 자동 도구가 "양치기 장부(The Shepherd's Ledger)"를 스스로 제출해 버렸어요. 연습에서 v7을 6판 다 이겼거든요. 그래서 자동 도구를 드라이런으로 바꿨어요. 우리 점수대에서 어느 계열을 얼마나 만나는지 재고 <span class="sha">0c988ba</span>, 그 비율대로 게이틀릿을 만들었어요 <span class="sha">316ad9a</span>. 이제 새 에이전트는 게이틀릿의 벽을 모두 넘어야 제출돼요 <span class="sha">a7ecb82</span>. v7의 마지막 대량 판매를 나눠 팔게 해 봤더니 오히려 나빠져서, v7이 지는 이유는 그게 아니라는 걸 알았어요 <span class="sha">e0e6b45</span>. 우리 래더 경기를 원래 시드로 다시 돌려 보니, fastsim 결과가 동전 한 닢까지 같았어요 <span class="sha">fc50edc</span>.</p>
+    </div></div>
+    <div class="day"><time>9월 26일<small>토요일</small></time><div>
+      <p>공식 규칙을 다시 읽었어요. 최근 2개만 경기에 나가니까, 새로 내면 하나가 빠진다는 걸 확인했어요. 메모리가 모자라 시험이 중간에 꺼지면 결과가 다 날아가서, 한 판 끝날 때마다 저장하게 고쳤어요 <span class="sha">35ad462</span>. 1~23등 팀은 공개된 어떤 계열과도 시작이 달랐어요.</p>
+    </div></div>
+    <div class="day"><time>9월 27일<small>일요일</small></time><div>
+      <h3>숫자 하나의 힘</h3>
+      <p>상대가 팔 물건을 예측해서 먼저 파는 개수, 노브 <code>_V92_P_TOP</code>을 2에서 6으로 바꿨어요. 그랬더니 양치기 장부의 게이틀릿 점수가 81.2%에서 95.4%로 올랐어요 <span class="sha">6d8e45a</span>. 이 에이전트와 hybrid 개량판을 제출했어요.</p>
+    </div></div>
+    <div class="day"><time>9월 28일<small>월요일</small></time><div>
+      <h3>실제 상대의 테이프</h3>
+      <p>게이틀릿에서는 우리가 cha22 계열을 이겼는데, 래더에서는 cha22가 93판 중 72%를 이겼어요. 래더의 cha22는 공개 복사본과 이틀째부터 달랐거든요. 그래서 우리 실제 경기에서 상대가 한 행동을 테이프로 만들어 시험하는 방법을 만들었어요 <span class="sha">168e667</span>. 실제로 냈던 에이전트로 돌리니 195판 모두 진짜 결과와 똑같았어요. 이 시험에서 ttv1이라는 공개 에이전트가 141승으로 가장 강했어요(양치기 장부는 119승). 그래서 ttv1을 제출했어요 <span class="sha">28ee0ee</span>. 게임 엔진 버전도 1.32.7로 고정했어요 <span class="sha">a76bf5f</span>.</p>
+    </div></div>
+    <div class="day"><time>9월 29일<small>화요일</small></time><div>
+      <h3>비슷한 실력의 상대, 그리고 노브 16개 시험</h3>
+      <p>다른 팀들 경기로도 테이프를 만들었어요. 2300점대 117팀의 188판이에요. <code>_V92_P_TOP</code>을 6에서 8로 바꾸는 건 효과가 없었고, ttv1이 양치기 장부를 133 대 118로 이겼어요. 노브 16가지를 하나씩 바꿔 본 결과, "내 판매 계획을 더 일찍 당겨 팔기"(<code>_S738_LOOK</code>)만 확실히 도움이 됐어요. 토마토를 더 쉽게 시작하게 하면 16판을 더 졌어요.</p>
+    </div></div>
+    <div class="day"><time>9월 30일<small>수요일 · 마감일</small></time><div>
+      <h3>홀드아웃으로 확인하고, 마지막 제출</h3>
+      <p>새벽 0시 30분(세계 표준시)에 확인 작업을 하도록 예약해 뒀는데, 프로그램이 다시 시작되면서 예약이 사라졌어요. 그래서 5시 20분에 시작했어요. 고를 때 쓰지 않은 홀드아웃 152판에서도 9판을 더 이기고, 한 판도 더 지지 않았어요. 전체 340판에서는 15판 더 이기고 0판 더 졌어요. 이 버전을 7시 50분에 마지막으로 제출했어요 <span class="sha">563c8bb</span>.</p>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">배운 것</span>
+  <h2>다음에도 기억할 것</h2>
+  <ol class="lessons">
+    <li><h3>진짜 만날 상대로 연습하기</h3><p>연습 상대가 실제 대회와 다르면, 연습에서 1등이어도 실전에서 질 수 있어요. v7이 그랬어요. 레이팅 1,000점을 잃었죠.</p></li>
+    <li><h3>복사본은 진짜 상대가 아니에요</h3><p>공개된 상대 에이전트는 래더의 진짜 상대보다 훨씬 약할 수 있어요. 실제 경기를 녹화한 테이프만 래더와 같은 결과를 냈어요.</p></li>
+    <li><h3>먼저 똑같이 나오는지 확인하기</h3><p>실제로 낸 에이전트로 다시 돌렸을 때 래더 결과가 그대로 나오는지부터 확인했어요. 그게 맞아야 비교 결과를 믿을 수 있어요.</p></li>
+    <li><h3>운을 조심하기</h3><p>한 판 결과는 운 때문에 9천 달러씩 오르내려요. 그래서 같은 시드, 양쪽 자리, 적어도 시드 6개로 비교해요. 40판으로 찾은 개선은 일단 의심해요.</p></li>
+    <li><h3>고르는 시험과 확인하는 시험을 나누기</h3><p><code>_S738_LOOK</code>은 188판으로 고르고, 처음 보는 152판으로 확인했어요. 새 문제에서도 맞아야 슬롯을 쓸 가치가 있어요.</p></li>
+    <li><h3>돌려도 아무 일 없는 노브도 많아요</h3><p>어떤 노브는 바꿔도 한 판도 결과가 안 바뀌어요(ttv1의 <code>_V92_Q_*</code>). 그리고 좋아지다가 멈추는 지점이 있어요. <code>_V92_P_TOP</code>은 2에서 6까지는 도움이 됐지만, 그 뒤로는 그대로였어요.</p></li>
+    <li><h3>자동 도구에는 브레이크를</h3><p>슬롯이 2개뿐이라, 자동 제출이 아끼던 에이전트를 빼 버릴 수 있어요. 그래서 드라이런으로 바꾸고 게이틀릿을 통과해야만 내게 했어요. 예약한 일도 프로그램이 다시 시작되면 사라질 수 있다는 걸 배웠어요.</p></li>
+  </ol>
+  <div class="note"><strong>다시 한다면</strong><p>실제 상대 테이프로 시험하는 방법을 8일째가 아니라 첫날부터 만들 거예요. 우리만의 에이전트 만들기는 네 팀으로 나누지 않고, 한 팀에 집중하고 분명한 합격 기준을 둘 거예요. 부족했던 건 아이디어가 아니라 일을 꼼꼼히 해내는 힘이었거든요. 두 슬롯 중 하나를 다른 계열로 채우는 건, 테이프 시험에서 정말로 약점을 막아 준다고 나올 때만 할 거예요.</p></div>
+</section>
+
+<footer>
+  <p>2026년 9월 30일, 최종 결과(10월 15일쯤)가 나오기 전에 썼어요. 레이팅은 9월 30일의 값이지 최종 결과가 아니에요.</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var MAX = 3200;
+  var rows = [
+    ["21 Sep", "9/21", "Our planner v1", "직접 만든 에이전트 v1", 437.5, "", "56421859 · market-aware planner", "56421859 · 시장을 보는 계획형"],
+    ["21 Sep", "9/21", "Our planner v2", "직접 만든 에이전트 v2", 499.4, "", "56423481 · fertilize strawberries, labor cap", "56423481 · 딸기 비료, 일꾼 수 제한"],
+    ["21 Sep", "9/21", "2945 Farm, unmodified", "2945 Farm (그대로)", 2064.8, "", "56426094 · public baseline", "56426094 · 비교용 공개 에이전트"],
+    ["22 Sep", "9/22", "2965 Master Hybrid, unmodified", "2965 Master Hybrid (그대로)", 2369.4, "", "56472063 · public baseline", "56472063 · 비교용 공개 에이전트"],
+    ["22 Sep", "9/22", "hybrid2965 + 8 knobs", "hybrid2965 + 노브 8개", 2644.5, "peak", "56473646 · our best rating; retired 23 Sep", "56473646 · 우리 최고 기록, 9/23 슬롯에서 빠짐"],
+    ["23 Sep", "9/23", "v7, unmodified", "v7 (그대로)", 1664.2, "", "56481388 · local pool champion", "56481388 · 연습 상대들 사이의 챔피언"],
+    ["23 Sep", "9/23", "v7 + endgame gates", "v7 + 막판 설정", 1630.6, "", "56482583 · lost to V53 near-clones", "56482583 · V53 계열에게 짐"],
+    ["25 Sep", "9/25", "Shepherd's Ledger (auto)", "양치기 장부 (자동 제출)", 1961.9, "", "56541496 · submitted by the daily refresh", "56541496 · 자동 도구가 제출"],
+    ["25 Sep", "9/25", "hybrid2965 resubmitted", "hybrid2965 다시 제출", 1830.2, "", "56549345 · re-measured on a changed ladder", "56549345 · 바뀐 래더에서 다시 측정"],
+    ["27 Sep", "9/27", "hybrid + counter-D, P_TOP 8", "hybrid 개량판, P_TOP 8", 1801.6, "", "56612448", "56612448"],
+    ["27 Sep", "9/27", "Shepherd's Ledger, P_TOP 6", "양치기 장부, P_TOP 6", 1652.9, "", "56612456 · retired 30 Sep", "56612456 · 9/30 슬롯에서 빠짐"],
+    ["28 Sep", "9/28", "ttv1 + our knobs", "ttv1 + 우리 노브", 1952.7, "active", "56633420 · final pair", "56633420 · 마지막 두 선수"],
+    ["30 Sep", "9/30", "ttv1 + LOOK 10", "ttv1 + LOOK 10", 1513.3, "active", "56701314 · final pair; still climbing from 600", "56701314 · 마지막 두 선수, 600점에서 올라가는 중"]
+  ];
+  function build(id, ko) {
+    var chart = document.getElementById(id);
+    rows.forEach(function (r) {
+      var row = document.createElement("div");
+      row.className = "bar-row" + (r[5] ? " " + r[5] : "");
+      row.setAttribute("role", "row");
+      row.tabIndex = 0;
+      var pct = (r[4] / MAX * 100).toFixed(2);
+      row.innerHTML = '<span class="d" role="cell">' + (ko ? r[1] : r[0]) + '</span><span class="name" role="cell">' + (ko ? r[3] : r[2]) +
+        '</span><span class="track" role="cell"><span class="fill" style="width:' + pct + '%"></span>' +
+        '<span class="val" style="left:' + pct + '%">' + r[4].toFixed(1) + '</span></span>';
+      var tip = null;
+      function show() { if (tip) return; tip = document.createElement("span"); tip.className = "tip"; tip.textContent = (ko ? r[7] : r[6]) + " · " + r[4].toFixed(1); row.appendChild(tip); }
+      function hide() { if (tip) { tip.remove(); tip = null; } }
+      row.addEventListener("mouseenter", show); row.addEventListener("mouseleave", hide);
+      row.addEventListener("focus", show); row.addEventListener("blur", hide);
+      chart.appendChild(row);
+    });
+    var axis = document.createElement("div");
+    axis.className = "axis";
+    axis.innerHTML = "<span></span><span></span><span class='ticks'>" +
+      [0, 800, 1600, 2400, 3200].map(function (v) { return "<span style='left:" + (v / MAX * 100) + "%'>" + v + "</span>"; }).join("") + "</span>";
+    chart.appendChild(axis);
+  }
+  build("chart-en", false);
+  build("chart-ko", true);
+
+  var KEY = "kag-lang";
+  var btn = document.getElementById("lang-btn");
+  function apply(l) {
+    document.querySelectorAll("[data-lang]").forEach(function (el) { el.hidden = el.getAttribute("data-lang") !== l; });
+    document.documentElement.lang = l;
+    btn.textContent = l === "ko" ? "ENG" : "KOR";
+    btn.setAttribute("aria-label", l === "ko" ? "Read in English" : "한국어로 보기");
+    document.title = l === "ko" ? "Kaggriculture 회고록" : "Kaggriculture Retrospective";
+    document.querySelectorAll("a.xlink").forEach(function (a) { a.href = a.getAttribute("data-base") + (l === "ko" ? "#ko" : ""); });
+    try { localStorage.setItem(KEY, l); } catch (e) {}
+  }
+  var start = "en";
+  try { start = localStorage.getItem(KEY) || "en"; } catch (e) {}
+  if (location.hash === "#ko") start = "ko";
+  if (location.hash === "#en") start = "en";
+  apply(start);
+  btn.addEventListener("click", function () { apply(document.documentElement.lang === "ko" ? "en" : "ko"); window.scrollTo(0, 0); });
+})();
+</script>
+</body>
+</html>

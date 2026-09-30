@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>Kaggriculture Field Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single ledger column (~68ch) with full-width tables; a sticky language bar; highlights pair a replay GIF with its caption. */
+:root {
+  --bg: #f6f7f2; --surface: #eceee6; --fg: #1b221c; --muted: #58645a; --rule: #d3d9cd;
+  --accent: #2e6a3b; --wheat: #9a6614; --accent-soft: #dbe8d9;
+  --display: "Zilla Slab", "IBM Plex Sans KR", "Rockwell", Georgia, serif;
+  --body: "IBM Plex Sans", "IBM Plex Sans KR", "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+  --ko: "IBM Plex Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121612; --surface: #1b211b; --fg: #e3e8df; --muted: #9ba699; --rule: #2d352c;
+  --accent: #86c28b; --wheat: #dcaa4e; --accent-soft: #223425; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121612; --surface: #1b211b; --fg: #e3e8df; --muted: #9ba699; --rule: #2d352c;
+  --accent: #86c28b; --wheat: #dcaa4e; --accent-soft: #223425; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--body); }
+.langbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; justify-content: flex-end; padding-inline: 20px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); }
+.langbar button { font: 600 12px/1 var(--mono); letter-spacing: .1em; border: 1px solid var(--fg); background: var(--bg); color: var(--fg); padding: 8px 14px; border-radius: 4px; cursor: pointer; }
+.langbar button:hover { background: var(--surface); }
+button:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 46rem; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; display: grid; gap: 44px; }
+.wrap[data-lang="ko"] { font-family: var(--ko); word-break: keep-all; line-height: 1.75; }
+.wrap[data-lang="ko"] h1, .wrap[data-lang="ko"] h2 { font-family: var(--ko); font-weight: 700; letter-spacing: -.01em; }
+header { display: grid; gap: 14px; border-bottom: 2px solid var(--fg); padding-bottom: 24px; }
+.eyebrow { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 700 clamp(2.1rem, 6vw, 3.3rem)/1.1 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 1.55rem/1.25 var(--display); margin: 0; text-wrap: balance; }
+h3 { font-weight: 600; font-size: 1.05rem; line-height: 1.35; margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.lede { font-size: 1.1rem; }
+section { display: grid; gap: 16px; }
+.tag { font: 500 12px/1 var(--mono); color: var(--wheat); letter-spacing: .06em; text-transform: uppercase; }
+a { color: var(--accent); text-underline-offset: 3px; }
+code, .mono { font-family: var(--mono); font-size: .88em; }
+ul, ol { margin: 0; padding-left: 1.25rem; display: grid; gap: 8px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 0; }
+.facts div { background: var(--bg); padding: 14px 16px; display: grid; gap: 2px; min-width: 0; }
+.facts dt { font: 500 11px/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; font: 600 1.15rem/1.3 var(--display); font-variant-numeric: tabular-nums; }
+.facts dd small { display: block; font: 400 12px/1.4 var(--body); color: var(--muted); }
+.tbl { overflow-x: auto; border-top: 1px solid var(--fg); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; padding: 9px 10px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font: 500 11px/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; font-family: var(--mono); font-size: 13.5px; }
+.good { color: var(--accent); font-weight: 600; }
+.bad { color: var(--wheat); font-weight: 600; }
+.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 18px; }
+.steps li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 12px; }
+.steps li::before { counter-increment: s; content: counter(s); font: 600 1.4rem/1 var(--display); color: var(--accent); }
+.steps li > div { display: grid; gap: 4px; min-width: 0; }
+.note { background: var(--surface); border-left: 3px solid var(--wheat); padding: 14px 16px; display: grid; gap: 6px; }
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 12px; }
+.pair div { border: 1px solid var(--rule); padding: 14px 16px; display: grid; gap: 4px; min-width: 0; }
+.pair .id { font: 500 12px/1 var(--mono); color: var(--muted); }
+
+/* glossary */
+details.gloss { border: 1px solid var(--rule); background: var(--surface); border-radius: 4px; }
+details.gloss summary { cursor: pointer; padding: 14px 16px; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; list-style: none; }
+details.gloss summary::-webkit-details-marker { display: none; }
+details.gloss summary::after { content: "+"; font: 600 18px/1 var(--mono); color: var(--accent); }
+details.gloss[open] summary::after { content: "−"; }
+details.gloss summary small { font-weight: 400; color: var(--muted); }
+.terms { margin: 0; padding: 4px 16px 16px; display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr; gap: 10px 16px; }
+.terms dt { font-weight: 600; min-width: 0; }
+.terms dt span { display: block; font: 400 12px/1.4 var(--mono); color: var(--muted); }
+.terms dd { margin: 0; min-width: 0; }
+@media (max-width: 520px) { .terms { grid-template-columns: 1fr; gap: 2px 0; } .terms dd { margin-bottom: 10px; } }
+
+/* highlights */
+.hls { display: grid; gap: 36px; }
+.hl { display: grid; gap: 14px; margin: 0; }
+.hl img { width: 100%; max-width: 688px; height: auto; border: 1px solid var(--rule); border-radius: 4px; background: #f6f7f2; display: block; image-rendering: pixelated; }
+.hl figcaption { display: grid; gap: 8px; min-width: 0; }
+.badge { justify-self: start; font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--bg); background: var(--accent); padding: 5px 8px; border-radius: 3px; }
+.badge.w { background: var(--wheat); }
+.hl .meta { font: 400 12.5px/1.5 var(--mono); color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend img { width: 24px; height: 24px; image-rendering: pixelated; border-radius: 3px; }
+footer { border-top: 1px solid var(--rule); padding-top: 18px; color: var(--muted); font-size: 14px; display: grid; gap: 8px; }
+</style>
+</head>
+<body>
+<div class="langbar"><button type="button" id="lang-btn" aria-label="한국어로 보기">KOR</button></div>
+
+<!-- ============================== ENGLISH ============================== -->
+<div class="wrap" data-lang="en" lang="en">
+<header>
+  <span class="eyebrow">Kaggle · Kaggriculture · entry by Yujin Cha · 21–30 Sep 2026</span>
+  <h1>Kaggriculture Field Notes</h1>
+  <p class="lede">What the competition was, how it is scored, what the ladder looked like, and the tools and measurements that decided our final two agents. For the day-by-day story told from the commit log, read the <a class="xlink" data-base="retrospective.html" href="retrospective.html">retrospective</a>.</p>
+</header>
+
+<dl class="facts">
+  <div><dt>Submissions</dt><dd>13<small>21–30 Sep</small></dd></div>
+  <div><dt>Best ladder rating</dt><dd>2644.5<small>hybrid2965 + knobs, 22 Sep</small></dd></div>
+  <div><dt>Standing, 30 Sep</dt><dd>~800 / 10,190<small>ladder had deflated by then</small></dd></div>
+  <div><dt>Final ranking</dt><dd>~15 Oct<small>Bradley-Terry fit</small></dd></div>
+</dl>
+
+<details class="gloss">
+  <summary><span>Glossary <small>· 14 terms used on this page</small></span></summary>
+  <dl class="terms">
+    <dt>Agent</dt><dd>The program that plays the game. One Python file per agent.</dd>
+    <dt>Submission, slot</dt><dd>Uploading an agent. Up to 5 a day, but only the latest 2 (the active slots) keep playing.</dd>
+    <dt>Ladder, rating</dt><dd>The live table where active agents play each other automatically. The rating moves up on a win and down on a loss; new agents start near 600.</dd>
+    <dt>Bradley-Terry</dt><dd>A model that estimates each agent's strength from who beat whom. One fit over the post-deadline games sets the final order.</dd>
+    <dt>Fork, lineage</dt><dd>A fork is a copy of someone's agent with changes. Forks of one ancestor form a lineage.</dd>
+    <dt>Tape, tape agent</dt><dd>A recorded sequence of actions. A tape agent replays recorded routes and adjusts a few things (sales, herd, hires) to the game.</dd>
+    <dt>Opening fingerprint</dt><dd>An md5 over an agent's actions on turns 1–48, used to tell lineages apart.</dd>
+    <dt>Seed, seat</dt><dd>The seed fixes the game's random events, such as which shops open. The seat is whether an agent plays first or second.</dd>
+    <dt>Paired evaluation</dt><dd>Two candidates play the same seeds from the same seats, so luck cancels out of the comparison.</dd>
+    <dt>Gauntlet, wall</dt><dd>A test pool of agents from several lineages, weighted by how often the ladder serves them. A wall is a lineage a candidate must beat to pass.</dd>
+    <dt>Band</dt><dd>A rating range, such as teams rated 2300–2399.</dd>
+    <dt>Knob</dt><dd>A tunable constant inside an agent's code, such as <code>_S738_LOOK</code>.</dd>
+    <dt>Hold-out</dt><dd>Games kept aside while choosing, then used only to confirm the choice.</dd>
+    <dt>fastsim</dt><dd>Our headless copy of the official game engine that reproduces ladder games exactly.</dd>
+  </dl>
+</details>
+
+<section>
+  <span class="tag">Highlights</span>
+  <h2>Three games we like to replay</h2>
+  <p>Each replay shows our farm on the left and the opponent's on the right. The bar below shows the bank gap, green when we lead and brown when we trail, and the line under it is the gap over the whole game. Days 1–26 run fast; the last three days slow down.</p>
+  <div class="legend" aria-label="Tile key"><span><img src="img/ic_sprout.png" width="24" height="24" alt="">Growing</span><span><img src="img/ic_watered.png" width="24" height="24" alt="">Watered today</span><span><img src="img/ic_wheat.png" width="24" height="24" alt="">Wheat</span><span><img src="img/ic_carrot.png" width="24" height="24" alt="">Carrot</span><span><img src="img/ic_tomato.png" width="24" height="24" alt="">Tomato</span><span><img src="img/ic_melon.png" width="24" height="24" alt="">Melon</span><span><img src="img/ic_strawberry.png" width="24" height="24" alt="">Strawberry</span><span><img src="img/ic_weed.png" width="24" height="24" alt="">Weed</span><span><img src="img/ic_cow.png" width="24" height="24" alt="">Cow</span><span><img src="img/ic_sheep.png" width="24" height="24" alt="">Sheep</span><span><img src="img/ic_goose.png" width="24" height="24" alt="">Goose</span><span><img src="img/ic_chicken.png" width="24" height="24" alt="">Chicken</span><span><img src="img/ic_coop.png" width="24" height="24" alt="">Empty coop</span><span><img src="img/ic_grass.png" width="24" height="24" alt="">Empty land</span><span><img src="img/ic_locked.png" width="24" height="24" alt="">Locked land</span><span><img src="img/ic_farmer.png" width="24" height="24" alt="">Farmer</span><span><img src="img/ic_hand.png" width="24" height="24" alt="">Hired hand</span></div>
+  <div class="hls">
+    <figure class="hl">
+      <img src="img/hl_112213443.gif" width="688" height="496" alt="Replay of episode 112213443: our farm and Gemini IS ALL YOU NEED's farm grow almost identically; we fall behind by up to $408, take the lead on day 25 and win by $253.">
+      <figcaption>
+        <span class="badge">Giant slayer</span>
+        <h3>Beating a top-30 team by $253</h3>
+        <p>Our hybrid2965 fork against "Gemini IS ALL YOU NEED", ranked 26th on the 30 Sep leaderboard. Same lineage, so the farms mirror each other. We trailed for most of the game, by as much as $408 on day 10, took the lead at 19:00 on day 25 and never gave it back. On the last two days both sides placed the same sell orders.</p>
+        <span class="meta">episode 112213443 · 22 Sep · $108,641 to $108,388</span>
+      </figcaption>
+    </figure>
+    <figure class="hl">
+      <img src="img/hl_114483134.gif" width="688" height="496" alt="Replay of episode 114483134: we are $883 behind at the start of day 30, lead by $18 two hours later and win by $85.">
+      <figcaption>
+        <span class="badge w">Last-day comeback</span>
+        <h3>$883 down at dawn, $85 up at the bell</h3>
+        <p>The Shepherd's Ledger against l1aF of the cha22 lineage, the family that beat our agents most often. We were down $1,791 on day 25 and still $883 behind when the last day began. Within two hours the day-30 sales had turned it into an $18 lead, and we finished $85 ahead.</p>
+        <span class="meta">episode 114483134 · 28 Sep · $90,819 to $90,734</span>
+      </figcaption>
+    </figure>
+    <figure class="hl">
+      <img src="img/hl_113569489.gif" width="688" height="496" alt="Replay of episode 113569489: we recover from $2,137 behind on day 24, lead from day 29, and the lead shrinks from $479 to $47 on the last day.">
+      <figcaption>
+        <span class="badge">Photo finish</span>
+        <h3>Holding on by $47</h3>
+        <p>The Shepherd's Ledger against hugghngkai, ranked 158th. We were $2,137 behind on day 24 and went ahead for good at 14:00 on day 29. On the last day every one of the opponent's sales ate into the gap: $479, $311, $151, $71, then $47 at the end.</p>
+        <span class="meta">episode 113569489 · 26 Sep · $115,858 to $115,811</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <span class="tag">The game</span>
+  <h2>A 30-day farm, a shared market, one winner</h2>
+  <p>Two agents run neighbouring farms for 720 turns: 30 days of 24 hours. Each turn they move farmers and hired hands, plant wheat, carrot, tomato, melon and strawberry, keep cows, sheep, geese and chickens, and trade on one market that both farms share. Whoever has more coins in the bank after turn 720 wins. The size of the win does not matter.</p>
+  <ul>
+    <li><strong>The market is a set of small reservoirs.</strong> Selling pushes a product's price down for both players, and town shops drain stock back out. Melon has no shop demand, so about 160 units drive it to the floor.</li>
+    <li><strong>Shops unlock at random.</strong> Knowing the first two shops predicts the third with 13.4% accuracy against 12.5% for a random guess. Agents can react to shops but not anticipate them.</li>
+    <li><strong>Labour is cheap.</strong> The n-th hire of a day costs fib(n), so about ten hands cost $143 a day. Hands vanish at the end of each day.</li>
+    <li><strong>Step 718 is the last step whose actions run</strong>, so everything has to be dropped and sold before it.</li>
+    <li>The ladder engine is <code>kaggle-environments 1.32.7</code>, since 15 Aug. That version changed scarcity pricing for carrot, tomato and egg, so every local match must use it.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="tag">Scoring</span>
+  <h2>How the final leaderboard is made</h2>
+  <ul>
+    <li>Each team may submit up to 5 agents a day. Only the <strong>latest two</strong> stay active, so every new submission retires the older of the pair.</li>
+    <li>Active agents play rated games against agents of similar rating. The rating moves on win, loss or tie only. A new agent starts near 600.</li>
+    <li>After the 30 Sep deadline, games keep running for about two weeks. One <strong>Bradley-Terry fit</strong> over those games then sets the final order.</li>
+    <li>Kaggle staff said on the forum that the fit uses every game played between agents that are still active. The live rating number itself is not carried over. Submitting earlier buys more games and a smaller error band, not a higher expected score.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="tag">The ladder</span>
+  <h2>A population of forks</h2>
+  <p>Almost every strong public agent is a tape agent: a library of recorded 720-turn routes plus reactive layers that adjust sales, herd and hires. Authors fork each other, so the ladder is a set of lineages rather than independent designs. We named lineages by an opening fingerprint. The fingerprint does not depend on the seed but does depend on the opponent, so each agent is fingerprinted against several.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Lineage</th><th>Share of 2450–2850 band</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>hybrid2965 / master-engine</td><td class="n">28.5%</td><td>Where our best rating came from</td></tr>
+      <tr><td>a-wonderful-life / cha22</td><td class="n">27.1%</td><td>Ladder versions far stronger than any public copy</td></tr>
+      <tr><td>V52 / V53</td><td class="n">10.3%</td><td>Beats v7 in 93% of games</td></tr>
+      <tr><td>2945 Farm family</td><td class="n">10.0%</td><td></td></tr>
+      <tr><td>Unnamed</td><td class="n">~23%</td><td>Private agents, 1–4 submissions each</td></tr>
+      <tr><td>herd-safe (Shepherd's Ledger, harvest-ledger)</td><td class="n">new</td><td>Appeared after this window; our final lineage</td></tr>
+    </tbody>
+  </table></div>
+  <p class="mono" style="color:var(--muted)">Band mix from the community episode dataset, games 19–23 Sep.</p>
+  <p>Lineages form a rock-paper-scissors cycle: v7 beats hybrid, hybrid beats V53, and V53 beats v7. It reproduced 8/8 each way locally. The top 23 teams in Kaggle's own episode dumps all open differently from every public lineage, so the top of the board runs private agents.</p>
+</section>
+
+<section>
+  <span class="tag">Method</span>
+  <h2>Five tools, in the order we came to trust them</h2>
+  <ol class="steps">
+    <li><div><h3>fastsim: a headless match runner</h3><p>It runs the official interpreter about 20× faster and reproduces ladder games to the coin. Replaying 391 of our ladder games, six opening groups came out exact, including 29 v7 games against six different teams. The misses were against near-forks of the files we had. Without that check, no local number means anything.</p></div></li>
+    <li><div><h3>Paired evaluation on fixed seeds</h3><p>Every candidate plays the same seeds from both seats as its baseline. Per-game margin sd is about $9k and outcomes cluster by seed, so 40-game trials "found" gains that reversed at 80. Six seeds is our minimum.</p></div></li>
+    <li><div><h3>A lineage-weighted gauntlet</h3><p>It plays two agents per lineage, weighted by the ladder mix, with walls that a candidate must hold against every agent. It replaced picking by head-to-head wins against one champion, which is how a locally unbeaten v7 went to the ladder and lost 1,000 rating points.</p></div></li>
+    <li><div><h3>Tape evaluation on real ladder boards</h3><p>We turn the opponent seat of each of our ladder games into an open-loop tape and replay candidates on that game's seed and seat. The file that actually played gives back the ladder banks exactly (195/195, then 73/73 on new boards). This mattered most, because local copies of some lineages were far weaker than the versions on the ladder: the cha22 family lost every local game to the Shepherd's Ledger but won 72% of 93 real ones. Later we built tapes from other teams' games in the community dataset, 188 boards from 117 teams rated 2300–2399.</p></div></li>
+    <li><div><h3>Knob screens with a hold-out</h3><p>Public agents expose dozens of module constants. We screen one change at a time against the same boards, pick on one set, and confirm on boards that played no part in the choice.</p></div></li>
+  </ol>
+  <div class="note"><strong>Limit of tapes.</strong><p>A tape repeats what the opponent did and cannot react to us, except through market prices. Absolute win counts are an upper bound. Only the comparison between candidates on the same tapes is reliable.</p></div>
+</section>
+
+<section>
+  <span class="tag">Findings</span>
+  <h2>Measurements that changed a decision</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Change</th><th>Evidence</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>8-knob search on hybrid2965</td><td>14/16 vs unmodified, then the ladder</td><td class="n good">2370 → 2644</td></tr>
+      <tr><td><code>_V92_P_TOP</code> 2 → 6 (Shepherd's Ledger)</td><td>Lineage gauntlet, 6 seeds, both seats</td><td class="n good">81.2% → 95.4%</td></tr>
+      <tr><td><code>_V92_P_TOP</code> 6 → 8</td><td>188 band boards + 69 own boards</td><td class="n">no effect</td></tr>
+      <tr><td>harvest-ledger (ttv1) vs Shepherd's Ledger</td><td>188 band boards</td><td class="n good">133 vs 118 wins</td></tr>
+      <tr><td>Enter tomatoes more readily (<code>_CXTB_MIN_REVENUE</code> 9000 → 6000)</td><td>188 band boards, paired</td><td class="n bad">−16 wins</td></tr>
+      <tr><td>Sell ahead of own plan (<code>_S738_LOOK</code> 4 → 10) and <code>_CXTB_MIN_REVENUE</code> 7500</td><td>340 boards including 152 hold-out</td><td class="n good">+15 / −0</td></tr>
+      <tr><td>Split v7's day-27 bulk sales into slices</td><td>12 seeds vs V53 and hybrid</td><td class="n bad">about −1k own score</td></tr>
+    </tbody>
+  </table></div>
+  <p>Our 2300+ losses were level on money through day 15 and fell behind from day 18, in the selling phase. The stronger farms bought and sold wheat about twice as often, fertilized more, and planted tomatoes on days 15–25 instead of all strawberry. Copying the tomato move made our agent worse, because both farms then sell into one tomato market.</p>
+</section>
+
+<section>
+  <span class="tag">Final pair</span>
+  <h2>Both slots on the harvest-ledger lineage</h2>
+  <div class="pair">
+    <div><span class="id">56633420 · 28 Sep</span><h3>ttv1_flags</h3><p>harvest-ledger plus our tuned knobs, <code>_V92_P_TOP = 6</code>.</p></div>
+    <div><span class="id">56701314 · 30 Sep</span><h3>ttv1_look10</h3><p>The same, plus <code>_S738_LOOK = 10</code> and <code>_CXTB_MIN_REVENUE = 7500</code>.</p></div>
+  </div>
+  <p>Tapes ranked the Shepherd's Ledger below ttv1 on every board set, so we gave up lineage diversity for strength.</p>
+</section>
+
+<footer>
+  <p>The pixel art in the replays is original, drawn for this page.</p>
+  <p><strong>Credits.</strong> Every public agent we built on is Apache-2.0 with its notices kept: 2945 Farm (thomastschinkel), 2965 Master Hybrid (haideptry), shop-router-reactive v7 (aurax7 / Yaxon), The Shepherd's Ledger (shiiin9) and harvest-ledger (haodou092; public ttv1 re-upload by kunaldesale2408). Ladder population data: the <span class="mono">georgymamarin/kaggriculture-episodes</span> dataset.</p>
+  <p>Written 30 Sep 2026, before final standings. Standings on 30 Sep are live ratings, not the final result.</p>
+</footer>
+</div>
+
+<!-- ============================== KOREAN ============================== -->
+<div class="wrap" data-lang="ko" lang="ko" hidden>
+<header>
+  <span class="eyebrow">Kaggle · Kaggriculture · Yujin Cha 팀 · 2026년 9월 21~30일</span>
+  <h1>Kaggriculture 현장 노트</h1>
+  <p class="lede">컴퓨터 프로그램끼리 농장을 운영해서 누가 돈을 더 많이 버는지 겨루는 대회였어요. 이 페이지에는 대회 규칙, 우리가 쓴 방법, 그리고 알게 된 것을 정리했어요. 날짜별 이야기는 <a class="xlink" data-base="retrospective.html" href="retrospective.html#ko">회고록</a>에 있어요.</p>
+</header>
+
+<dl class="facts">
+  <div><dt>제출한 에이전트</dt><dd>13개<small>9월 21~30일</small></dd></div>
+  <div><dt>가장 높았던 레이팅</dt><dd>2644.5<small>9월 22일</small></dd></div>
+  <div><dt>9월 30일 순위</dt><dd>약 800등<small>전체 10,190팀 중</small></dd></div>
+  <div><dt>최종 결과 발표</dt><dd>10월 15일쯤<small>브래들리-테리 계산</small></dd></div>
+</dl>
+
+<details class="gloss">
+  <summary><span>용어집 <small>· 눌러서 열기 · 이 페이지에 나오는 말 16개</small></span></summary>
+  <dl class="terms">
+    <dt>에이전트<span>agent</span></dt><dd>사람 대신 게임을 두는 프로그램이에요. 이 대회에서는 파이썬 파일 하나가 에이전트 하나예요.</dd>
+    <dt>제출<span>submission</span></dt><dd>에이전트를 대회에 올리는 것이에요. 하루에 5번까지 할 수 있어요.</dd>
+    <dt>활성 슬롯<span>active slot</span></dt><dd>실제로 경기에 나가는 자리예요. 팀마다 2자리뿐이라서, 새로 제출하면 오래된 에이전트가 자리에서 빠져요.</dd>
+    <dt>래더<span>ladder</span></dt><dd>제출된 에이전트끼리 자동으로 계속 경기하는 순위표예요. 사다리처럼 이기면 올라가고 지면 내려가요.</dd>
+    <dt>레이팅<span>rating</span></dt><dd>래더에서 매겨지는 실력 점수예요. 새 에이전트는 600점쯤에서 시작해요.</dd>
+    <dt>브래들리-테리<span>Bradley-Terry</span></dt><dd>"누가 누구를 이겼는지" 기록 전체를 보고 각자의 실력을 거꾸로 계산하는 방법이에요. 최종 순위를 이걸로 정해요.</dd>
+    <dt>포크<span>fork</span></dt><dd>남이 공개한 에이전트를 복사해서 고친 것이에요.</dd>
+    <dt>계열<span>lineage</span></dt><dd>한 조상에서 나온 포크들의 가족이에요. 생김새(행동)가 서로 닮았어요.</dd>
+    <dt>테이프 · 테이프 에이전트<span>tape</span></dt><dd>테이프는 녹화해 둔 행동 순서예요. 테이프 에이전트는 잘된 게임을 녹화한 순서대로 움직이면서, 판매나 가축 수 같은 몇 가지만 상황에 맞게 바꿔요.</dd>
+    <dt>오프닝 지문<span>opening fingerprint</span></dt><dd>처음 48차례의 행동으로 만든 짧은 암호(해시)예요. 사람 지문처럼, 이걸로 어느 계열인지 알아봐요.</dd>
+    <dt>시드<span>seed</span></dt><dd>게임 속 무작위(어떤 가게가 언제 열리는지 등)를 정하는 번호예요. 시드가 같으면 운도 똑같이 흘러가요.</dd>
+    <dt>자리<span>seat</span></dt><dd>두 플레이어 중 첫 번째인지 두 번째인지예요.</dd>
+    <dt>짝 비교<span>paired evaluation</span></dt><dd>두 에이전트를 똑같은 시드, 똑같은 자리에서 둬 보고 비교하는 방법이에요. 운의 차이가 빠져서 공정해요.</dd>
+    <dt>게이틀릿 · 벽<span>gauntlet · wall</span></dt><dd>게이틀릿은 여러 계열의 상대를 모아 만든 시험장이에요. 벽은 그중 꼭 이겨야 통과하는 상대예요.</dd>
+    <dt>밴드<span>band</span></dt><dd>레이팅 구간이에요. 예를 들어 "2300점대 밴드"는 2300~2399점인 팀들이에요.</dd>
+    <dt>노브<span>knob</span></dt><dd>에이전트 코드 안에서 조절할 수 있는 숫자예요. 라디오 볼륨 손잡이를 돌리듯 바꾸면 행동이 달라져요. 예: <code>_S738_LOOK</code></dd>
+    <dt>홀드아웃<span>hold-out</span></dt><dd>고를 때는 쓰지 않고 따로 남겨 둔 시험 경기예요. 처음 보는 문제에서도 잘해야 진짜 실력이니까요.</dd>
+    <dt>fastsim</dt><dd>대회와 똑같은 게임을 내 컴퓨터에서 빠르게 돌리는 우리 도구예요.</dd>
+  </dl>
+</details>
+
+<section>
+  <span class="tag">하이라이트</span>
+  <h2>다시 봐도 짜릿한 세 경기</h2>
+  <p>왼쪽이 우리 농장, 오른쪽이 상대 농장이에요. 아래 막대는 누가 돈을 얼마나 더 가졌는지 보여 줘요. 초록이면 우리가 앞선 거고, 갈색이면 뒤진 거예요. 그 밑의 선은 게임 전체 동안 돈 차이가 어떻게 바뀌었는지예요. 1~26일은 빠르게, 마지막 3일은 천천히 흘러가요.</p>
+  <div class="legend" aria-label="그림 설명"><span><img src="img/ic_sprout.png" width="24" height="24" alt="">자라는 중</span><span><img src="img/ic_watered.png" width="24" height="24" alt="">오늘 물 줌</span><span><img src="img/ic_wheat.png" width="24" height="24" alt="">밀</span><span><img src="img/ic_carrot.png" width="24" height="24" alt="">당근</span><span><img src="img/ic_tomato.png" width="24" height="24" alt="">토마토</span><span><img src="img/ic_melon.png" width="24" height="24" alt="">멜론</span><span><img src="img/ic_strawberry.png" width="24" height="24" alt="">딸기</span><span><img src="img/ic_weed.png" width="24" height="24" alt="">잡초</span><span><img src="img/ic_cow.png" width="24" height="24" alt="">소</span><span><img src="img/ic_sheep.png" width="24" height="24" alt="">양</span><span><img src="img/ic_goose.png" width="24" height="24" alt="">거위</span><span><img src="img/ic_chicken.png" width="24" height="24" alt="">닭</span><span><img src="img/ic_coop.png" width="24" height="24" alt="">빈 닭장</span><span><img src="img/ic_grass.png" width="24" height="24" alt="">빈 땅</span><span><img src="img/ic_locked.png" width="24" height="24" alt="">잠긴 땅</span><span><img src="img/ic_farmer.png" width="24" height="24" alt="">농부</span><span><img src="img/ic_hand.png" width="24" height="24" alt="">일꾼</span></div>
+  <div class="hls">
+    <figure class="hl">
+      <img src="img/hl_112213443.gif" width="688" height="496" alt="경기 112213443 다시보기: 두 농장이 거의 똑같이 자라고, 우리가 최대 408달러까지 뒤지다가 25일째에 앞서서 253달러 차로 이겨요.">
+      <figcaption>
+        <span class="badge">거인 잡기</span>
+        <h3>상위 30등 팀을 253달러 차로 이기다</h3>
+        <p>우리 hybrid2965 포크와 "Gemini IS ALL YOU NEED"의 경기예요. 이 팀은 9월 30일 순위표에서 26등이에요. 같은 계열이라 두 농장이 거울처럼 닮았어요. 우리는 10일째에 408달러까지 뒤지는 등 거의 내내 끌려갔어요. 그런데 25일째 저녁 7시에 앞서기 시작했고, 끝까지 자리를 내주지 않았어요. 마지막 이틀은 두 팀이 똑같은 판매 주문을 냈어요.</p>
+        <span class="meta">경기 112213443 · 9월 22일 · 108,641달러 대 108,388달러</span>
+      </figcaption>
+    </figure>
+    <figure class="hl">
+      <img src="img/hl_114483134.gif" width="688" height="496" alt="경기 114483134 다시보기: 마지막 날 아침 883달러 뒤져 있다가 두 시간 만에 18달러 앞서고, 85달러 차로 이겨요.">
+      <figcaption>
+        <span class="badge w">마지막 날 역전</span>
+        <h3>새벽엔 883달러 뒤, 끝날 땐 85달러 앞</h3>
+        <p>양치기 장부(The Shepherd's Ledger)와 l1aF의 경기예요. l1aF는 우리를 가장 자주 이긴 cha22 계열이에요. 우리는 25일째에 1,791달러까지 뒤졌고, 마지막 날이 시작될 때도 883달러 뒤져 있었어요. 그런데 마지막 날 판매가 시작되고 두 시간 만에 18달러 앞섰고, 85달러 차로 이겼어요.</p>
+        <span class="meta">경기 114483134 · 9월 28일 · 90,819달러 대 90,734달러</span>
+      </figcaption>
+    </figure>
+    <figure class="hl">
+      <img src="img/hl_113569489.gif" width="688" height="496" alt="경기 113569489 다시보기: 24일째 2,137달러 뒤지다가 29일째부터 앞서고, 마지막 날 차이가 479달러에서 47달러까지 줄어요.">
+      <figcaption>
+        <span class="badge">사진 판정</span>
+        <h3>47달러 차로 버티다</h3>
+        <p>양치기 장부와 158등 팀 hugghngkai의 경기예요. 24일째에는 2,137달러나 뒤졌는데, 29일째 오후 2시에 앞선 뒤로는 다시 뒤지지 않았어요. 마지막 날에는 상대가 물건을 팔 때마다 차이가 줄었어요. 479달러, 311달러, 151달러, 71달러, 그리고 마지막엔 47달러였어요.</p>
+        <span class="meta">경기 113569489 · 9월 26일 · 115,858달러 대 115,811달러</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <span class="tag">게임</span>
+  <h2>30일 농장, 함께 쓰는 시장, 승자는 한 명</h2>
+  <p>두 에이전트가 이웃한 농장을 하나씩 맡아요. 게임은 720차례(30일 × 24시간)예요. 차례마다 농부와 일꾼을 움직여 밀·당근·토마토·멜론·딸기를 심고, 소·양·거위·닭을 키우고, 두 농장이 같이 쓰는 시장에 팔아요. 마지막에 은행에 돈이 더 많은 쪽이 이겨요. 얼마나 크게 이겼는지는 상관없어요. 1달러 차이도 이긴 거예요.</p>
+  <ul>
+    <li><strong>시장은 작은 물통 같아요.</strong> 한 가지를 많이 팔면 값이 뚝 떨어지고, 그 값은 상대에게도 똑같이 적용돼요. 멜론은 가게에서 사 가지 않아서 160개쯤 팔면 거의 바닥 값이 돼요.</li>
+    <li><strong>가게는 무작위로 열려요.</strong> 처음 두 가게를 보고 세 번째를 맞힐 확률이 13.4%인데, 그냥 찍어도 12.5%예요. 그래서 미리 예측은 못 하고, 열린 다음에 반응만 할 수 있어요.</li>
+    <li><strong>일꾼은 싸요.</strong> 하루에 열 명쯤 써도 143달러예요. 일꾼은 그날 밤이 되면 사라져요.</li>
+    <li><strong>718번째 차례가 마지막으로 행동이 적용되는 차례예요.</strong> 그 전에 모두 팔아야 해요.</li>
+    <li>대회는 <code>kaggle-environments 1.32.7</code> 엔진을 써요. 이 버전에서 당근·토마토·달걀 값 계산이 바뀌어서, 연습할 때도 꼭 같은 버전을 써야 해요.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="tag">순위</span>
+  <h2>최종 순위는 이렇게 정해져요</h2>
+  <ul>
+    <li>하루에 5번까지 제출할 수 있지만, 활성 슬롯은 <strong>가장 최근 2개</strong>뿐이에요. 새로 제출하면 둘 중 오래된 쪽이 빠져요.</li>
+    <li>활성 에이전트는 래더에서 레이팅이 비슷한 상대와 자동으로 경기해요. 이기면 레이팅이 오르고 지면 내려가요. 새 에이전트는 600점쯤에서 시작해요.</li>
+    <li>9월 30일 마감 뒤에도 2주쯤 경기를 계속해요. 그다음 그 경기 기록 전체로 <strong>브래들리-테리</strong> 계산을 한 번 해서 최종 순위를 정해요.</li>
+    <li>그래서 지금 레이팅 숫자가 그대로 최종 점수가 되지는 않아요. 일찍 제출하면 경기 기록이 많아져서 결과가 더 정확해질 뿐, 점수가 더 높아지지는 않아요.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="tag">래더</span>
+  <h2>포크들의 가족 모임</h2>
+  <p>잘하는 공개 에이전트는 거의 다 테이프 에이전트예요. 사람들이 서로의 에이전트를 포크해서 고쳐 쓰기 때문에, 래더는 몇 개의 계열로 나뉘어 있어요. 우리는 오프닝 지문으로 계열을 구별했어요. 지문은 시드가 바뀌어도 그대로지만 상대가 바뀌면 달라져서, 에이전트마다 여러 상대와 붙여 보고 지문을 만들었어요.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>계열</th><th>2450~2850점 밴드에서 만나는 비율</th><th>메모</th></tr></thead>
+    <tbody>
+      <tr><td>hybrid2965 / master-engine</td><td class="n">28.5%</td><td>우리 최고 레이팅이 나온 계열</td></tr>
+      <tr><td>a-wonderful-life / cha22</td><td class="n">27.1%</td><td>래더 버전이 공개 복사본보다 훨씬 강해요</td></tr>
+      <tr><td>V52 / V53</td><td class="n">10.3%</td><td>v7을 93%나 이겨요</td></tr>
+      <tr><td>2945 Farm 계열</td><td class="n">10.0%</td><td></td></tr>
+      <tr><td>이름 모를 계열</td><td class="n">약 23%</td><td>공개되지 않은 에이전트들</td></tr>
+      <tr><td>herd-safe (양치기 장부, harvest-ledger)</td><td class="n">새로 등장</td><td>이 기간 뒤에 나왔어요. 우리 최종 계열이에요</td></tr>
+    </tbody>
+  </table></div>
+  <p class="mono" style="color:var(--muted)">9월 19~23일 경기, 커뮤니티 경기 데이터셋 기준이에요.</p>
+  <p>계열끼리는 가위바위보처럼 물고 물려요. v7은 hybrid를, hybrid는 V53을, V53은 v7을 이겨요. 1~23등 팀은 공개된 어떤 계열과도 시작이 달라요. 자기만의 비공개 에이전트를 쓴다는 뜻이에요.</p>
+</section>
+
+<section>
+  <span class="tag">방법</span>
+  <h2>우리가 믿게 된 도구 다섯 가지</h2>
+  <ol class="steps">
+    <li><div><h3>fastsim: 빠른 연습 경기장</h3><p>대회와 똑같은 게임을 내 컴퓨터에서 20배쯤 빠르게 돌려요. 우리 래더 경기 391판을 다시 돌려 봤더니, 여섯 개 오프닝 그룹은 동전 한 닢까지 똑같이 나왔어요. 이게 맞아야 연습 결과를 믿을 수 있어요.</p></div></li>
+    <li><div><h3>짝 비교</h3><p>두 후보를 똑같은 시드에서, 양쪽 자리 모두 둬 보고 비교해요. 한 판 결과는 운 때문에 9천 달러씩 오르내려요. 그래서 40판만 보고 "좋아졌다"고 믿었다가 80판에서 뒤집힌 적도 있어요. 시드는 적어도 6개를 써요.</p></div></li>
+    <li><div><h3>계열별 게이틀릿</h3><p>래더에 실제로 많은 계열들을, 만나는 비율대로 모아 시험을 봐요. 벽인 계열은 꼭 이겨야 통과예요. 예전에는 우리 연습 상대만 이기는 v7을 골랐다가, 래더에서 레이팅 1,000점을 잃었거든요.</p></div></li>
+    <li><div><h3>실제 상대의 테이프로 시험하기</h3><p>가장 중요한 도구였어요. 우리가 실제로 둔 래더 경기에서 상대가 한 행동을 테이프로 만들고, 같은 시드와 자리에서 새 후보와 붙여 봐요. 실제로 냈던 에이전트로 돌리면 결과가 진짜 경기와 똑같이 나와요(195판 중 195판, 새 경기 73판 중 73판). 이게 필요했던 이유가 있어요. cha22 계열의 공개 복사본은 연습에서 양치기 장부에게 전부 졌는데, 진짜 래더에서는 93판 중 72%를 이겼거든요. 나중에는 다른 팀들 경기로도 테이프를 만들었어요. 2300점대 117팀의 188판이에요.</p></div></li>
+    <li><div><h3>노브 하나씩 바꿔 보기, 그리고 홀드아웃</h3><p>공개 에이전트에는 노브가 수십 개 있어요. 하나씩 바꿔서 같은 경기들로 비교하고, 한 묶음으로 고른 다음, 고를 때 쓰지 않은 홀드아웃 경기로 한 번 더 확인해요.</p></div></li>
+  </ol>
+  <div class="note"><strong>테이프의 한계</strong><p>테이프 상대는 녹화된 대로만 움직여서 우리에게 맞춰 반응하지 않아요(시장 가격만 달라져요). 그래서 이긴 횟수 자체는 실제보다 좋게 나와요. 같은 테이프에서 두 후보 중 누가 더 나은지 비교할 때만 믿을 수 있어요.</p></div>
+</section>
+
+<section>
+  <span class="tag">알게 된 것</span>
+  <h2>결정을 바꾼 측정들</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>바꾼 것</th><th>확인한 방법</th><th>결과</th></tr></thead>
+    <tbody>
+      <tr><td>hybrid2965의 노브 8개 찾기</td><td>원래 버전과 16판 중 14승, 그다음 래더</td><td class="n good">2370 → 2644</td></tr>
+      <tr><td>상대 판매를 미리 따라 파는 개수 <code>_V92_P_TOP</code> 2 → 6 (양치기 장부)</td><td>계열별 게이틀릿, 시드 6개, 양쪽 자리</td><td class="n good">81.2% → 95.4%</td></tr>
+      <tr><td><code>_V92_P_TOP</code> 6 → 8</td><td>2300점대 188판 + 우리 경기 69판</td><td class="n">효과 없음</td></tr>
+      <tr><td>harvest-ledger(ttv1) 대 양치기 장부</td><td>2300점대 188판</td><td class="n good">133승 대 118승</td></tr>
+      <tr><td>토마토를 더 쉽게 시작하기 (<code>_CXTB_MIN_REVENUE</code> 9000 → 6000)</td><td>188판 짝 비교</td><td class="n bad">16판 더 짐</td></tr>
+      <tr><td>내 판매 계획을 더 일찍 당겨 팔기 (<code>_S738_LOOK</code> 4 → 10) + <code>_CXTB_MIN_REVENUE</code> 7500</td><td>홀드아웃 152판을 포함한 340판</td><td class="n good">15판 더 이기고 0판 더 짐</td></tr>
+      <tr><td>v7의 27일째 대량 판매를 나눠서 팔기</td><td>V53, hybrid 상대로 시드 12개</td><td class="n bad">자기 점수 약 1,000 줄어듦</td></tr>
+    </tbody>
+  </table></div>
+  <p>2300점 넘는 팀에게 진 경기들을 살펴보니, 15일째까지는 돈이 비슷하다가 18일째부터 뒤처졌어요. 파는 단계에서 지고 있었던 거예요. 강한 농장들은 밀을 두 배쯤 자주 사고팔고, 비료를 더 많이 쓰고, 15~25일째에 딸기 대신 토마토를 심었어요. 그런데 우리도 토마토를 따라 심게 하자 오히려 더 졌어요. 두 농장이 같은 토마토 시장에 팔면 값이 떨어지기 때문이에요.</p>
+</section>
+
+<section>
+  <span class="tag">마지막 두 선수</span>
+  <h2>두 슬롯 모두 harvest-ledger 계열로</h2>
+  <div class="pair">
+    <div><span class="id">56633420 · 9월 28일</span><h3>ttv1_flags</h3><p>harvest-ledger에 우리가 찾은 노브를 넣은 버전이에요. <code>_V92_P_TOP = 6</code></p></div>
+    <div><span class="id">56701314 · 9월 30일</span><h3>ttv1_look10</h3><p>위와 같고, <code>_S738_LOOK = 10</code>과 <code>_CXTB_MIN_REVENUE = 7500</code>을 더했어요.</p></div>
+  </div>
+  <p>테이프 시험에서 양치기 장부는 어느 경기 묶음에서나 ttv1보다 약했어요. 그래서 계열을 다양하게 섞기보다 가장 강한 쪽으로 두 슬롯을 모두 채웠어요. 대신 ttv1이 약한 상대를 만나면 둘 다 약하다는 위험이 있어요.</p>
+</section>
+
+<footer>
+  <p>다시보기 속 도트 그림은 이 페이지를 위해 새로 그린 거예요.</p>
+  <p><strong>고마운 분들.</strong> 우리가 바탕으로 쓴 공개 에이전트는 모두 Apache-2.0 라이선스이고, 원래 표시를 그대로 남겼어요: 2945 Farm (thomastschinkel), 2965 Master Hybrid (haideptry), shop-router-reactive v7 (aurax7 / Yaxon), The Shepherd's Ledger (shiiin9), harvest-ledger (haodou092; ttv1 공개 재업로드 kunaldesale2408). 래더 데이터는 <span class="mono">georgymamarin/kaggriculture-episodes</span> 데이터셋을 썼어요.</p>
+  <p>2026년 9월 30일, 최종 결과가 나오기 전에 썼어요. 9월 30일 순위는 그때의 레이팅이지 최종 결과가 아니에요.</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var KEY = "kag-lang";
+  var btn = document.getElementById("lang-btn");
+  function apply(l) {
+    document.querySelectorAll("[data-lang]").forEach(function (el) { el.hidden = el.getAttribute("data-lang") !== l; });
+    document.documentElement.lang = l;
+    btn.textContent = l === "ko" ? "ENG" : "KOR";
+    btn.setAttribute("aria-label", l === "ko" ? "Read in English" : "한국어로 보기");
+    document.title = l === "ko" ? "Kaggriculture 현장 노트" : "Kaggriculture Field Notes";
+    document.querySelectorAll("a.xlink").forEach(function (a) { a.href = a.getAttribute("data-base") + (l === "ko" ? "#ko" : ""); });
+    try { localStorage.setItem(KEY, l); } catch (e) {}
+  }
+  var start = "en";
+  try { start = localStorage.getItem(KEY) || "en"; } catch (e) {}
+  if (location.hash === "#ko") start = "ko";
+  if (location.hash === "#en") start = "en";
+  apply(start);
+  btn.addEventListener("click", function () { apply(document.documentElement.lang === "ko" ? "en" : "ko"); window.scrollTo(0, 0); });
+})();
+</script>
+</body>
+</html>
