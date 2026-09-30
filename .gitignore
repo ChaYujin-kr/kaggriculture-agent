@@ -29,3 +29,5 @@ research/daily_task.log
 zero2one/data_audit/raw/
 zero2one/data_audit/turns*/
 *.parquet
+whatclaudeshouldknow.md
+research/drafts/
