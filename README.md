@@ -12,19 +12,18 @@ between still-active submissions, run for about two weeks after the 2026-09-30 d
 ## Read the write-ups
 
 <p>
-  <a href="docs/field-notes.html"><img src="https://img.shields.io/badge/Read-Field%20Notes-2e6a3b?style=for-the-badge" alt="Read the Field Notes"></a>
+  <a href="https://chayujin-kr.github.io/kaggriculture-agent/field-notes.html"><img src="https://img.shields.io/badge/Read-Field%20Notes-2e6a3b?style=for-the-badge" alt="Read the Field Notes"></a>
   &nbsp;
-  <a href="docs/retrospective.html"><img src="https://img.shields.io/badge/Read-Retrospective-9a6614?style=for-the-badge" alt="Read the Retrospective"></a>
+  <a href="https://chayujin-kr.github.io/kaggriculture-agent/retrospective.html"><img src="https://img.shields.io/badge/Read-Retrospective-9a6614?style=for-the-badge" alt="Read the Retrospective"></a>
 </p>
 
 | Page | What is in it |
 | --- | --- |
-| **[Kaggriculture Field Notes](docs/field-notes.html)** | The game, how it is scored, the ladder's lineages, three highlight replays as pixel-art GIFs, our evaluation tools and the measurements behind the final pair |
-| **[Kaggriculture Retrospective](docs/retrospective.html)** | The ten days told from the commit log and all 13 submissions, with the lessons we keep |
+| **[Kaggriculture Field Notes](https://chayujin-kr.github.io/kaggriculture-agent/field-notes.html)** | The game, how it is scored, the ladder's lineages, three highlight replays as pixel-art GIFs, our evaluation tools and the measurements behind the final pair |
+| **[Kaggriculture Retrospective](https://chayujin-kr.github.io/kaggriculture-agent/retrospective.html)** | The ten days told from the commit log and all 13 submissions, with the lessons we keep |
 
-Both pages have an English/Korean switch and a glossary. They are plain HTML files in `docs/`, so no
-login is needed: GitHub shows HTML as source, so clone or download the repository and open
-`docs/field-notes.html` in a browser.
+Both pages have an English/Korean switch and a glossary. They are served by GitHub Pages at
+<https://chayujin-kr.github.io/kaggriculture-agent/>; the source is plain HTML in `docs/`, so they also open offline from a clone.
 
 ## What is here
 

@@ -12,19 +12,19 @@
 ## 정리한 글 읽기
 
 <p>
-  <a href="docs/field-notes.html"><img src="https://img.shields.io/badge/%EC%9D%BD%EA%B8%B0-%ED%98%84%EC%9E%A5%20%EB%85%B8%ED%8A%B8-2e6a3b?style=for-the-badge" alt="현장 노트 읽기"></a>
+  <a href="https://chayujin-kr.github.io/kaggriculture-agent/field-notes.html"><img src="https://img.shields.io/badge/%EC%9D%BD%EA%B8%B0-%ED%98%84%EC%9E%A5%20%EB%85%B8%ED%8A%B8-2e6a3b?style=for-the-badge" alt="현장 노트 읽기"></a>
   &nbsp;
-  <a href="docs/retrospective.html"><img src="https://img.shields.io/badge/%EC%9D%BD%EA%B8%B0-%ED%9A%8C%EA%B3%A0%EB%A1%9D-9a6614?style=for-the-badge" alt="회고록 읽기"></a>
+  <a href="https://chayujin-kr.github.io/kaggriculture-agent/retrospective.html"><img src="https://img.shields.io/badge/%EC%9D%BD%EA%B8%B0-%ED%9A%8C%EA%B3%A0%EB%A1%9D-9a6614?style=for-the-badge" alt="회고록 읽기"></a>
 </p>
 
 | 페이지 | 들어 있는 것 |
 | --- | --- |
-| **[Kaggriculture 현장 노트](docs/field-notes.html)** | 게임 규칙, 순위 정하는 법, 래더의 계열들, 도트 그림으로 만든 하이라이트 경기 GIF 3개, 우리가 쓴 시험 도구, 마지막 두 선수를 고른 근거 |
-| **[Kaggriculture 회고록](docs/retrospective.html)** | 커밋 기록과 제출 13개로 돌아본 열흘, 그리고 배운 것 |
+| **[Kaggriculture 현장 노트](https://chayujin-kr.github.io/kaggriculture-agent/field-notes.html)** | 게임 규칙, 순위 정하는 법, 래더의 계열들, 도트 그림으로 만든 하이라이트 경기 GIF 3개, 우리가 쓴 시험 도구, 마지막 두 선수를 고른 근거 |
+| **[Kaggriculture 회고록](https://chayujin-kr.github.io/kaggriculture-agent/retrospective.html)** | 커밋 기록과 제출 13개로 돌아본 열흘, 그리고 배운 것 |
 
 두 페이지 모두 오른쪽 위 버튼으로 한국어/영어를 바꿀 수 있고, 앞부분에 용어집이 있어요.
-`docs/` 폴더의 평범한 HTML 파일이라 로그인 없이 볼 수 있어요. 다만 GitHub은 HTML 파일을 코드로 보여 주기 때문에,
-저장소를 내려받은(clone 또는 다운로드) 다음 `docs/field-notes.html`을 브라우저로 열어 주세요.
+GitHub Pages(<https://chayujin-kr.github.io/kaggriculture-agent/>)에서 바로 볼 수 있어요. 원본은 `docs/` 폴더의 평범한 HTML 파일이라
+저장소를 내려받아 브라우저로 열어도 돼요.
 페이지를 연 뒤 오른쪽 위 KOR 버튼을 누르면 한국어로 바뀌어요.
 
 <details>
